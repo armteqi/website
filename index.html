@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Дгмтеϙі – Technology Education Without Barriers | Student‑Led Community</title>
+  <meta name="description" content="Armteqi is a student-led technology community offering free cyber awareness sessions, beginner bootcamps, open source projects, and peer learning." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="assets/css/cookie.css">
+</head>
+<body>
+   <!-- ─── COOKIE BANNER ─── -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+    <div class="banner-row">
+      <div class="icon-wrap">
+        <i class="fas fa-cookie-bite"></i>
+      </div>
+      <div class="content">
+        <div class="title">Cookie Preferences</div>
+        <div class="desc">
+          We use cookies to keep Armteqi secure, remember your preferences, and improve the website.
+          <br />
+          <a href="/trust/privacy-policy.html">Learn more</a>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" id="cookieAcceptBtn">
+            <i class="fas fa-check"></i> Accept All
+          </button>
+          <button class="btn btn-ghost" id="cookieCustomizeBtn">
+            <i class="fas fa-sliders"></i> Customize
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── OVERLAY ─── -->
+  <div class="cookie-overlay" id="cookieOverlay"></div>
+
+  <!-- ─── PREFERENCES PANEL ─── -->
+  <div class="cookie-panel" id="cookiePanel" role="dialog" aria-label="Cookie preferences">
+    <div class="panel-header">
+      <h3><i class="fas fa-sliders" style="color:var(--cookie-accent-soft);margin-right:8px;"></i>Cookie Preferences</h3>
+      <button class="close-btn" id="panelCloseBtn" aria-label="Close preferences">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="panel-desc">
+      Choose which cookies you allow. Essential cookies are always enabled to keep the site working properly.
+    </div>
+    <div id="prefsList"></div>
+    <div class="panel-actions">
+      <button class="btn btn-danger" id="panelRejectOptionalBtn">
+        <i class="fas fa-times"></i> Reject Optional
+      </button>
+      <button class="btn btn-primary" id="panelSaveBtn">
+        <i class="fas fa-save"></i> Save Preferences
+      </button>
+      <button class="btn btn-ghost" id="panelAcceptAllBtn">
+        <i class="fas fa-check"></i> Accept All
+      </button>
+    </div>
+  </div>
+
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="Armteqi Home">
+        <img src="logos/final-logo.png" alt="Armteqi Icon" class="logo-icon">
+        <span class="logo-text">Дгмтеϙі</span>
+      </a>
+      
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#today">Programs</a>
+        <a href="#next">Projects</a>
+        <a href="#join">Join</a>
+        <a href="/trust/index.html">Policy</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="#join" class="btn-outline-sm"><i class="fas fa-arrow-right"></i> Join</a>
+      </div>
+    </nav>
+
+    <main id="main-content">
+      <section class="hero">
+        <div class="hero-logo-wrapper">
+          <div class="hero-logo-container">
+            <img src="logos/final-logo.png" alt="Armteqi Icon" class="hero-logo-icon">
+            <span class="hero-logo-text">Дгмтеϙі</span>
+          </div>
+        </div>
+
+        <div class="hero-tagline">Student‑Led • Community‑Driven • Non‑Profit</div>
+        
+        <div class="hero-subtitle">Technology Education Without Barriers</div>
+        
+        <p class="subhead">Armteqi is a student-led community making quality education accessible through free awareness programs, beginner bootcamps, peer learning, and collaborative projects.</p>
+        
+        <div class="btn-group">
+          <a href="#join" class="btn-primary"><i class="fas fa-users"></i> Join Community</a>
+          <a href="#today" class="btn-secondary"><i class="fas fa-compass"></i> Explore Programs</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="section-header">
+          <h2 class="section-title">Why We Exist</h2>
+          <p class="section-subtitle">Every student deserves the opportunity to build a future in technology. Many face financial barriers, limited guidance, or uncertainty about where to start. Armteqi bridges that gap.</p>
+        </div>
+        <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto; text-align: center; font-size: 1.05rem; line-height: 1.7;">We believe education should inspire confidence, not create barriers.</p>
+
+        <div class="grid-2" style="margin-top: 50px;">
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-eye"></i></div>
+            <h3>Vision</h3>
+            <p>To create a future where every student, regardless of financial background, has access to quality technology education and a clear path into the industry.</p>
+          </div>
+          <div class="card">
+            <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+            <h3>Mission</h3>
+            <p>Armteqi is a student-led community committed to free awareness programs, beginner bootcamps, peer learning, open source projects, and honest career guidance.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="today">
+        <div class="section-header">
+          <h2 class="section-title">What We Do Today</h2>
+          <p class="section-subtitle">Real skills, real projects, and a supportive community to help you grow.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card"><div class="card-icon"><i class="fas fa-shield-alt"></i></div><h3>Cyber Awareness</h3><p>Free workshops helping students stay safe online and understand digital threats in a practical, engaging way.</p></div>
+          <div class="card"><div class="card-icon"><i class="fas fa-graduation-cap"></i></div><h3>Beginner Bootcamps</h3><p>Hands‑on learning experiences designed specifically for students taking their very first steps into technology.</p></div>
+          <div class="card"><div class="card-icon"><i class="fas fa-code-branch"></i></div><h3>Open Source Projects</h3><p>Collaborative coding environments where members learn by building real-world tools and contributing to impactful projects.</p></div>
+          <div class="card"><div class="card-icon"><i class="fas fa-users"></i></div><h3>Study Groups & Peer Learning</h3><p>Structured group sessions and discussion circles designed to help you learn faster by growing together.</p></div>
+          <div class="card"><div class="card-icon"><i class="fas fa-road"></i></div><h3>Career Roadmaps</h3><p>Clear, actionable learning paths and practical advice from industry professionals to help you enter the tech field.</p></div>
+        </div>
+      </section>
+      
+      <section id="next">
+        <div class="section-header">
+          <h2 class="section-title">What's Next</h2>
+          <p class="section-subtitle">Ambitious initiatives we're building toward. We only launch what we can genuinely deliver.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card"><div class="card-icon"><i class="fas fa-flag"></i></div><h3>Community CTF Platform</h3><p>Cybersecurity challenges designed for all skill levels. A safe, competitive environment to sharpen your skills—coming soon.</p></div>
+          <div class="card"><div class="card-icon"><i class="fas fa-university"></i></div><h3>College Chapters</h3><p>Student-led branches on campuses nationwide, bringing the Armteqi spirit and resources directly to your university.</p></div>
+          <div class="card"><div class="card-icon"><i class="fas fa-trophy"></i></div><h3>Hackathons</h3><p>Friendly, inclusive competitions where teams solve real-world problems, build projects, and learn from each other.</p></div>
+          <div class="card"><div class="card-icon"><i class="fas fa-handshake"></i></div><h3>Industry Collaborations</h3><p>Mentorship programs, guest talks, and career pathways built responsibly and transparently with our community partners.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <h2 class="section-title">Why Join Дгмтеϙі?</h2>
+          <p class="section-subtitle">A community designed to help you learn, connect, and build your future.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card"><i class="fas fa-laptop-code card-icon"></i><h3>Learn by Doing</h3><p>Hands-on projects, workshops, and bootcamps that build practical, job-ready skills rather than just theory.</p></div>
+          <div class="card"><i class="fas fa-handshake card-icon"></i><h3>Connect with Purpose</h3><p>Meet passionate students, mentors, and industry professionals who genuinely want to see you succeed.</p></div>
+          <div class="card"><i class="fas fa-cubes card-icon"></i><h3>Build Your Portfolio</h3><p>Contribute to real open‑source projects, document your work, and create a portfolio that stands out to employers.</p></div>
+          <div class="card"><i class="fas fa-seedling card-icon"></i><h3>Grow Continuously</h3><p>Access structured study groups, curated roadmaps, and an ever-growing network of peers who challenge and support you.</p></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-header">
+          <h2 class="section-title">Community Values</h2>
+          <p class="section-subtitle">The principles that guide everything we do.</p>
+        </div>
+        <div class="values-list">
+          <span class="value-badge"><i class="fas fa-book-open"></i> Knowledge is open</span>
+          <span class="value-badge"><i class="fas fa-shield-alt"></i> Ethics over skill</span>
+          <span class="value-badge"><i class="fas fa-handshake"></i> Community over competition</span>
+          <span class="value-badge"><i class="fas fa-heart"></i> Respect is non-negotiable</span>
+          <span class="value-badge"><i class="fas fa-sync-alt"></i> Never stop learning</span>
+        </div>
+      </section>
+
+      <section id="impact">
+        <div class="section-header">
+          <h2 class="section-title">Our Footprint</h2>
+          <p class="section-subtitle">Building momentum, one step at a time.</p>
+        </div>
+        <div class="impact-grid">
+          <div class="impact-stat"><h4>25+</h4><p>Founding Members</p></div>
+          <div class="impact-stat"><h4>Coming Soon</h4><p>First Workshop</p></div>
+          <div class="impact-stat"><h4>In Development</h4><p>Bootcamp</p></div>
+          <div class="impact-stat"><h4>3</h4><p>Active Projects</p></div>
+        </div>
+      </section>
+
+      <section>
+        <div class="promise-block">
+          <i class="fas fa-quote-left" style="font-size: 2rem; color: var(--accent); opacity: 0.7; margin-bottom: 16px; display: block;"></i>
+          <p style="font-size: 1.4rem; font-weight: 500; margin-bottom: 10px; line-height: 1.4;">We would rather exceed expectations than create unrealistic ones.</p>
+          <p style="color: var(--text-secondary);">Armteqi exists to bridge the opportunity gap. We only offer what we can genuinely deliver, and we grow transparently with our community.</p>
+        </div>
+      </section>
+
+      <section style="padding-top: 20px;">
+        <div class="section-header">
+          <h2 class="section-title">A Note from Our Founder</h2>
+        </div>
+        <div style="max-width: 700px; margin: 0 auto; color: var(--text-secondary); font-style: italic; font-size: 1.1rem; line-height: 1.8; text-align: center; padding: 0 20px;">
+          <p>“Armteqi started with a simple belief: no student should miss a career in technology because they lacked guidance or resources. We're not here to promise what we can't do – we're here to build a foundation that lasts, one honest step at a time.”</p>
+          <p style="margin-top: 16px; font-style: normal; font-weight: 600; color: var(--accent-soft);">— Дгмтеϙі Founder</p>
+        </div>
+      </section>
+
+      <section id="join" style="background: var(--bg-surface); border-radius: 24px; padding: 60px 40px; margin-top: 20px; border: 1px solid var(--border-subtle);">
+        <div class="section-header" style="margin-bottom: 30px;">
+          <h2 class="section-title" style="margin-top:0;">Join the Community</h2>
+          <p class="section-subtitle">Become part of a growing network of students and enthusiasts learning, building, and creating opportunities together. It's free, it's open, and it's yours.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
+          <a href="https://chat.whatsapp.com/LMZW8ts0gYGBKod3aD4wgj" class="btn-primary" style="background:#25D366; box-shadow:0 8px 22px rgba(37, 211, 102, 0.25);"><i class="fab fa-whatsapp"></i> Join WhatsApp</a>
+          <a href="#" class="btn-secondary"><i class="fab fa-telegram-plane"></i> Join Telegram</a>
+          <a href="#" class="btn-secondary"><i class="fab fa-linkedin-in"></i> Follow LinkedIn</a>
+          <a href="#" class="btn-secondary"><i class="fab fa-instagram"></i> Follow Instagram</a>
+        </div>
+      </section>
+
+      <section id="faq">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">Everything you need to know before joining.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is Armteqi free? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Yes, all current activities are completely free. Any future paid programs would be introduced transparently and only to sustain the community.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Who can join? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Anyone interested in learning technology – no prerequisites, no restrictions, no prior experience needed.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Do I need experience? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Not at all. Beginners are at the heart of our community. We built this exactly for you.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is Armteqi only about cybersecurity? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">Cybersecurity is a core focus, but we embrace all technology disciplines – from software development and cloud computing to AI and beyond.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I become a mentor? <i class="fas fa-chevron-down"></i></div>
+          <div class="faq-answer">We welcome active members to support their peers. Formal mentorship programs will be introduced once we have the capacity to do it well.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div><h4>Дгмтеϙі</h4><p style="color: var(--text-muted); font-size:0.95rem; line-height:1.6;">Learn Together.<br>Build Together.<br>Grow Together.</p></div>
+        <div><h4>Community</h4><a href="#about">About</a><a href="#today">Programs</a><a href="#next">Projects</a><a href="#join">Join</a></div>
+        <div><h4>Policies</h4><a href="#">Code of Conduct</a><a href="#">Community Guidelines</a><a href="#">Cookie Policy</a><a href="/trust/privacy-policy.html">Privacy Policy</a></div>
+        <div>
+         <h4>Cookie</h4>
+         <a href="#" class="cookie-manage-link">Manage Cookie Preferences</a>
+        </div>    
+        <div><h4>Connect</h4><a href="#">GitHub</a><a href="#">LinkedIn</a><a href="#">Instagram</a><a href="mailto:hello@armteqi.org">Email</a></div>
+      </div>
+      <div class="social-icons" style="margin: 30px 0 20px; text-align: center;">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:hello@armteqi.org" aria-label="Email"><i class="far fa-envelope"></i></a>
+      </div>
+      <div style="color: var(--text-muted); font-size:0.85rem; text-align:center; border-top: 1px solid var(--border-subtle); padding-top: 25px;">
+        © 2026 Дгмтеϙі – a student-led technology community.
+      </div>
+    </footer>
+  </div>
+<script src="assets/css/js/main.js"></script>
+<!-- ─── COOKIE BANNER ─── -->
+<div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+  <div class="banner-row">
+    <div class="icon-wrap">
+      <i class="fas fa-cookie-bite"></i>
+    </div>
+    <div class="content">
+      <div class="title">Cookie Preferences</div>
+      <div class="desc">
+        We use cookies to keep Armteqi secure, remember your preferences, and improve the website.
+        <br />
+        <a href="/trust/privacy-policy.html">Learn more</a>
+      </div>
+      <div class="actions">
+        <button class="btn btn-primary" id="cookieAcceptBtn">
+          <i class="fas fa-check"></i> Accept All
+        </button>
+        <button class="btn btn-ghost" id="cookieCustomizeBtn">
+          <i class="fas fa-sliders"></i> Customize
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="assets/css/js/cookie.js" defer></script>
+</body>
+</html>

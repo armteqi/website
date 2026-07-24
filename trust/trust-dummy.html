@@ -1,0 +1,2133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Дгмтеϙі · Trust Center</title>
+  <meta name="description" content="Armteqi Trust Center – building trust through transparency, ethics, and community-driven cybersecurity education." />
+  <meta property="og:title" content="Armteqi · Trust Center" />
+  <meta property="og:description" content="Protecting our members, our projects, and our mission. Trust isn't claimed – it's demonstrated." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://armteqi.org/trust/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://armteqi.org/trust/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="https://armteqi.org/assets/logo.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://armteqi.org/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="https://armteqi.org/assets/apple-touch-icon.png" />
+
+  <style>
+
+  :root{
+    --blue-glow: rgba(130,180,255,.18);
+}
+
+body.light-mode{
+    --blue-glow: rgba(79,100,217,.15);
+}
+
+
+    /* ---------- REDUCED MOTION PREFERENCE ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ---------- SCROLL PROGRESS BAR ---------- */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 2.5px;
+      background: linear-gradient(90deg, #6C8CFF, #8B5CF6);
+      width: 0%;
+      z-index: 9999;
+      transition: width 0.05s linear;
+      box-shadow: 0 0 25px var(--blue-glow);
+    }
+
+    /* ---------- RESET & BASE ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #0B0C15;
+      color: #f0f2f8;
+      line-height: 1.7;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ---------- SKIP LINK ---------- */
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      padding: 0.5rem 1rem;
+      background: #6C8CFF;
+      color: #fff;
+      border-radius: 0 0 8px 8px;
+      z-index: 9999;
+      font-weight: 600;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+
+    /* ---------- BACKGROUND LAYERS ---------- */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      opacity: 0.012;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      top: -20%;
+      left: -20%;
+      width: 140%;
+      height: 140%;
+      background:
+        radial-gradient(ellipse at 25% 35%, rgba(108, 140, 255, 0.035) 0%, transparent 60%),
+        radial-gradient(ellipse at 75% 70%, rgba(139, 92, 246, 0.025) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+      animation: aurora 25s ease-in-out infinite alternate;
+    }
+    @keyframes aurora {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+      100% {
+        transform: translate(1%, 2%) scale(1.02);
+      }
+    }
+
+    /* ---------- HERO BACKGROUND SHIELD ---------- */
+    .hero-shield {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 520px;
+      height: 640px;
+      opacity: 0.04;
+      pointer-events: none;
+      z-index: 0;
+      animation: shieldFloat 12s ease-in-out infinite;
+    }
+    .hero-shield svg {
+      width: 100%;
+      height: 100%;
+      fill: #6C8CFF;
+      filter: drop-shadow(0 0 60px rgba(108, 140, 255, 0.08));
+    }
+    @keyframes shieldFloat {
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1) rotate(0deg);
+      }
+      50% {
+        transform: translate(-50%, -50%) scale(1.03) rotate(1.5deg);
+      }
+    }
+
+    /* ---------- BRAND WATERMARK ---------- */
+    .bg-watermark {
+      position: fixed;
+      right: -140px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 720px;
+      opacity: 0.02;
+      pointer-events: none;
+      z-index: 0;
+      filter: drop-shadow(0 0 40px rgba(108, 140, 255, 0.06));
+      transition: transform 0.1s linear;
+      user-select: none;
+      will-change: transform;
+    }
+    .bg-watermark svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* ---------- FLOATING PARTICLES ---------- */
+    #particles-container {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: rgba(108, 140, 255, 0.15);
+      border-radius: 50%;
+      animation: drift linear infinite;
+    }
+    @keyframes drift {
+      0% {
+        transform: translateY(100vh) translateX(0) scale(0);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) translateX(40px) scale(1);
+        opacity: 0;
+      }
+    }
+
+    /* ---------- NETWORK HEX DOTS (subtle) ---------- */
+    .bg-hex {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.015;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(108, 140, 255, 0.3) 1px, transparent 1px),
+        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.3) 1px, transparent 1px);
+      background-size: 120px 120px, 160px 160px;
+      background-position: 0 0, 40px 40px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---------- FOCUS STYLES ---------- */
+    a:focus-visible,
+    button:focus-visible,
+    .btn:focus-visible {
+      outline: 2px solid #6C8CFF;
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    /* ---------- HEADER ---------- */
+    header {
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      background: rgba(11, 12, 21, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* ---- REAL LOGO ---- */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 1.3rem;
+      letter-spacing: -0.02em;
+      color: #f0f2f8;
+    }
+    .logo img {
+      height: 38px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.2rem;
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: #a8b2d9;
+      align-items: center;
+    }
+    .nav-links a {
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a:hover {
+      color: #6C8CFF;
+    }
+    .nav-links .active {
+      color: #fff;
+    }
+    .nav-links .active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, #6C8CFF, #8B5CF6);
+      border-radius: 4px;
+      animation: underlineGlow 2s ease-in-out infinite;
+    }
+    @keyframes underlineGlow {
+      0%,
+      100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.4;
+      }
+    }
+    .nav-cta {
+      background: linear-gradient(135deg, #6C8CFF, #8B5CF6);
+      color: #fff;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: all 0.25s;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px -8px rgba(108, 140, 255, 0.35);
+    }
+    .hamburger {
+      display: none;
+      font-size: 1.3rem;
+      cursor: pointer;
+      color: #a8b2d9;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    /* ---------- BREADCRUMB ---------- */
+    .breadcrumb {
+      font-size: 0.8rem;
+      color: #6a7aa0;
+      padding: 0.5rem 0 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .breadcrumb a {
+      transition: color 0.2s;
+    }
+    .breadcrumb a:hover {
+      color: #6C8CFF;
+    }
+    .breadcrumb .sep {
+      opacity: 0.4;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      padding: 3rem 0 3.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero .tag {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #6C8CFF;
+      margin-bottom: 0.6rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .hero .tag svg {
+      width: 20px;
+      height: 20px;
+      stroke: #6C8CFF;
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 5.5vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      background: linear-gradient(135deg, #f0f2f8 0%, #6C8CFF 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .hero .subhead {
+      font-size: 1.1rem;
+      color: #b0bce6;
+      max-width: 620px;
+      margin: 0 auto 1.8rem;
+      line-height: 1.7;
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+    }
+    .hero .subhead strong {
+      color: #f0f2f8;
+      font-weight: 500;
+    }
+    .hero .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---------- BUTTONS ---------- */
+    .btn {
+      padding: 0.9rem 2.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      font-family: inherit;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #6C8CFF, #8B5CF6);
+      color: #fff;
+      box-shadow: 0 6px 20px -8px rgba(108, 140, 255, 0.2);
+      background-size: 200% 200%;
+      animation: gradientShine 4s ease-in-out infinite;
+    }
+    @keyframes gradientShine {
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+      pointer-events: none;
+    }
+    .btn-primary:hover::after {
+      transform: translateX(100%);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 32px -8px rgba(108, 140, 255, 0.4);
+    }
+    .btn-primary i {
+      transition: transform 0.3s;
+    }
+    .btn-primary:hover i {
+      transform: translateX(4px);
+    }
+    .btn-ghost {
+      background: transparent;
+      color: #a8b2d9;
+      padding: 0.6rem 1rem;
+      border: none;
+    }
+    .btn-ghost:hover {
+      color: #6C8CFF;
+      transform: translateY(-2px);
+    }
+
+    /* ---------- TRUST BADGES ---------- */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .trust-badges .badge {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: #c8d0f0;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      transition: all 0.2s;
+      cursor: pointer;
+      box-shadow: 0 0 0 0 rgba(108, 140, 255, 0);
+    }
+    .trust-badges .badge i {
+      color: #6C8CFF;
+      font-size: 0.5rem;
+    }
+    .trust-badges .badge:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(108, 140, 255, 0.2);
+      transform: translateY(-2px);
+      box-shadow: 0 0 20px rgba(108, 140, 255, 0.06);
+    }
+
+    .scroll-hint {
+      margin-top: 2rem;
+      opacity: 0.2;
+      animation: fadeUp 0.8s 1s forwards, floatHint 3s ease-in-out infinite;
+      font-size: 0.7rem;
+      letter-spacing: 2px;
+      color: #6a7aa0;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 1;
+    }
+    .scroll-hint i {
+      display: block;
+      margin: 0.2rem auto 0;
+      font-size: 0.9rem;
+    }
+    @keyframes floatHint {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(6px);
+      }
+    }
+
+    /* ---------- TRUST PRINCIPLES ---------- */
+    .principles {
+      padding: 2rem 0 2rem;
+    }
+    .principles .intro {
+      color: #8b9acf;
+      font-size: 1rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+    }
+    .principle-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    .principle-block {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      padding: 1.8rem 1.2rem;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .principle-block::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(108, 140, 255, 0.15), transparent);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    .principle-block:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(108, 140, 255, 0.12);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.35);
+    }
+    .principle-block:hover::before {
+      opacity: 1;
+    }
+    .principle-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(108, 140, 255, 0.04);
+      border: 1px solid rgba(108, 140, 255, 0.04);
+      transition: all 0.4s;
+    }
+    .principle-block:hover .principle-icon {
+      background: rgba(108, 140, 255, 0.10);
+      border-color: rgba(108, 140, 255, 0.15);
+      transform: scale(1.06) rotate(3deg);
+      box-shadow: 0 0 30px rgba(108, 140, 255, 0.05);
+    }
+    .principle-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: #6C8CFF;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .principle-block h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #e0e6ff;
+      margin-bottom: 0.2rem;
+    }
+    .principle-block p {
+      font-size: 0.85rem;
+      color: #8892b0;
+      line-height: 1.5;
+    }
+
+    /* ---------- TRUST HIGHLIGHTS ---------- */
+    .stats {
+      padding: 0.5rem 0 2.5rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.2rem;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 1.5rem 0.8rem;
+      border-radius: 20px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.005));
+      border: 1px solid rgba(255, 255, 255, 0.02);
+      transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .stat-item:hover {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(108, 140, 255, 0.06);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px -8px rgba(108, 140, 255, 0.03);
+    }
+    .stat-number {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #6C8CFF, #8B5CF6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-label {
+      font-size: 0.85rem;
+      color: #8892b0;
+      margin-top: 0.2rem;
+      font-weight: 500;
+    }
+    .stat-sub {
+      font-size: 0.75rem;
+      color: #6a7aa0;
+      margin-top: 0.1rem;
+    }
+
+    /* ---------- SECURITY COMMITMENT ---------- */
+    .security-commit {
+      padding: 1.5rem 0 2.5rem;
+    }
+    .security-commit .block {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+    }
+    .security-commit h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      text-align: center;
+    }
+    .security-commit .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+    .security-commit .item {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.6rem 0.8rem;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.03);
+      transition: 0.3s;
+    }
+    .security-commit .item:hover {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(108, 140, 255, 0.10);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px -8px rgba(108, 140, 255, 0.04);
+    }
+    .security-commit .item i {
+      color: #6C8CFF;
+      font-size: 1.1rem;
+      width: 1.4rem;
+      text-align: center;
+    }
+    .security-commit .item span {
+      font-size: 0.9rem;
+      color: #c8d0f0;
+    }
+
+    /* ---------- FEATURED POLICIES ---------- */
+    .policies {
+      padding: 2rem 0 4rem;
+    }
+    .policies .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    .policy-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 1.5rem;
+    }
+
+    /* Featured large card (Privacy) */
+    .card-featured {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 20px;
+      padding: 2.8rem 2.5rem;
+      transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px -12px rgba(0, 0, 0, 0.5),
+        inset 0 1px rgba(255, 255, 255, 0.03);
+    }
+    .card-featured::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(108, 140, 255, 0.08), rgba(139, 92, 246, 0.03));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+      transition: opacity 0.4s;
+    }
+    .card-featured:hover::before {
+      opacity: 1;
+      background: linear-gradient(135deg, rgba(108, 140, 255, 0.20), rgba(139, 92, 246, 0.10));
+    }
+    .card-featured:hover {
+      transform: translateY(-8px);
+      border-color: rgba(108, 140, 255, 0.15);
+      box-shadow: 0 20px 50px -12px rgba(108, 140, 255, 0.08);
+    }
+    .card-featured .bg-shield {
+      position: absolute;
+      right: -40px;
+      bottom: -40px;
+      width: 200px;
+      height: 200px;
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: 0;
+      fill: #6C8CFF;
+      animation: floatLogo 18s ease-in-out infinite;
+    }
+    .card-featured .icon-wrap {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: rgba(108, 140, 255, 0.06);
+      border: 1px solid rgba(108, 140, 255, 0.04);
+      margin-bottom: 0.8rem;
+      position: relative;
+      z-index: 1;
+      transition: all 0.4s;
+    }
+    .card-featured:hover .icon-wrap {
+      background: rgba(108, 140, 255, 0.12);
+      transform: scale(1.06) rotate(3deg);
+      box-shadow: 0 0 30px rgba(108, 140, 255, 0.05);
+    }
+    .card-featured .icon-wrap svg {
+      width: 28px;
+      height: 28px;
+      stroke: #6C8CFF;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .card-featured h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 1;
+    }
+    .card-featured p {
+      color: #b8c2e6;
+      font-size: 1rem;
+      max-width: 88%;
+      margin-top: 0.2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .card-featured .meta {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 1.2rem;
+      font-size: 0.8rem;
+      color: #6a7aa0;
+      position: relative;
+      z-index: 1;
+    }
+    .card-featured .meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .card-featured .meta i {
+      color: #6C8CFF;
+      font-size: 0.7rem;
+    }
+    .card-featured .link {
+      display: inline-block;
+      margin-top: 1.2rem;
+      font-weight: 600;
+      color: #6C8CFF;
+      position: relative;
+      z-index: 1;
+      transition: all 0.2s;
+    }
+    .card-featured .link i {
+      transition: transform 0.3s;
+    }
+    .card-featured .link:hover i {
+      transform: translateX(5px);
+    }
+
+    /* Smaller cards */
+    .card-small {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 20px;
+      padding: 1.5rem 1.5rem;
+      transition: all 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.4),
+        inset 0 1px rgba(255, 255, 255, 0.02);
+    }
+    .card-small:hover {
+      transform: translateY(-8px);
+      border-color: rgba(108, 140, 255, 0.12);
+      box-shadow: 0 16px 36px -8px rgba(108, 140, 255, 0.06);
+    }
+    .card-small .top {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+    .card-small .top .icon-wrap {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      background: rgba(108, 140, 255, 0.04);
+      border: 1px solid rgba(108, 140, 255, 0.03);
+      transition: all 0.4s;
+      flex-shrink: 0;
+    }
+    .card-small:hover .top .icon-wrap {
+      background: rgba(108, 140, 255, 0.10);
+      transform: scale(1.06) rotate(3deg);
+      box-shadow: 0 0 20px rgba(108, 140, 255, 0.04);
+    }
+    .card-small .top .icon-wrap svg {
+      width: 18px;
+      height: 18px;
+      stroke: #6C8CFF;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .card-small .top h4 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      transition: transform 0.3s;
+    }
+    .card-small:hover .top h4 {
+      transform: translateX(3px);
+    }
+    .card-small p {
+      color: #8892b0;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      margin-bottom: 0.8rem;
+    }
+    .card-small .meta {
+      font-size: 0.7rem;
+      color: #6a7aa0;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .card-small .meta i {
+      color: #6C8CFF;
+      font-size: 0.6rem;
+    }
+    .card-small .link {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #6C8CFF;
+      display: inline-block;
+      margin-top: auto;
+      transition: all 0.2s;
+    }
+    .card-small .link i {
+      transition: transform 0.3s;
+    }
+    .card-small .link:hover i {
+      transform: translateX(4px);
+    }
+
+    /* Grid positioning */
+    .card-small:nth-child(2) {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+    .card-small:nth-child(3) {
+      grid-column: 2 / 3;
+      grid-row: 2 / 3;
+    }
+    .card-small:nth-child(4) {
+      grid-column: 2 / 3;
+      grid-row: 3 / 4;
+    }
+    .card-small:nth-child(5) {
+      grid-column: 2 / 3;
+      grid-row: 4 / 5;
+    }
+    .card-small:nth-child(6) {
+      grid-column: 2 / 3;
+      grid-row: 5 / 6;
+    }
+
+    /* ---------- TRUST TIMELINE ---------- */
+    .timeline-section {
+      padding: 2rem 0 4rem;
+    }
+    .timeline-section .section-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+    .timeline {
+      position: relative;
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: rgba(108, 140, 255, 0.15);
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      width: 50%;
+      padding: 0 2rem;
+      box-sizing: border-box;
+    }
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+      padding-right: 2.5rem;
+    }
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+      padding-left: 2.5rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      top: 0.4rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #6C8CFF;
+      border: 2px solid #0B0C15;
+      box-shadow: 0 0 0 2px rgba(108, 140, 255, 0.2);
+    }
+    .timeline-item:nth-child(odd)::before {
+      right: -6px;
+    }
+    .timeline-item:nth-child(even)::before {
+      left: -6px;
+    }
+    .timeline-item .year {
+      font-weight: 700;
+      color: #6C8CFF;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+    .timeline-item .event {
+      color: #c8d0f0;
+      font-size: 1rem;
+      margin-top: 0.1rem;
+    }
+    .timeline-item .event i {
+      color: #6C8CFF;
+      margin-right: 0.4rem;
+      font-size: 0.8rem;
+    }
+    .timeline-item .description {
+      color: #8892b0;
+      font-size: 0.85rem;
+      margin-top: 0.1rem;
+      font-style: italic;
+    }
+
+    /* ---------- SECURITY STATUS STRIP ---------- */
+    .security-status {
+      padding: 2rem 0 3rem;
+    }
+    .security-status .strip {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem 2.5rem;
+    }
+    .security-status .strip .label {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #e0e6ff;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .security-status .strip .label i {
+      color: #6C8CFF;
+      font-size: 1rem;
+    }
+    .security-status .strip .item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      color: #a8b2d9;
+    }
+    .security-status .strip .item i {
+      color: #6C8CFF;
+      font-size: 0.7rem;
+    }
+
+    /* ---------- REPORT A SAFETY CONCERN ---------- */
+    .concern {
+      padding: 3rem 0 3rem;
+    }
+    .concern-banner {
+      background: rgba(108, 140, 255, 0.02);
+      border-top: 1px solid rgba(108, 140, 255, 0.04);
+      border-bottom: 1px solid rgba(108, 140, 255, 0.04);
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 0;
+      transition: all 0.3s;
+    }
+    .concern-banner:hover {
+      background: rgba(108, 140, 255, 0.03);
+    }
+    .concern-banner h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+    .concern-banner p {
+      color: #a8b2d9;
+      max-width: 550px;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+    }
+    .concern-banner .btn-group {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .concern-banner .response-time {
+      margin-top: 1.2rem;
+      font-size: 0.85rem;
+      color: #6a7aa0;
+    }
+    .concern-banner .response-time strong {
+      color: #c8d0f0;
+    }
+    .concern-banner .email-safety {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      color: #8892b0;
+    }
+    .concern-banner .email-safety a {
+      color: #6C8CFF;
+    }
+
+    /* ---------- COMMUNITY PLEDGE ---------- */
+    .pledge {
+      padding: 3rem 0 3rem;
+      text-align: center;
+    }
+    .pledge-block {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem;
+      border-left: 4px solid #8B5CF6;
+      background: transparent;
+      text-align: left;
+      position: relative;
+    }
+    .pledge-block .big-quote {
+      position: absolute;
+      top: -0.5rem;
+      left: -0.5rem;
+      font-size: 6rem;
+      color: rgba(139, 92, 246, 0.06);
+      font-family: 'Georgia', serif;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+    .pledge-block .icon-wrap {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(139, 92, 246, 0.04);
+      border: 1px solid rgba(139, 92, 246, 0.04);
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .pledge-block .icon-wrap svg {
+      width: 22px;
+      height: 22px;
+      stroke: #8B5CF6;
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .pledge-block h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.2rem;
+      position: relative;
+      z-index: 1;
+    }
+    .pledge-block blockquote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #d0d8f2;
+      padding: 0.5rem 0 0 1.2rem;
+      border-left: 3px solid #6C8CFF;
+      margin-top: 0.5rem;
+      line-height: 1.7;
+      position: relative;
+      z-index: 1;
+    }
+    .pledge-block .attribution {
+      margin-top: 0.8rem;
+      font-weight: 500;
+      color: #8b9acf;
+      font-size: 0.95rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #080a12;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      padding: 4rem 0 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      margin-bottom: 2.5rem;
+    }
+    .footer-brand .logo {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+    .footer-brand .logo img {
+      height: 34px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .footer-brand p {
+      color: #8892b0;
+      font-size: 0.85rem;
+      max-width: 260px;
+      margin: 0.3rem 0 1rem;
+      line-height: 1.6;
+    }
+    .footer-brand .tagline {
+      color: #6a7aa0;
+      font-size: 0.9rem;
+      font-weight: 400;
+      margin-top: 0.2rem;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 1rem;
+    }
+    .footer-socials a {
+      color: #a8b2d9;
+      font-size: 1rem;
+      transition: 0.2s;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+    .footer-socials a:hover {
+      color: #6C8CFF;
+      background: rgba(108, 140, 255, 0.04);
+      border-color: rgba(108, 140, 255, 0.08);
+      transform: translateY(-2px);
+    }
+    .footer-col h4 {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+      color: #e0e6ff;
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 0.4rem;
+    }
+    .footer-col ul a {
+      color: #8892b0;
+      font-size: 0.85rem;
+      transition: 0.2s;
+    }
+    .footer-col ul a:hover {
+      color: #6C8CFF;
+    }
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.04);
+      padding-top: 1.5rem;
+      color: #64748b;
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .footer-bottom .trust-email a {
+      color: #6C8CFF;
+    }
+    .footer-bottom .trust-email a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- CLOSING STATEMENT ---------- */
+    .closing-statement {
+      margin-top: 2rem;
+      text-align: center;
+      color: #6a7aa0;
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.3px;
+      border-top: 1px solid rgba(255, 255, 255, 0.03);
+      padding-top: 2rem;
+    }
+    .closing-statement strong {
+      color: #a8b2d9;
+      font-weight: 500;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 920px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .bg-watermark {
+        width: 500px;
+        right: -100px;
+        opacity: 0.015;
+      }
+    }
+    @media (max-width: 780px) {
+      .principle-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .policy-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .card-small {
+        grid-column: auto !important;
+        grid-row: auto !important;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .security-commit .grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .security-status .strip {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      .timeline::before {
+        left: 20px;
+      }
+      .timeline-item {
+        width: 100%;
+        padding: 0 0 0 3rem !important;
+        left: 0 !important;
+        text-align: left !important;
+      }
+      .timeline-item::before {
+        left: 14px !important;
+        right: auto !important;
+      }
+      .bg-watermark {
+        display: none;
+      }
+      #particles-container {
+        display: none;
+      }
+      .hero-shield {
+        width: 300px;
+        height: 380px;
+      }
+    }
+    @media (max-width: 720px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+      .nav-links{
+
+      max-height:0;
+
+      opacity:0;
+
+      overflow:hidden;
+
+      transition:.35s;
+
+      }
+
+      .nav-links.open{
+
+      max-height:500px;
+
+      opacity:1;
+
+      }
+      .hamburger {
+        display: block;
+      }
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .hero {
+        padding: 3rem 0 2rem;
+      }
+      .principle-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+      }
+      .stat-number {
+        font-size: 2.2rem;
+      }
+      .card-featured {
+        padding: 1.8rem;
+      }
+      .card-featured h3 {
+        font-size: 1.4rem;
+      }
+      .card-featured .bg-shield {
+        width: 140px;
+        height: 140px;
+        right: -20px;
+        bottom: -20px;
+      }
+      .card-featured p {
+        max-width: 100%;
+      }
+      .concern-banner {
+        padding: 2rem 1.5rem;
+      }
+      .concern-banner h3 {
+        font-size: 1.3rem;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        gap: 0.4rem;
+        text-align: center;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .principle-grid {
+        grid-template-columns: 1fr;
+      }
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .security-commit .grid {
+        grid-template-columns: 1fr;
+      }
+      .btn {
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        justify-content: center;
+      }
+      .btn-group {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero .btn-group {
+        flex-direction: column;
+        width: 100%;
+      }
+      .concern-banner .btn-group {
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+
+    /* ---------- REVEAL ANIMATIONS ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s cubic-bezier(0.22, 0.61, 0.36, 1), transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 {
+      transition-delay: 0.05s;
+    }
+    .reveal-delay-2 {
+      transition-delay: 0.1s;
+    }
+    .reveal-delay-3 {
+      transition-delay: 0.15s;
+    }
+    .reveal-delay-4 {
+      transition-delay: 0.2s;
+    }
+    .reveal-delay-5 {
+      transition-delay: 0.25s;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatLogo {
+      0%,
+      100% {
+        transform: translateY(-50%) translateX(0);
+      }
+      50% {
+        transform: translateY(calc(-50% - 12px)) translateX(-4px);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- SKIP LINK -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- BACKGROUND WATERMARK -->
+  <div class="bg-watermark" id="watermark" aria-hidden="true">
+    <svg viewBox="0 0 100 120">
+      <path d="M50 4 L90 20 L90 60 C90 90 70 110 50 116 C30 110 10 90 10 60 L10 20 L50 4Z" stroke="currentColor" stroke-width="2" fill="currentColor" />
+      <path d="M50 18 L76 30 L76 58 C76 78 64 92 50 98 C36 92 24 78 24 58 L24 30 L50 18Z" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1.5" />
+      <text x="50" y="70" font-family="Inter, sans-serif" font-weight="800" font-size="22" fill="rgba(255,255,255,0.04)" text-anchor="middle" letter-spacing="2">ARMTEQI</text>
+    </svg>
+  </div>
+
+  <!-- FLOATING PARTICLES -->
+  <div id="particles-container" aria-hidden="true"></div>
+
+  <!-- SUBTLE HEX DOTS -->
+  <div class="bg-hex" aria-hidden="true"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container nav-bar">
+      <a href="../index.html" class="logo" aria-label="Armteqi home">
+        <img src="/logos/final-logo.png" alt="Armteqi Logo" loading="lazy" width="200" height="38" />
+        <span>Дгмтеϙі</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="/about">About</a>
+        <a href="/programs">Programs</a>
+        <a href="/projects">Projects</a>
+        <a href="/trust/index.html" class="active">Trust Center</a>
+        <a href="/join" class="nav-cta">Join Community</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main">
+    <!-- BREADCRUMB -->
+    <div class="container breadcrumb">
+      <a href="/">Home</a>
+      <span class="sep">›</span>
+      <a href="/trust/index.html">Trust Center</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="container hero">
+      <!-- Faint animated shield background -->
+      <div class="hero-shield" aria-hidden="true">
+        <svg viewBox="0 0 100 120">
+          <path d="M50 4 L90 20 L90 60 C90 90 70 110 50 116 C30 110 10 90 10 60 L10 20 L50 4Z" stroke="currentColor" stroke-width="2" fill="currentColor" />
+          <path d="M50 18 L76 30 L76 58 C76 78 64 92 50 98 C36 92 24 78 24 58 L24 30 L50 18Z" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.5" />
+        </svg>
+      </div>
+      <div class="tag">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" />
+        </svg>
+        TRUST CENTER
+      </div>
+      <h1>Protecting our members,<br />our projects, and our mission.</h1>
+      <p class="subhead">
+        <strong>Trust isn't claimed.</strong> It's demonstrated. Every policy at Armteqi exists to protect our community —
+        from privacy and ethics to inclusion and accountability.
+      </p>
+      <div class="btn-group">
+        <a href="#policies" class="btn btn-primary">Explore Policies <i class="fas fa-arrow-right"></i></a>
+        <a href="#pledge" class="btn btn-ghost">Read Our Pledge →</a>
+      </div>
+      <div class="trust-badges">
+        <a href="/trust/index.html" class="badge"><i class="fas fa-graduation-cap"></i> Student-led</a>
+        <a href="/trust/security" class="badge"><i class="fas fa-code"></i> Open Source</a>
+        <a href="/trust/privacy-policy.html" class="badge"><i class="fas fa-lock"></i> Privacy First</a>
+        <a href="/trust/community-guidelines.html" class="badge"><i class="fas fa-users"></i> Community Driven</a>
+        <a href="/about" class="badge"><i class="fas fa-globe"></i> Founded in India</a>
+      </div>
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- TRUST PRINCIPLES -->
+    <section class="container principles">
+      <p class="intro reveal">These four principles guide every decision we make.</p>
+      <div class="principle-grid">
+        <div class="principle-block reveal reveal-delay-1">
+          <div class="principle-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <h4>Privacy</h4>
+          <p>We collect only what is necessary. Your privacy comes first.</p>
+        </div>
+        <div class="principle-block reveal reveal-delay-2">
+          <div class="principle-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          </div>
+          <h4>Ethics</h4>
+          <p>Technology should protect people, never harm them.</p>
+        </div>
+        <div class="principle-block reveal reveal-delay-3">
+          <div class="principle-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <h4>Transparency</h4>
+          <p>Our policies are public, clear, and continuously improved.</p>
+        </div>
+        <div class="principle-block reveal reveal-delay-4">
+          <div class="principle-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <h4>Community</h4>
+          <p>Built by students, for learners around the world.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST HIGHLIGHTS -->
+    <section class="container stats">
+      <div class="stats-grid">
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Ads</div>
+          <div class="stat-sub">Privacy-first. No tracking.</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Transparent</div>
+          <div class="stat-sub">Policies are public &amp; open.</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-number">Free</div>
+          <div class="stat-label">Education</div>
+          <div class="stat-sub">Accessible to everyone.</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-4">
+          <div class="stat-number">Open</div>
+          <div class="stat-label">Source</div>
+          <div class="stat-sub">Built in the open.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY COMMITMENT -->
+    <section class="container security-commit">
+      <div class="block reveal">
+        <h3>Our Security Commitment</h3>
+        <div class="grid">
+          <div class="item"><i class="fas fa-shield-halved"></i><span>Responsible Disclosure</span></div>
+          <div class="item"><i class="fas fa-code"></i><span>Secure Development Practices</span></div>
+          <div class="item"><i class="fas fa-eye"></i><span>Open Source Transparency</span></div>
+          <div class="item"><i class="fas fa-database"></i><span>Minimal Data Collection</span></div>
+          <div class="item"><i class="fas fa-calendar-check"></i><span>Regular Policy Reviews</span></div>
+          <div class="item"><i class="fas fa-graduation-cap"></i><span>Ethical Learning Environment</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED POLICIES -->
+    <section class="container policies" id="policies">
+      <h2 class="section-title reveal">Our core policies</h2>
+      <div class="policy-grid">
+
+        <!-- Featured Large Card (Privacy) -->
+        <div class="card-featured reveal reveal-delay-1">
+          <svg class="bg-shield" viewBox="0 0 100 120">
+            <path d="M50 4 L90 20 L90 60 C90 90 70 110 50 116 C30 110 10 90 10 60 L10 20 L50 4Z" />
+            <path d="M50 18 L76 30 L76 58 C76 78 64 92 50 98 C36 92 24 78 24 58 L24 30 L50 18Z" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1.5" />
+          </svg>
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              <circle cx="12" cy="16" r="1" />
+            </svg>
+          </div>
+          <h3>Privacy Policy</h3>
+          <p>What we collect, how we use it, and your rights regarding your information.</p>
+          <div class="meta">
+            <span><i class="fas fa-circle"></i> Updated July 2026</span>
+            <span><i class="fas fa-circle"></i> 5 min read</span>
+          </div>
+          <a href="/trust/privacy-policy.html" class="link">Read Policy <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Smaller Cards -->
+        <div class="card-small reveal reveal-delay-2">
+          <div>
+            <div class="top">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polyline points="9 12 11 14 15 10" />
+                </svg>
+              </div>
+              <h4>Code of Conduct</h4>
+            </div>
+            <p>Standards, values, and accountability for every member.</p>
+            <div class="meta">
+              <span><i class="fas fa-circle"></i> Last reviewed July 2026</span>
+            </div>
+          </div>
+          <a href="/trust/code-of-conduct" class="link">Read Policy <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="card-small reveal reveal-delay-3">
+          <div>
+            <div class="top">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h4>Cyber Ethics</h4>
+            </div>
+            <p>Responsible disclosure, ethical learning, and digital citizenship.</p>
+            <div class="meta">
+              <span><i class="fas fa-circle"></i> Last reviewed July 2026</span>
+            </div>
+          </div>
+          <a href="/trust/cyber-ethics" class="link">Read Policy <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="card-small reveal reveal-delay-4">
+          <div>
+            <div class="top">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                  <polyline points="2 17 12 22 22 17" />
+                  <polyline points="2 12 12 17 22 12" />
+                </svg>
+              </div>
+              <h4>Community Guidelines</h4>
+            </div>
+            <p>Learn with curiosity. Collaborate with respect. Protect privacy.</p>
+            <div class="meta">
+              <span><i class="fas fa-circle"></i> Last reviewed July 2026</span>
+            </div>
+          </div>
+          <a href="/trust/community-guidelines" class="link">Read Policy <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="card-small reveal reveal-delay-5">
+          <div>
+            <div class="top">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M18 11h-4.5A2.5 2.5 0 0 1 11 8.5V4" />
+                  <path d="M11 4L4 11v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-7-7z" />
+                  <polyline points="9 13 11 15 15 11" />
+                </svg>
+              </div>
+              <h4>Responsible Disclosure</h4>
+            </div>
+            <p>Report vulnerabilities securely. We acknowledge, investigate, and fix promptly.</p>
+            <div class="meta">
+              <span><i class="fas fa-circle"></i> Last reviewed July 2026</span>
+            </div>
+          </div>
+          <a href="/trust/responsible-disclosure" class="link">Read Policy <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="card-small reveal reveal-delay-5">
+          <div>
+            <div class="top">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <h4>Terms of Use</h4>
+            </div>
+            <p>Rules for using the Armteqi platform and community, including intellectual property.</p>
+            <div class="meta">
+              <span><i class="fas fa-circle"></i> Last reviewed July 2026</span>
+            </div>
+          </div>
+          <a href="/trust/terms-of-use" class="link">Read Policy <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRUST TIMELINE -->
+    <section class="container timeline-section">
+      <h2 class="section-title reveal">Our journey so far</h2>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="year">July 2026</div>
+          <div class="event"><i class="fas fa-check-circle"></i> Community Founded</div>
+          <div class="description">"Our mission officially begins."</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">July 2026</div>
+          <div class="event"><i class="fas fa-check-circle"></i> Privacy Policy Published</div>
+          <div class="description">"Your data, your rights — clearly stated."</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">July 2026</div>
+          <div class="event"><i class="fas fa-check-circle"></i> Code of Conduct Released</div>
+          <div class="description">"A shared commitment to integrity."</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">July 2026</div>
+          <div class="event"><i class="fas fa-check-circle"></i> GitHub Organization Created</div>
+          <div class="description">"Building in the open, together."</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">July 2026</div>
+          <div class="event"><i class="fas fa-check-circle"></i> First Open Source Project</div>
+          <div class="description">"Code that anyone can learn from."</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">July 2026</div>
+          <div class="event"><i class="fas fa-check-circle"></i> First Student Workshop</div>
+          <div class="description">"Hands-on learning for the next generation."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY STATUS STRIP -->
+    <section class="container security-status">
+      <div class="strip reveal">
+        <div class="label"><i class="fas fa-shield-halved"></i> Security Status</div>
+        <div class="item"><i class="fas fa-check-circle"></i> HTTPS Ready</div>
+        <div class="item"><i class="fas fa-check-circle"></i> Privacy First</div>
+        <div class="item"><i class="fas fa-check-circle"></i> Open Source</div>
+        <div class="item"><i class="fas fa-check-circle"></i> Last Policy Review: July 2026</div>
+        <div class="item"><i class="fas fa-check-circle"></i> Responsible Disclosure</div>
+      </div>
+    </section>
+
+    <!-- REPORT A SAFETY CONCERN -->
+    <section class="container concern">
+      <div class="concern-banner reveal">
+        <h3>We take our community's safety seriously.</h3>
+        <p>If you believe a policy has been violated or have a concern, we want to hear from you.</p>
+        <div class="btn-group">
+          <a href="#" class="btn btn-primary"><i class="fas fa-flag"></i> Report a Safety Concern</a>
+          <a href="#" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Trust Team</a>
+        </div>
+        <div class="response-time">
+          <strong>Typical response:</strong> Within 72 hours
+        </div>
+        <div class="email-safety">
+          Questions? <a href="mailto:trust@armteqi.org">trust@armteqi.org</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY PLEDGE -->
+    <section class="container pledge" id="pledge">
+      <div class="pledge-block reveal">
+        <div class="big-quote">“</div>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 11h-4.5A2.5 2.5 0 0 1 11 8.5V4" />
+            <path d="M11 4L4 11v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-7-7z" />
+            <polyline points="9 13 11 15 15 11" />
+          </svg>
+        </div>
+        <h3>Member Honor Pledge</h3>
+        <blockquote>
+          “As a member of Armteqi, I commit to learning with integrity, acting ethically, respecting others,
+          and using technology to create positive impact. I will contribute to a community built on collaboration,
+          curiosity, and trust.”
+        </blockquote>
+        <div class="attribution">— Every Armteqi Member</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" aria-label="Armteqi home">
+            <img src=""eager" fetchpriority="high" decoding="async" alt="Armteqi Logo">
+            <span>Дгмтеϙі</span>
+          </a>
+          <p>Technology Education Without Barriers — founded by students, built for everyone.</p>
+          <p class="tagline">Building the next generation of ethical cybersecurity professionals.</p>
+          <div class="footer-socials">
+            <a href="https://github.com/armteqi" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trust Center</h4>
+          <ul>
+            <li><a href="/trust/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/trust/code-of-conduct">Code of Conduct</a></li>
+            <li><a href="/trust/cyber-ethics">Cyber Ethics</a></li>
+            <li><a href="/trust/community-guidelines">Community Guidelines</a></li>
+            <li><a href="/trust/responsible-disclosure">Responsible Disclosure</a></li>
+            <li><a href="/trust/terms-of-use">Terms of Use</a></li>
+            <li><a href="/trust/security">Security</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="#">Bootcamps</a></li>
+            <li><a href="#">Workshops</a></li>
+            <li><a href="#">Open Source</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="closing-statement">
+        <strong>Trust is earned every day.</strong> We're committed to building a safe, transparent, and welcoming community for everyone.
+      </div>
+
+      <div class="footer-bottom">
+       <footer>
+
+      <p>
+      © 2026 Armteqi · Built by students · Open Source · Privacy First
+      </p>
+
+      </footer>
+        <span class="trust-email">Trust inquiries: <a href="mailto:trust@armteqi.org">trust@armteqi.org</a></span>
+        <span>Learn Together. Build Together. Grow Together.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script>
+    (function() {
+      // ── SCROLL PROGRESS ──
+      const progressBar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+        progressBar.style.width = Math.min(progress, 100) + '%';
+        progressBar.setAttribute('aria-valuenow', Math.round(progress));
+      });
+
+      // ── HAMBURGER ──
+      const hamburger = document.getElementById('hamburger');
+      const navLinks = document.getElementById('navLinks');
+
+      if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
+          this.setAttribute('aria-expanded', expanded);
+          navLinks.classList.toggle('open');
+          const icon = this.querySelector('i');
+          if (navLinks.classList.contains('open')) {
+            icon.className = 'fas fa-times';
+          } else {
+            icon.className = 'fas fa-bars';
+          }
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            const icon = hamburger.querySelector('i');
+            if (icon) icon.className = 'fas fa-bars';
+          });
+        });
+      }
+
+      // ── SCROLL REVEAL ──
+      const revealEls = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.10,
+        rootMargin: '0px 0px -30px 0px'
+      });
+      revealEls.forEach(el => revealObserver.observe(el));
+
+      // ── WATERMARK PARALLAX ──
+      const watermark = document.getElementById('watermark');
+      if (watermark) {
+        window.addEventListener('scroll', () => {
+          const scrollY = window.scrollY;
+          const offset = scrollY * 0.03;
+          watermark.style.transform = `translateY(calc(-50% + ${offset}px))`;
+        }, { passive: true });
+      }
+
+      // ── FLOATING PARTICLES ──
+      const particlesContainer = document.getElementById('particles-container');
+      if (particlesContainer && window.innerWidth > 720) {
+        const count = 40;
+        for (let i = 0; i < count; i++) {
+          const p = document.createElement('div');
+          p.className = 'particle';
+          p.style.left = Math.random() * 100 + '%';
+          p.style.width = (Math.random() * 2 + 1) + 'px';
+          p.style.height = p.style.width;
+          p.style.animationDuration = (Math.random() * 25 + 20) + 's';
+          p.style.animationDelay = (Math.random() * 20) + 's';
+          p.style.opacity = Math.random() * 0.3 + 0.02;
+          particlesContainer.appendChild(p);
+        }
+      }
+    })();
+  </script>
+</body>
+</html>

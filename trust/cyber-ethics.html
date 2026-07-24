@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Armteqi — Student-led Technology &amp; Cybersecurity Community</title>
+<meta name="description" content="Armteqi is a student-led community making quality technology and cybersecurity education accessible to everyone through hands-on workshops, open-source projects, and mentorship.">
+<meta name="color-scheme" content="dark">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Armteqi — Student-led Technology & Cybersecurity Community">
+<meta property="og:description" content="Quality technology and cybersecurity education, built in the open.">
+<meta property="og:type" content="website">
+
+<!-- Preconnect for fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================
+     DESIGN TOKENS
+     ============================================ */
+  :root {
+    /* Color — neutral dark, blue-tinted (not pure black), single restrained accent */
+    --bg: #0B0D12;
+    --bg-elevated: #10131A;
+    --surface: #151923;
+    --surface-hover: #1A1F2B;
+    --border: #232936;
+    --border-subtle: #1A1F2A;
+
+    --text-primary: #EDEFF3;
+    --text-secondary: #99A2B3;
+    --text-tertiary: #5C6577;
+
+    --accent: #5B8DEF;
+    --accent-hover: #7AA3FF;
+    --accent-dim: rgba(91, 141, 239, 0.12);
+    --accent-border: rgba(91, 141, 239, 0.35);
+
+    --terminal-prompt: #4ADE80;
+
+    /* Type */
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+    /* Spacing scale (4px base) */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-6: 1.5rem;
+    --space-8: 2rem;
+    --space-12: 3rem;
+    --space-16: 4rem;
+    --space-24: 6rem;
+    --space-32: 8rem;
+
+    /* Radius — consistent, restrained */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+
+    /* Shadow — subtle, used only on interaction */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+    --shadow-focus: 0 0 0 3px var(--accent-dim);
+
+    --max-width: 1120px;
+    --transition: 160ms ease;
+  }
+
+  /* ============================================
+     RESET
+     ============================================ */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+  body {
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  ul { list-style: none; }
+  button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--accent);
+    color: #0B0D12;
+    padding: var(--space-3) var(--space-4);
+    z-index: 200;
+    border-radius: 0 0 var(--radius-sm) 0;
+    font-weight: 600;
+  }
+  .skip-link:focus { left: 0; }
+
+  .container {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--space-6);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+    color: var(--accent);
+    letter-spacing: 0.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+
+  /* ============================================
+     HEADER / NAV
+     ============================================ */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11, 13, 18, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+  .logo {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 1.0625rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 2px;
+  }
+  .logo .bracket { color: var(--accent); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-8);
+  }
+  .nav-links a {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--text-primary); }
+
+  .nav-actions { display: flex; align-items: center; gap: var(--space-4); }
+
+  .nav-toggle {
+    display: none;
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+  }
+  .nav-toggle svg { width: 22px; height: 22px; }
+
+  /* ============================================
+     BUTTONS
+     ============================================ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding: 0.625rem 1.125rem;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition), border-color var(--transition), transform var(--transition);
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #0A0C10;
+  }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-primary:active { transform: translateY(1px); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { border-color: var(--text-tertiary); background: var(--surface); }
+
+  /* ============================================
+     HERO
+     ============================================ */
+  .hero {
+    padding-block: var(--space-32) var(--space-24);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: var(--space-16);
+    align-items: center;
+  }
+  .hero h1 {
+    font-size: clamp(2.25rem, 4.2vw, 3.375rem);
+    line-height: 1.12;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: var(--space-6);
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--accent);
+  }
+  .hero p.lead {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    max-width: 46ch;
+    margin-bottom: var(--space-8);
+  }
+  .hero-actions { display: flex; gap: var(--space-4); flex-wrap: wrap; }
+
+  /* Terminal signature element */
+  .terminal {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border-subtle);
+    background: var(--surface);
+  }
+  .terminal-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--border);
+  }
+  .terminal-title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+    margin-left: var(--space-2);
+  }
+  .terminal-body {
+    padding: var(--space-6);
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1.8;
+    min-height: 180px;
+  }
+  .terminal-line { color: var(--text-secondary); }
+  .terminal-prompt { color: var(--terminal-prompt); margin-right: var(--space-2); }
+  .terminal-output { color: var(--text-primary); }
+  .terminal-caret {
+    display: inline-block;
+    width: 8px;
+    height: 1.1em;
+    background: var(--accent);
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+
+  /* ============================================
+     SECTIONS (shared)
+     ============================================ */
+  section { padding-block: var(--space-24); }
+  .section-header { max-width: 56ch; margin-bottom: var(--space-12); }
+  .section-header h2 {
+    font-size: clamp(1.625rem, 2.6vw, 2.125rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-3);
+  }
+  .section-header p { color: var(--text-secondary); font-size: 1.0625rem; }
+
+  /* Focus areas grid */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+  }
+  .card {
+    background: var(--bg-elevated);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: var(--space-8);
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .card:hover { border-color: var(--border); }
+  .card-icon {
+    width: 36px; height: 36px;
+    color: var(--accent);
+    margin-bottom: var(--space-6);
+  }
+  .card h3 { font-size: 1.125rem; font-weight: 600; margin-bottom: var(--space-2); }
+  .card p { color: var(--text-secondary); font-size: 0.9375rem; }
+
+  /* Why Armteqi — feature list */
+  .why { border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); background: var(--bg-elevated); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8) var(--space-12);
+  }
+  .why-item { display: flex; gap: var(--space-4); }
+  .why-icon {
+    flex-shrink: 0;
+    width: 22px; height: 22px;
+    color: var(--accent);
+    margin-top: 3px;
+  }
+  .why-item h3 { font-size: 1rem; font-weight: 600; margin-bottom: var(--space-1); }
+  .why-item p { color: var(--text-secondary); font-size: 0.9375rem; }
+
+  /* CTA band */
+  .cta {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+  .cta h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); font-weight: 700; margin-bottom: var(--space-4); letter-spacing: -0.01em; }
+  .cta p { color: var(--text-secondary); font-size: 1.0625rem; margin-bottom: var(--space-8); }
+  .cta-actions { display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap; }
+
+  /* ============================================
+     FOOTER
+     ============================================ */
+  .site-footer {
+    border-top: 1px solid var(--border-subtle);
+    padding-block: var(--space-12);
+  }
+  .footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--space-8);
+  }
+  .footer-brand p {
+    color: var(--text-tertiary);
+    font-size: 0.875rem;
+    margin-top: var(--space-2);
+    max-width: 32ch;
+  }
+  .footer-links { display: flex; gap: var(--space-12); flex-wrap: wrap; }
+  .footer-col h4 {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--text-tertiary);
+    margin-bottom: var(--space-3);
+  }
+  .footer-col ul { display: flex; flex-direction: column; gap: var(--space-2); }
+  .footer-col a { color: var(--text-secondary); font-size: 0.875rem; transition: color var(--transition); }
+  .footer-col a:hover { color: var(--text-primary); }
+  .footer-bottom {
+    margin-top: var(--space-12);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+  }
+
+  /* ============================================
+     RESPONSIVE
+     ============================================ */
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .grid-3 { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 720px) {
+    .nav-links, .nav-actions .btn-ghost { display: none; }
+    .nav-toggle { display: inline-flex; }
+    .hero { padding-block: var(--space-16) var(--space-12); }
+    section { padding-block: var(--space-16); }
+    .cta-actions { flex-direction: column; }
+    .btn { width: 100%; }
+    .cta-actions .btn { width: auto; }
+  }
+
+  /* Mobile menu panel */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 68px 0 0 0;
+    background: var(--bg);
+    z-index: 99;
+    padding: var(--space-8) var(--space-6);
+    overflow-y: auto;
+  }
+  .mobile-menu.is-open { display: block; }
+  .mobile-menu a {
+    display: block;
+    font-size: 1.125rem;
+    padding-block: var(--space-4);
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+  }
+  .mobile-menu .btn { width: 100%; margin-top: var(--space-6); }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container nav">
+    <a href="#" class="logo" aria-label="Armteqi home">
+      <span class="bracket">[</span>armteqi<span class="bracket">]</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#focus">What we do</a>
+      <a href="#why">Why Armteqi</a>
+      <a href="#join">Community</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a href="#" class="btn btn-ghost">Sign in</a>
+      <a href="#join" class="btn btn-primary">Join community</a>
+    </div>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#focus">What we do</a>
+    <a href="#why">Why Armteqi</a>
+    <a href="#join">Community</a>
+    <a href="#">Sign in</a>
+    <a href="#join" class="btn btn-primary">Join community</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">// student-led · security-first · open</p>
+        <h1>Quality tech education, <em>built in the open.</em></h1>
+        <p class="lead">Armteqi is a student-led community teaching technology and cybersecurity through hands-on workshops, open-source projects, and peer mentorship — free and accessible to everyone.</p>
+        <div class="hero-actions">
+          <a href="#join" class="btn btn-primary">Join the community</a>
+          <a href="#focus" class="btn btn-ghost">See what we do</a>
+        </div>
+      </div>
+
+      <div class="terminal" role="img" aria-label="Terminal showing: whoami. Output: armteqi — student-led, security-first, open.">
+        <div class="terminal-bar">
+          <span class="terminal-dot"></span><span class="terminal-dot"></span><span class="terminal-dot"></span>
+          <span class="terminal-title">armteqi — zsh</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <div class="terminal-line"><span class="terminal-prompt">$</span><span id="typed-text"></span><span class="terminal-caret" aria-hidden="true"></span></div>
+          <div class="terminal-line terminal-output" id="typed-output" style="opacity:0"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section id="focus">
+    <div class="container">
+      <div class="section-header">
+        <h2>What we do</h2>
+        <p>Three areas, one goal: making technology skills real, practical, and accessible.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5"/></svg>
+          <h3>Learn</h3>
+          <p>Structured workshops and study groups covering fundamentals through advanced topics — taught by students, for students.</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+          <h3>Build</h3>
+          <p>Open-source projects and collaborative builds that turn theory into a working portfolio you can point to.</p>
+        </article>
+
+        <article class="card">
+          <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V5l-8-3Z"/></svg>
+          <h3>Secure</h3>
+          <p>Hands-on cybersecurity practice — CTFs, labs, and threat-modeling sessions grounded in real-world security.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY ARMTEQI -->
+  <section id="why" class="why">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why Armteqi</h2>
+        <p>Principles we hold ourselves to, not just words on a page.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item">
+          <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <div><h3>Free and open</h3><p>No paywalls on core learning. Our materials and projects are open for anyone to use and contribute to.</p></div>
+        </div>
+        <div class="why-item">
+          <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <div><h3>Community-led</h3><p>Run by students who understand what it's like to start from zero — every program is built with beginners in mind.</p></div>
+        </div>
+        <div class="why-item">
+          <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <div><h3>Security-first</h3><p>Cybersecurity isn't a side track — it's woven into how we teach technology from the start.</p></div>
+        </div>
+        <div class="why-item">
+          <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+          <div><h3>Built to last</h3><p>We optimize for clarity and trust over hype — practical skills you can rely on, not trends.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="join">
+    <div class="container cta">
+      <h2>Start learning with Armteqi</h2>
+      <p>Join a community of students building real skills in technology and cybersecurity — together.</p>
+      <div class="cta-actions">
+        <a href="#" class="btn btn-primary">Join the community</a>
+        <a href="#" class="btn btn-ghost">Read the docs</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" aria-label="Armteqi home"><span class="bracket">[</span>armteqi<span class="bracket">]</span></a>
+        <p>A student-led technology and cybersecurity community.</p>
+      </div>
+
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="#focus">What we do</a></li>
+            <li><a href="#why">Why Armteqi</a></li>
+            <li><a href="#join">Join</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Open source</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Armteqi. All rights reserved.</span>
+      <span>Built by students, for students.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // Mobile menu toggle
+  var toggle = document.querySelector('.nav-toggle');
+  var menu = document.getElementById('mobile-menu');
+
+  toggle.addEventListener('click', function () {
+    var isOpen = menu.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  });
+
+  menu.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      menu.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Open menu');
+    });
+  });
+
+  // Terminal typing effect — decorative only, respects reduced motion,
+  // and the full content is already present in the element's aria-label
+  // on the parent, so screen readers are never blocked on the animation.
+  var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var typedEl = document.getElementById('typed-text');
+  var outputEl = document.getElementById('typed-output');
+  var command = 'whoami';
+  var output = 'armteqi — student-led, security-first, open';
+
+  if (prefersReducedMotion) {
+    typedEl.textContent = command;
+    outputEl.textContent = output;
+    outputEl.style.opacity = '1';
+  } else {
+    var i = 0;
+    var typer = setInterval(function () {
+      typedEl.textContent = command.slice(0, i + 1);
+      i++;
+      if (i === command.length) {
+        clearInterval(typer);
+        setTimeout(function () {
+          outputEl.textContent = output;
+          outputEl.style.opacity = '1';
+        }, 300);
+      }
+    }, 80);
+  }
+})();
+</script>
+
+</body>
+</html>

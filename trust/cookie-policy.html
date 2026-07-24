@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookie Policy · Armteqi</title>
+  <meta name="description" content="Learn how Armteqi uses cookies to keep your experience secure, remember your preferences, and improve our website." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/cookie.css" />
+  <link rel="stylesheet" href="/assets/css/cookie-policy.css">
+</head>
+
+<body>
+
+  <!-- ─── COOKIE BANNER ─── -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+    <div class="banner-row">
+      <div class="icon-wrap">
+        <i class="fas fa-cookie-bite"></i>
+      </div>
+      <div class="content">
+        <div class="title">Cookie Preferences</div>
+        <div class="desc">
+          We use cookies to keep Armteqi secure, remember your preferences, and improve the website.
+          <br />
+          <a href="/trust/cookie-policy.html">Learn more</a>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" id="cookieAcceptBtn">
+            <i class="fas fa-check"></i> Accept All
+          </button>
+          <button class="btn btn-ghost" id="cookieCustomizeBtn">
+            <i class="fas fa-sliders"></i> Customize
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── OVERLAY ─── -->
+  <div class="cookie-overlay" id="cookieOverlay"></div>
+
+  <!-- ─── PREFERENCES PANEL ─── -->
+  <div class="cookie-panel" id="cookiePanel" role="dialog" aria-labelledby="panelTitle" aria-modal="true">
+    <div class="panel-header">
+      <h3 id="panelTitle"><i class="fas fa-sliders" style="color:var(--cookie-accent-soft);margin-right:8px;"></i>Cookie Preferences</h3>
+      <button class="close-btn" id="panelCloseBtn" aria-label="Close preferences">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="panel-desc">
+      Choose which cookies you allow. Essential cookies are always enabled to keep the site working properly.
+    </div>
+    <div id="prefsList"></div>
+    <div class="panel-actions">
+      <button class="btn btn-danger" id="panelRejectOptionalBtn">
+        <i class="fas fa-times"></i> Reject Optional
+      </button>
+      <button class="btn btn-primary" id="panelSaveBtn">
+        <i class="fas fa-save"></i> Save Preferences
+      </button>
+      <button class="btn btn-ghost" id="panelAcceptAllBtn">
+        <i class="fas fa-check"></i> Accept All
+      </button>
+    </div>
+  </div>
+
+  <!-- ─── PAGE CONTENT ─── -->
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/index.html" class="logo" aria-label="Armteqi Home">
+        <img src="/logos/final-logo.png" alt="Armteqi Icon" class="logo-icon" />
+        <span class="logo-text">Дгмтеϙі</span>
+      </a>
+      <div class="nav-links">
+        <a href="/index.html#about">About</a>
+        <a href="/index.html#today">Programs</a>
+        <a href="/index.html#next">Projects</a>
+        <a href="/index.html#join">Join</a>
+        <a href="/trust/index.html">Trust Center</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="/index.html#join" class="btn-outline-sm"><i class="fas fa-arrow-right"></i> Join</a>
+      </div>
+    </nav>
+
+    <main class="policy-container">
+
+      <!-- ─── HEADER ─── -->
+      <header class="policy-header">
+        <div class="badge">
+          <i class="fas fa-cookie-bite" style="margin-right:6px;"></i> Cookie Policy
+        </div>
+        <h1>How we use cookies</h1>
+        <p style="color: var(--text-secondary); font-size: 1.15rem; max-width: 600px; margin: 0 auto 16px;">
+          Transparency about the data we collect and how we protect your privacy.
+        </p>
+        <div class="meta">
+          <span><i class="fas fa-calendar-alt"></i> Last updated: July 23, 2026</span>
+          <span><i class="fas fa-clock"></i> 5 min read</span>
+          <span><i class="fas fa-shield-alt"></i> Version 1.0</span>
+        </div>
+      </header>
+
+      <!-- ─── TABLE OF CONTENTS ─── -->
+      <nav class="toc" aria-label="Table of contents">
+        <h3>On this page</h3>
+        <ul>
+          <li><a href="#what-are-cookies"><i class="fas fa-circle"></i> What are cookies?</a></li>
+          <li><a href="#how-we-use"><i class="fas fa-circle"></i> How we use cookies</a></li>
+          <li><a href="#categories"><i class="fas fa-circle"></i> Cookie categories</a></li>
+          <li><a href="#manage"><i class="fas fa-circle"></i> Manage your preferences</a></li>
+          <li><a href="#third-party"><i class="fas fa-circle"></i> Third-party cookies</a></li>
+          <li><a href="#changes"><i class="fas fa-circle"></i> Changes to this policy</a></li>
+          <li><a href="#contact"><i class="fas fa-circle"></i> Contact us</a></li>
+        </ul>
+      </nav>
+
+      <!-- ─── SECTION 1 ─── -->
+      <section class="policy-section" id="what-are-cookies">
+        <h2><span class="section-number">01</span> What are cookies?</h2>
+        <p>
+          Cookies are small text files that websites store on your device (computer, tablet, or phone)
+          when you visit them. They help websites remember information about your visit, such as your
+          preferred language, theme settings, and other preferences.
+        </p>
+        <p>
+          Cookies are not viruses or malware. They are safe, widely used, and essential for many
+          modern web experiences. At Armteqi, we use cookies responsibly and only when they
+          genuinely improve your experience or help us maintain security.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 2 ─── -->
+      <section class="policy-section" id="how-we-use">
+        <h2><span class="section-number">02</span> How we use Cookies</h2>
+        <p>
+          At Armteqi, we take a <strong>privacy-first</strong> approach to cookies. We use them
+          only for purposes that directly benefit you as a member of our community:
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin: 20px 0;">
+          <div style="background: var(--bg-surface-soft); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--border-subtle);">
+            <i class="fas fa-shield-alt" style="color:var(--accent-soft); font-size: 1.4rem; margin-bottom: 6px; display: block;"></i>
+            <h4 style="font-size:0.95rem; font-weight:600; margin-bottom:4px;">Security</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin:0;">Protecting your account and our platform from unauthorized access.</p>
+          </div>
+          <div style="background: var(--bg-surface-soft); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--border-subtle);">
+            <i class="fas fa-sliders" style="color:var(--accent-soft); font-size: 1.4rem; margin-bottom: 6px; display: block;"></i>
+            <h4 style="font-size:0.95rem; font-weight:600; margin-bottom:4px;">Preferences</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin:0;">Remembering your theme, language, and other display choices.</p>
+          </div>
+          <div style="background: var(--bg-surface-soft); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--border-subtle);">
+            <i class="fas fa-chart-simple" style="color:var(--accent-soft); font-size: 1.4rem; margin-bottom: 6px; display: block;"></i>
+            <h4 style="font-size:0.95rem; font-weight:600; margin-bottom:4px;">Analytics</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin:0;">Understanding how our community interacts with the website.</p>
+          </div>
+          <div style="background: var(--bg-surface-soft); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--border-subtle);">
+            <i class="fas fa-bullhorn" style="color:var(--accent-soft); font-size: 1.4rem; margin-bottom: 6px; display: block;"></i>
+            <h4 style="font-size:0.95rem; font-weight:600; margin-bottom:4px;">Marketing</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin:0;">We do <strong>not</strong> use marketing or advertising cookies.</p>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <p>
+            <strong>✋ We do not sell or share your data.</strong> Armteqi is a student-led,
+            non-profit community. We do not run ads, and we never will. Your privacy is
+            our priority.
+          </p>
+        </div>
+      </section>
+
+      <!-- ─── SECTION 3 ─── -->
+      <section class="policy-section" id="categories">
+        <h2><span class="section-number">03</span> Cookie categories</h2>
+        <p>
+          We classify cookies into the following categories. You can manage your preferences
+          at any time using the <strong>Manage Cookie Preferences</strong> link in our footer.
+        </p>
+
+        <div class="cookie-table-wrap">
+          <table class="cookie-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Purpose</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Essential</strong></td>
+                <td>Required for basic functionality, security, and core features. These cookies cannot be disabled.</td>
+                <td><span class="badge-required">Always Enabled</span></td>
+              </tr>
+              <tr>
+                <td><strong>Preferences</strong></td>
+                <td>Remember your settings, such as theme preference (light/dark mode) and language choices.</td>
+                <td><span class="badge-optional">Optional</span></td>
+              </tr>
+              <tr>
+                <td><strong>Analytics</strong></td>
+                <td>Help us understand how you use Armteqi, anonymously. We use this to improve the website experience.</td>
+                <td><span class="badge-optional">Optional</span></td>
+              </tr>
+              <tr>
+                <td><strong>Marketing</strong></td>
+                <td>Armteqi does <strong>not</strong> use marketing or advertising cookies. We never will.</td>
+                <td><span class="badge-optional" style="opacity:0.5;">Not Used</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="font-size:0.9rem; color:var(--text-muted);">
+          <i class="fas fa-info-circle" style="color:var(--accent-soft);"></i>
+          When you visit Armteqi for the first time, only essential cookies are active. Optional
+          cookies are only enabled after you give consent.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 4 ─── -->
+      <section class="policy-section" id="manage">
+        <h2><span class="section-number">04</span> Manage your preferences</h2>
+        <p>
+          You have full control over your cookie preferences. You can change your choices
+          at any time by clicking the <strong>Manage Cookie Preferences</strong> link
+          in the footer of any page.
+        </p>
+
+        <div style="background: var(--bg-surface-soft); border-radius: 12px; padding: 20px 24px; border: 1px solid var(--border-subtle); margin: 16px 0;">
+          <p style="margin:0; display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+            <i class="fas fa-cookie-bite" style="color:var(--accent-soft); font-size:1.4rem;"></i>
+            <span style="color:var(--text-secondary);">
+              <strong style="color:var(--text-primary);">Current preference:</strong>
+              <span id="cookieStatusDisplay">Loading...</span>
+            </span>
+          </p>
+        </div>
+
+        <p>
+          You can also manage cookies through your browser settings. Most browsers allow you to
+          block or delete cookies, but please note that disabling essential cookies may affect
+          the functionality of our website.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 5 ─── -->
+      <section class="policy-section" id="third-party">
+        <h2><span class="section-number">05</span> Third-party cookies</h2>
+        <p>
+          Armteqi uses minimal third-party services. We carefully select partners who share
+          our commitment to privacy:
+        </p>
+        <ul>
+          <li>
+            <strong>GitHub</strong> – for hosting our open-source projects. GitHub's
+            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener noreferrer">privacy policy</a>
+            applies to interactions with our repositories.
+          </li>
+          <li>
+            <strong>Font Awesome</strong> – for icons. We load icons via CDN, which may set
+            minimal cookies for performance.
+          </li>
+          <li>
+            <strong>Google Fonts</strong> – for typography. We use the
+            <a href="https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users" target="_blank" rel="noopener noreferrer">privacy-friendly</a>
+            embedding method.
+          </li>
+        </ul>
+        <p>
+          We do <strong>not</strong> use Google Analytics, Meta (Facebook) pixels, or any
+          advertising trackers.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 6 ─── -->
+      <section class="policy-section" id="changes">
+        <h2><span class="section-number">06</span> Changes to this policy</h2>
+        <p>
+          We may update this Cookie Policy from time to time to reflect changes in our
+          practices or for legal or regulatory reasons. When we make changes, we will
+          update the "Last updated" date at the top of this page.
+        </p>
+        <p>
+          We encourage you to review this policy periodically. If we make significant changes,
+          we will notify you through our website or community channels.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 7 ─── -->
+      <section class="policy-section" id="contact">
+        <h2><span class="section-number">07</span> Contact us</h2>
+        <p>
+          If you have any questions about our Cookie Policy or privacy practices, please
+          reach out to us:
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0;">
+          <a href="mailto:trust@armteqi.org" style="display:inline-flex; align-items:center; gap:8px; background:var(--bg-surface); border:1px solid var(--border-subtle); padding:12px 24px; border-radius:12px; text-decoration:none; color:var(--text-primary); transition: all var(--transition);">
+            <i class="fas fa-envelope" style="color:var(--accent-soft);"></i>
+            trust@armteqi.org
+          </a>
+          <a href="/trust/index.html" style="display:inline-flex; align-items:center; gap:8px; background:var(--bg-surface); border:1px solid var(--border-subtle); padding:12px 24px; border-radius:12px; text-decoration:none; color:var(--text-primary); transition: all var(--transition);">
+            <i class="fas fa-shield-alt" style="color:var(--accent-soft);"></i>
+            Trust Center
+          </a>
+        </div>
+        <p style="font-size:0.9rem; color:var(--text-muted);">
+          We aim to respond to all inquiries within 72 hours.
+        </p>
+      </section>
+
+      <!-- ─── BACK TO TOP ─── -->
+      <a href="#" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+        <i class="fas fa-arrow-up"></i> Back to top
+      </a>
+
+    </main>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h4>Дгмтеϙі</h4>
+          <p style="color: var(--text-muted); font-size:0.95rem; line-height:1.6;">Learn Together.<br />Build Together.<br />Grow Together.</p>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <a href="/index.html#about">About</a>
+          <a href="/index.html#today">Programs</a>
+          <a href="/index.html#next">Projects</a>
+          <a href="/index.html#join">Join</a>
+        </div>
+        <div>
+          <h4>Policies</h4>
+          <a href="/trust/privacy-policy.html">Privacy Policy</a>
+          <a href="/trust/cookie-policy.html">Cookie Policy</a>
+          <a href="/trust/code-of-conduct.html">Code of Conduct</a>
+        </div>
+        <div>
+          <h4>Cookie</h4>
+          <a href="#" class="cookie-manage-link" id="manageCookiesLink">
+            <i class="fas fa-cookie-bite" style="margin-right:6px;"></i> Manage Cookie Preferences
+          </a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
+          <a href="mailto:hello@armteqi.org">Email</a>
+        </div>
+      </div>
+
+      <div class="social-icons" style="margin: 30px 0 20px; text-align: center;">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:hello@armteqi.org" aria-label="Email"><i class="far fa-envelope"></i></a>
+      </div>
+
+      <div style="color: var(--text-muted); font-size:0.85rem; text-align:center; border-top: 1px solid var(--border-subtle); padding-top: 25px;">
+        © 2026 Дгмтеϙі – a student-led technology community.
+      </div>
+    </footer>
+  </div>
+
+  <!-- ─── SCRIPTS ─── -->
+  <script src="/assets/css/js/cookie.js" defer></script>
+ 
+</body>
+</html>

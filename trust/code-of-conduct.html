@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code of Conduct · Armteqi</title>
+  <meta name="description" content="Armteqi's Code of Conduct – our commitment to building a safe, respectful, and inclusive community for technology education." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/cookie.css" />
+  <link rel="stylesheet" href="/assets/css/code-of-conduct.css">
+</head>
+
+<body>
+
+  <!-- ─── COOKIE BANNER ─── -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+    <div class="banner-row">
+      <div class="icon-wrap">
+        <i class="fas fa-cookie-bite"></i>
+      </div>
+      <div class="content">
+        <div class="title">Cookie Preferences</div>
+        <div class="desc">
+          We use cookies to keep Armteqi secure, remember your preferences, and improve the website.
+          <br />
+          <a href="/trust/cookie-policy.html">Learn more</a>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" id="cookieAcceptBtn">
+            <i class="fas fa-check"></i> Accept All
+          </button>
+          <button class="btn btn-ghost" id="cookieCustomizeBtn">
+            <i class="fas fa-sliders"></i> Customize
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── OVERLAY ─── -->
+  <div class="cookie-overlay" id="cookieOverlay"></div>
+
+  <!-- ─── PREFERENCES PANEL ─── -->
+  <div class="cookie-panel" id="cookiePanel" role="dialog" aria-labelledby="panelTitle" aria-modal="true">
+    <div class="panel-header">
+      <h3 id="panelTitle"><i class="fas fa-sliders" style="color:var(--cookie-accent-soft);margin-right:8px;"></i>Cookie Preferences</h3>
+      <button class="close-btn" id="panelCloseBtn" aria-label="Close preferences">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="panel-desc">
+      Choose which cookies you allow. Essential cookies are always enabled to keep the site working properly.
+    </div>
+    <div id="prefsList"></div>
+    <div class="panel-actions">
+      <button class="btn btn-danger" id="panelRejectOptionalBtn">
+        <i class="fas fa-times"></i> Reject Optional
+      </button>
+      <button class="btn btn-primary" id="panelSaveBtn">
+        <i class="fas fa-save"></i> Save Preferences
+      </button>
+      <button class="btn btn-ghost" id="panelAcceptAllBtn">
+        <i class="fas fa-check"></i> Accept All
+      </button>
+    </div>
+  </div>
+
+  <!-- ─── PAGE CONTENT ─── -->
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/index.html" class="logo" aria-label="Armteqi Home">
+        <img src="/logos/final-logo.png" alt="Armteqi Icon" class="logo-icon" />
+        <span class="logo-text">Дгмтеϙі</span>
+      </a>
+      <div class="nav-links">
+        <a href="/index.html#about">About</a>
+        <a href="/index.html#today">Programs</a>
+        <a href="/index.html#next">Projects</a>
+        <a href="/index.html#join">Join</a>
+        <a href="/trust/index.html">Trust Center</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="/index.html#join" class="btn-outline-sm"><i class="fas fa-arrow-right"></i> Join</a>
+      </div>
+    </nav>
+
+    <main class="conduct-container">
+
+      <!-- ─── HEADER ─── -->
+      <header class="conduct-header">
+        <div class="badge">
+          <i class="fas fa-handshake" style="margin-right:6px;"></i> Code of Conduct
+        </div>
+        <h1>Building a community we're proud of</h1>
+        <p class="subtitle">
+          Our commitment to creating a safe, respectful, and inclusive environment
+          for everyone who learns, builds, and grows with Armteqi.
+        </p>
+        <div class="meta">
+          <span><i class="fas fa-calendar-alt"></i> Version 1.0</span>
+          <span><i class="fas fa-clock"></i> Effective: July 23, 2026</span>
+          <span><i class="fas fa-users"></i> For all members</span>
+        </div>
+      </header>
+
+      <!-- ─── WELCOME STATEMENT ─── -->
+      <div class="welcome-statement">
+        <p>
+          <strong>Everyone starts somewhere.</strong> Armteqi welcomes learners of all experience
+          levels – from absolute beginners to seasoned practitioners. Questions are encouraged,
+          mistakes are part of learning, and respectful guidance is valued over criticism.
+          We celebrate collaboration over unhealthy competition.
+        </p>
+      </div>
+
+      <!-- ─── TABLE OF CONTENTS ─── -->
+      <nav class="toc" aria-label="Table of contents">
+        <h3>On this page</h3>
+        <ul>
+          <li><a href="#purpose"><i class="fas fa-circle"></i> Purpose</a></li>
+          <li><a href="#who-it-applies"><i class="fas fa-circle"></i> Who It Applies To</a></li>
+          <li><a href="#values"><i class="fas fa-circle"></i> Our Community Values</a></li>
+          <li><a href="#expected"><i class="fas fa-circle"></i> Expected Behavior</a></li>
+          <li><a href="#unacceptable"><i class="fas fa-circle"></i> Unacceptable Behavior</a></li>
+          <li><a href="#security"><i class="fas fa-circle"></i> Responsible Security Learning</a></li>
+          <li><a href="#academic"><i class="fas fa-circle"></i> Academic Integrity</a></li>
+          <li><a href="#reporting"><i class="fas fa-circle"></i> Reporting Concerns</a></li>
+          <li><a href="#enforcement"><i class="fas fa-circle"></i> Enforcement</a></li>
+          <li><a href="#appeals"><i class="fas fa-circle"></i> Appeals Process</a></li>
+          <li><a href="#changes"><i class="fas fa-circle"></i> Changes to This Code</a></li>
+          <li><a href="#contact"><i class="fas fa-circle"></i> Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- ─── SECTION 1 ─── -->
+      <section class="conduct-section" id="purpose">
+        <h2><span class="section-number">01</span> Purpose</h2>
+        <p>
+          Armteqi was founded on the belief that technology education should be accessible to everyone.
+          This Code of Conduct exists to protect that vision by creating a <strong>safe, respectful,
+          and inclusive learning environment</strong> where every member can thrive.
+        </p>
+        <p>
+          We believe that the strongest communities are built on trust, honesty, and mutual respect.
+          This document isn't just a set of rules – it's a <strong>reflection of our values</strong>
+          and our commitment to each other.
+        </p>
+        <p>
+          <strong>Participation in Armteqi is a privilege, not a right.</strong> Community membership
+          depends on following this Code of Conduct and contributing positively to our shared spaces.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 2 ─── -->
+      <section class="conduct-section" id="who-it-applies">
+        <h2><span class="section-number">02</span> Who It Applies To</h2>
+        <p>
+          This Code of Conduct applies to <strong>everyone</strong> in the Armteqi community, regardless of
+          role, experience level, or how long you've been with us.
+        </p>
+        <ul>
+          <li><strong>Members</strong> – anyone who participates in our community</li>
+          <li><strong>Volunteers</strong> – those who give their time to help others</li>
+          <li><strong>Mentors</strong> – experienced members who guide and support learners</li>
+          <li><strong>Organizers</strong> – those who plan and manage community activities</li>
+          <li><strong>Contributors</strong> – anyone who contributes to our open-source projects</li>
+          <li><strong>Visitors</strong> – anyone who visits any Armteqi online or offline community spaces</li>
+        </ul>
+        <p>
+          By participating in Armteqi, you agree to follow this Code of Conduct in all community spaces,
+          including online platforms, in-person events, and any communication related to our community.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 3 ─── -->
+      <section class="conduct-section" id="values">
+        <h2><span class="section-number">03</span> Our Community Values</h2>
+        <p>
+          These are the principles that guide everything we do at Armteqi. They shape our decisions,
+          our interactions, and our culture.
+        </p>
+        <div class="value-grid">
+          <div class="value-item"><i class="fas fa-handshake"></i><span>Respect everyone</span></div>
+          <div class="value-item"><i class="fas fa-book"></i><span>Learn continuously</span></div>
+          <div class="value-item"><i class="fas fa-users"></i><span>Help others grow</span></div>
+          <div class="value-item"><i class="fas fa-shield-alt"></i><span>Act ethically</span></div>
+          <div class="value-item"><i class="fas fa-eye"></i><span>Be honest and transparent</span></div>
+          <div class="value-item"><i class="fas fa-laptop-code"></i><span>Use technology responsibly</span></div>
+          <div class="value-item"><i class="fas fa-lock"></i><span>Protect privacy</span></div>
+        </div>
+      </section>
+
+      <!-- ─── SECTION 4 ─── -->
+      <section class="conduct-section" id="expected">
+        <h2><span class="section-number">04</span> Expected Behavior</h2>
+        <p>
+          We expect all community members to contribute to a positive, productive, and safe environment.
+          Here's what that looks like in practice:
+        </p>
+
+        <div class="behavior-list">
+          <div class="behavior-column acceptable">
+            <h4><i class="fas fa-check-circle" style="color:#22c55e;margin-right:6px;"></i> We encourage</h4>
+            <ul>
+              <li>Treating everyone with respect and kindness</li>
+              <li>Welcoming beginners and answering questions patiently</li>
+              <li>Giving constructive, actionable feedback</li>
+              <li>Sharing knowledge openly and generously</li>
+              <li>Respecting privacy and intellectual property</li>
+              <li>Following platform rules and applicable laws</li>
+              <li>Admitting when you don't know something</li>
+              <li>Learning from mistakes and helping others learn from theirs</li>
+            </ul>
+          </div>
+
+          <div class="behavior-column unacceptable">
+            <h4><i class="fas fa-times-circle" style="color:#ef4444;margin-right:6px;"></i> We don't tolerate</h4>
+            <ul>
+              <li>Harassment, bullying, or intimidation</li>
+              <li>Hate speech or discrimination</li>
+              <li>Threats or personal attacks</li>
+              <li>Spam, scams, or deceptive behavior</li>
+              <li>Sharing malware, exploits, or malicious tools</li>
+              <li>Unauthorized hacking or illegal activities</li>
+              <li>Plagiarism or misrepresenting others' work</li>
+              <li>Deliberately derailing discussions or trolling</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─── SECTION 5 ─── -->
+      <section class="conduct-section" id="security">
+        <h2><span class="section-number">05</span> Responsible Security Learning</h2>
+        <p>
+          Armteqi focuses on cybersecurity education. This is a powerful responsibility that requires
+          strong ethical standards.
+        </p>
+        <div class="security-box">
+          <p>
+            <strong>We encourage ethical cybersecurity education.</strong> Members must
+            <strong>never</strong> use community resources to perform unauthorized access,
+            attacks, or illegal activities. Skills learned through Armteqi should only be used
+            for <strong>defensive, educational, or authorized purposes</strong>.
+          </p>
+          <p style="margin-top:12px;">
+            Members should <strong>never</strong> request or provide assistance intended to compromise
+            systems without authorization. If you're unsure whether an activity is ethical or legal,
+            please <strong>ask before acting</strong>.
+          </p>
+        </div>
+        <p>
+          We'd rather have a conversation than have to take corrective action. When in doubt,
+          reach out to the Armteqi Trust & Safety Team.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 6 (NEW) ─── -->
+      <section class="conduct-section" id="academic">
+        <h2><span class="section-number">06</span> Academic Integrity</h2>
+        <p>
+          As a learning community, Armteqi takes academic integrity seriously. We believe that
+          honest learning builds real skills and lasting confidence.
+        </p>
+        <ul>
+          <li><strong>Don't cheat</strong> during CTFs, competitions, or learning activities</li>
+          <li><strong>Don't plagiarize</strong> – always credit others for their work</li>
+          <li><strong>Give proper attribution</strong> when using others' code, ideas, or content</li>
+          <li><strong>Respect licenses</strong> – understand and follow open-source licensing terms</li>
+          <li><strong>Share honestly</strong> – if you didn't create it, don't claim you did</li>
+        </ul>
+        <p>
+          Learning from others is encouraged. Passing off others' work as your own is not.
+          We're here to grow together, not to take shortcuts.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 7 ─── -->
+      <section class="conduct-section" id="reporting">
+        <h2><span class="section-number">07</span> Reporting Concerns</h2>
+        <p>
+          If you experience or witness behavior that violates this Code of Conduct, please
+          <strong>report it</strong> to the Armteqi Trust & Safety Team. We take all reports seriously
+          and will respond as quickly as possible.
+        </p>
+        <p>
+          <strong>How to report:</strong> Send an email to
+          <a href="mailto:hello@armteqi.org">hello@armteqi.org</a> with as much detail as you're
+          comfortable sharing. All reports will be handled with care and shared only with those
+          who need to know in order to investigate and resolve the issue.
+        </p>
+        <div class="highlight-box" style="background:rgba(108,140,255,0.06); border-left:4px solid var(--accent-soft); border-radius:12px; padding:16px 24px; margin:16px 0;">
+          <p style="margin:0; color:var(--text-secondary); font-size:0.98rem;">
+            <i class="fas fa-shield-alt" style="color:var(--accent-soft);margin-right:8px;"></i>
+            <strong>No retaliation.</strong> Armteqi does not tolerate retaliation against anyone who
+            reports concerns in good faith. We are committed to protecting those who speak up.
+          </p>
+        </div>
+      </section>
+
+      <!-- ─── SECTION 8 ─── -->
+      <section class="conduct-section" id="enforcement">
+        <h2><span class="section-number">08</span> Enforcement</h2>
+        <p>
+          When a violation of this Code of Conduct is reported or observed, the Armteqi Trust & Safety Team
+          will take appropriate action. We aim to be <strong>fair, transparent, and consistent</strong>
+          in our responses.
+        </p>
+        <p>
+          Before taking action, we may review available information, speak with those involved,
+          and consider the severity, context, and impact of the behavior. Our goal is always to
+          <strong>educate and rehabilitate</strong> when possible, and to <strong>protect the community</strong>
+          when necessary.
+        </p>
+        <p>
+          Possible actions include:
+        </p>
+
+        <div class="enforcement-table-wrap">
+          <table class="enforcement-table">
+            <thead>
+              <tr>
+                <th>Action</th>
+                <th>Description</th>
+                <th>Severity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Friendly reminder</strong></td>
+                <td>A private note to clarify expectations</td>
+                <td><span class="severity-low">Low</span></td>
+              </tr>
+              <tr>
+                <td><strong>Warning</strong></td>
+                <td>A formal notice about the behavior and consequences</td>
+                <td><span class="severity-medium">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Temporary restriction</strong></td>
+                <td>Limited access to community spaces for a set period</td>
+                <td><span class="severity-medium">Medium</span></td>
+              </tr>
+              <tr>
+                <td><strong>Removal from the community</strong></td>
+                <td>Permanent removal from Armteqi spaces</td>
+                <td><span class="severity-high">High</span></td>
+              </tr>
+              <tr>
+                <td><strong>Permanent ban</strong></td>
+                <td>For serious or repeated violations</td>
+                <td><span class="severity-high">High</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>
+          The severity of the response will depend on the nature of the violation, the impact on
+          the community, and whether it's a first-time or repeated offense.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 9 (NEW) ─── -->
+      <section class="conduct-section" id="appeals">
+        <h2><span class="section-number">09</span> Appeals Process</h2>
+        <p>
+          We believe in fairness and second chances. Members who believe an enforcement decision
+          was made in error may request a review by contacting the
+          <strong>Armteqi Trust & Safety Team</strong> at
+          <a href="mailto:armteqi.community@gmail.com">armteqi.community@gmail.com</a>.
+        </p>
+        <p>
+          In your appeal, please explain why you believe the decision should be reconsidered.
+          The Trust & Safety Team will review the case and respond with a final decision.
+          We treat all appeals with respect and due consideration.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 10 ─── -->
+      <section class="conduct-section" id="changes">
+        <h2><span class="section-number">10</span> Changes to This Code</h2>
+        <p>
+          As our community grows, this Code of Conduct may evolve. We will always publish the
+          latest version in the <a href="/trust/index.html">Trust Center</a> and notify members of
+          significant changes through our communication channels.
+        </p>
+        <p>
+          We welcome <strong>feedback</strong> on this Code of Conduct. If you have suggestions for
+          improvement, please reach out to us at
+          <a href="mailto:armteqi.community@gmail.com">armteqi.community@gmail.com</a>.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 11 ─── -->
+      <section class="conduct-section" id="contact">
+        <h2><span class="section-number">11</span> Contact</h2>
+        <p>
+          If you have any questions about this Code of Conduct or need to report a concern,
+          please reach out to the Armteqi Trust & Safety Team:
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0;">
+          <a href="mailto:hello@armteqi.org" style="display:inline-flex; align-items:center; gap:8px; background:var(--bg-surface); border:1px solid var(--border-subtle); padding:12px 24px; border-radius:12px; text-decoration:none; color:var(--text-primary); transition: all var(--transition);">
+            <i class="fas fa-envelope" style="color:var(--accent-soft);"></i>
+            hello@armteqi.org
+          </a>
+          <a href="/trust/index.html" style="display:inline-flex; align-items:center; gap:8px; background:var(--bg-surface); border:1px solid var(--border-subtle); padding:12px 24px; border-radius:12px; text-decoration:none; color:var(--text-primary); transition: all var(--transition);">
+            <i class="fas fa-shield-alt" style="color:var(--accent-soft);"></i>
+            Trust Center
+          </a>
+        </div>
+        <p style="font-size:0.9rem; color:var(--text-muted);">
+          We aim to respond to all inquiries as promptly as possible.
+        </p>
+      </section>
+
+      <!-- ─── BACK TO TOP ─── -->
+      <a href="#" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+        <i class="fas fa-arrow-up"></i> Back to top
+      </a>
+
+    </main>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h4>Дгмтеϙі</h4>
+          <p style="color: var(--text-muted); font-size:0.95rem; line-height:1.6;">Learn Together.<br />Build Together.<br />Grow Together.</p>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <a href="/index.html#about">About</a>
+          <a href="/index.html#today">Programs</a>
+          <a href="/index.html#next">Projects</a>
+          <a href="/index.html#join">Join</a>
+        </div>
+        <div>
+          <h4>Policies</h4>
+          <a href="/trust/privacy-policy.html">Privacy Policy</a>
+          <a href="/trust/cookie-policy.html">Cookie Policy</a>
+          <a href="/trust/code-of-conduct.html">Code of Conduct</a>
+        </div>
+        <div>
+          <h4>Cookie</h4>
+          <a href="#" class="cookie-manage-link" id="manageCookiesLink">
+            <i class="fas fa-cookie-bite" style="margin-right:6px;"></i> Manage Cookie Preferences
+          </a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
+          <a href="mailto:hello@armteqi.org">Email</a>
+        </div>
+      </div>
+
+      <div class="social-icons" style="margin: 30px 0 20px; text-align: center;">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:armteqi.community@gmail.com" aria-label="Email"><i class="far fa-envelope"></i></a>
+      </div>
+
+      <div style="color: var(--text-muted); font-size:0.85rem; text-align:center; border-top: 1px solid var(--border-subtle); padding-top: 25px;">
+        © 2026 Armteqi. A student-led technology community.
+      </div>
+    </footer>
+  </div>
+
+  <!-- ─── SCRIPTS ─── -->
+  <script src="/assets/css/js/cookie.js" defer></script>
+
+</body>
+</html>

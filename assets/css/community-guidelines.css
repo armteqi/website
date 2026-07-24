@@ -1,0 +1,456 @@
+
+    /* ─── Community Guidelines Page Styles ─── */
+
+    .guidelines-container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
+    }
+
+    .guidelines-header {
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    .guidelines-header .badge {
+      display: inline-block;
+      background: rgba(108, 140, 255, 0.12);
+      border: 1px solid var(--border-subtle);
+      padding: 6px 18px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent-soft);
+      margin-bottom: 16px;
+    }
+
+    .guidelines-header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--text-primary), var(--accent-soft));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .guidelines-header .subtitle {
+      color: var(--text-secondary);
+      font-size: 1.15rem;
+      max-width: 600px;
+      margin: 0 auto 16px;
+    }
+
+    .guidelines-header .meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .guidelines-header .meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .guidelines-header .meta i {
+      color: var(--accent-soft);
+      font-size: 0.8rem;
+    }
+
+    /* ─── Welcome Statement ─── */
+    .welcome-statement {
+      background: rgba(108, 140, 255, 0.06);
+      border-left: 4px solid var(--accent-soft);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+
+    .welcome-statement p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .welcome-statement strong {
+      color: var(--text-primary);
+    }
+
+    /* ─── Values Grid ─── */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    .value-card {
+      background: var(--bg-surface-soft);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+      transition: border-color var(--transition);
+    }
+
+    .value-card:hover {
+      border-color: var(--accent-soft);
+    }
+
+    .value-card .value-icon {
+      font-size: 1.8rem;
+      color: var(--accent-soft);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .value-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .value-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* ─── Table of Contents ─── */
+    .toc {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    .toc h3 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .toc ul {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 6px 24px;
+    }
+
+    .toc ul li a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 0;
+    }
+
+    .toc ul li a:hover {
+      color: var(--accent-soft);
+    }
+
+    .toc ul li a i {
+      font-size: 0.6rem;
+      color: var(--accent-soft);
+      opacity: 0.6;
+    }
+
+    /* ─── Content ─── */
+    .guidelines-section {
+      margin-bottom: 48px;
+    }
+
+    .guidelines-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .guidelines-section h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .guidelines-section h2 .section-number {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent-soft);
+      background: rgba(108, 140, 255, 0.1);
+      padding: 2px 12px;
+      border-radius: 30px;
+      letter-spacing: 0;
+    }
+
+    .guidelines-section h2 .section-icon {
+      font-size: 1.4rem;
+      width: 1.8rem;
+      text-align: center;
+      color: var(--accent-soft);
+      flex-shrink: 0;
+    }
+
+    .guidelines-section p,
+    .guidelines-section li {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 1.02rem;
+    }
+
+    .guidelines-section p + p {
+      margin-top: 12px;
+    }
+
+    .guidelines-section ul {
+      padding-left: 24px;
+      margin: 8px 0;
+    }
+
+    .guidelines-section li {
+      margin-bottom: 6px;
+    }
+
+    .guidelines-section li strong {
+      color: var(--text-primary);
+    }
+
+    .guidelines-section strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .guidelines-section a {
+      color: var(--accent-soft);
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px dotted transparent;
+      transition: border-color var(--transition);
+    }
+
+    .guidelines-section a:hover {
+      border-color: var(--accent-soft);
+    }
+
+    /* ─── Guideline Cards ─── */
+    .guideline-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+
+    .guideline-card {
+      background: var(--bg-surface-soft);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 18px 20px;
+      transition: border-color var(--transition);
+    }
+
+    .guideline-card:hover {
+      border-color: var(--accent-soft);
+    }
+
+    .guideline-card .card-icon {
+      font-size: 1.2rem;
+      margin-bottom: 6px;
+      display: block;
+      color: var(--accent-soft);
+    }
+
+    .guideline-card h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .guideline-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ─── Highlight Box ─── */
+    .highlight-box {
+      background: rgba(108, 140, 255, 0.06);
+      border-left: 4px solid var(--accent-soft);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 20px 0;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      color: var(--text-secondary);
+      font-size: 0.98rem;
+    }
+
+    .highlight-box strong {
+      color: var(--text-primary);
+    }
+
+    /* ─── Enforcement Table ─── */
+    .enforcement-table-wrap {
+      overflow-x: auto;
+      margin: 16px 0 24px;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .enforcement-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      min-width: 400px;
+    }
+
+    .enforcement-table th {
+      background: var(--bg-surface-soft);
+      color: var(--text-primary);
+      font-weight: 600;
+      text-align: left;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .enforcement-table td {
+      padding: 10px 16px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .enforcement-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .enforcement-table .severity-low {
+      color: #22c55e;
+    }
+    .enforcement-table .severity-medium {
+      color: #f59e0b;
+    }
+    .enforcement-table .severity-high {
+      color: #ef4444;
+    }
+
+    /* ─── Back to Top ─── */
+    .back-to-top {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color var(--transition);
+      margin-top: 24px;
+    }
+
+    .back-to-top:hover {
+      color: var(--accent-soft);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 640px) {
+      .guidelines-container {
+        padding: 32px 16px 60px;
+      }
+
+      .guidelines-header h1 {
+        font-size: 2rem;
+      }
+
+      .guidelines-header .meta {
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+      }
+
+      .toc ul {
+        grid-template-columns: 1fr;
+      }
+
+      .guidelines-section h2 {
+        font-size: 1.3rem;
+      }
+      .guidelines-section h2 .section-number {
+        font-size: 0.7rem;
+        padding: 1px 10px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .guideline-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .welcome-statement {
+        padding: 16px 20px;
+      }
+      .welcome-statement p {
+        font-size: 0.95rem;
+      }
+
+      .highlight-box {
+        padding: 16px 20px;
+      }
+
+      .enforcement-table {
+        font-size: 0.8rem;
+        min-width: 340px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ─── Print Styles ─── */
+    @media print {
+      .cookie-banner,
+      .cookie-overlay,
+      .cookie-panel {
+        display: none !important;
+      }
+
+      .guidelines-container {
+        padding: 40px 0;
+      }
+
+      .toc {
+        break-inside: avoid;
+      }
+
+      .guideline-card,
+      .value-card {
+        break-inside: avoid;
+      }
+    }

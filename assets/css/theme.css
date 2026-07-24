@@ -1,0 +1,16 @@
+.hero-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px auto;
+}
+
+.hero-logo-icon {
+    width: 120px;
+    height: auto;
+}
+
+.hero-logo-text {
+    font-size: 80px;
+    font-weight: 700;
+}

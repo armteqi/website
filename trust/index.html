@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Дгмтеϙі · Trust Center</title>
+  <meta name="description" content="Armteqi Trust Center – building trust through transparency, ethics, and community-driven cybersecurity education." />
+  <meta property="og:title" content="Armteqi · Trust Center" />
+  <meta property="og:description" content="Protecting our members, our projects, and our mission. Trust isn't claimed – it's demonstrated." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://armteqi.org/trust" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://armteqi.org/trust" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="https://armteqi.org/assets/logo.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://armteqi.org/assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="https://armteqi.org/assets/apple-touch-icon.png" />
+  <link rel="stylesheet" href="../assets/css/trust.css"/> 
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div id="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- SKIP LINK -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- BACKGROUND WATERMARK -->
+   <div class="bg-watermark" id="watermark" aria-hidden="true">
+    <svg viewBox="0 0 100 120">
+      <path d="M50 4 L90 20 L90 60 C90 90 70 110 50 116 C30 110 10 90 10 60 L10 20 L50 4Z" stroke="currentColor" stroke-width="2" fill="currentColor" />
+      <path d="M50 18 L76 30 L76 58 C76 78 64 92 50 98 C36 92 24 78 24 58 L24 30 L50 18Z" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1.5" />
+      <text x="50" y="70" font-family="Inter, sans-serif" font-weight="800" font-size="22" fill="rgba(255,255,255,0.04)" text-anchor="middle" letter-spacing="2">ARMTEQI</text>
+    </svg>
+  </div>
+
+  <!-- <div class="bg-watermark" id="watermark"></div> -->
+
+  <!-- FLOATING PARTICLES -->
+  <div id="particles-container" aria-hidden="true"></div>
+
+  <!-- SUBTLE HEX DOTS -->
+  <div class="bg-hex" aria-hidden="true"></div>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container nav-bar">
+      <a href="../index.html" class="logo" aria-label="Дгмтеϙі home">
+        <img src="/logos/final-logo.png" alt="Дгмтеϙі Logo" loading="lazy" width="200" height="38" />
+        <span>Дгмтеϙі</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+        <a href="../program.html">Programs</a>
+        <a href="../projects.html">Projects</a>
+        <a href="/trust/index.html" class="active">Trust Center</a>
+        <a href="../index.html#join" class="nav-cta">Join Community</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main">
+    <!-- BREADCRUMB -->
+    <div class="container breadcrumb">
+      <a href="../index.html">Home</a>
+      <span class="sep">›</span>
+      <span>Trust Center</span>
+    </div>
+
+    <!-- HERO -->
+    <section class="container hero">
+      <!-- Faint animated shield background -->
+      <div class="hero-shield" aria-hidden="true">
+        <svg viewBox="0 0 100 120">
+          <path d="M50 4 L90 20 L90 60 C90 90 70 110 50 116 C30 110 10 90 10 60 L10 20 L50 4Z" stroke="currentColor" stroke-width="2" fill="currentColor" />
+          <path d="M50 18 L76 30 L76 58 C76 78 64 92 50 98 C36 92 24 78 24 58 L24 30 L50 18Z" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.5" />
+        </svg>
+      </div>
+      <div class="tag">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          <path d="M9 12l2 2 4-4" />
+        </svg>
+        TRUST CENTER
+      </div>
+      <h1>Protecting our members,<br />our projects, and our mission.</h1>
+      <p class="subhead">
+        <strong>Trust isn't claimed.</strong> It's demonstrated. Every policy at Armteqi exists to protect our community —
+        from privacy and ethics to inclusion and accountability.
+      </p>
+      <div class="btn-group">
+        <a href="#policies" class="btn btn-primary">Explore Policies <i class="fas fa-arrow-right"></i></a>
+        <a href="#pledge" class="btn btn-ghost">Read Our Pledge →</a>
+      </div>
+      <div class="trust-badges">
+        <a href="#" class="badge"><i class="fas fa-graduation-cap"></i> Student-led</a>
+        <a href="#" class="badge"><i class="fas fa-code"></i> Open Source</a>
+        <a href="#" class="badge"><i class="fas fa-lock"></i> Privacy First</a>
+        <a href="#" class="badge"><i class="fas fa-users"></i> Community Driven</a>
+        <a href="#" class="badge"><i class="fas fa-globe"></i> Founded in India</a>
+      </div>
+      <div class="scroll-hint">
+        <span>Scroll</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- TRUST PRINCIPLES -->
+    <section class="container principles">
+      <p class="intro reveal">These four principles guide every decision we make.</p>
+      <div class="principle-grid">
+        <div class="principle-block reveal reveal-delay-1">
+          <div class="principle-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          </div>
+          <h4>Privacy</h4>
+          <p>We collect only what is necessary. Your privacy comes first.</p>
+        </div>
+        <div class="principle-block reveal reveal-delay-2">
+          <div class="principle-icon">
+            <svg viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+          </div>
+          <h4>Ethics</h4>
+          <p>Technology should protect people, never harm them.</p>
+        </div>
+        <div class="principle-block reveal reveal-delay-3">
+          <div class="principle-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <h4>Transparency</h4>
+          <p>Our policies are public, clear, and continuously improved.</p>
+        </div>
+        <div class="principle-block reveal reveal-delay-4">
+          <div class="principle-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </div>
+          <h4>Community</h4>
+          <p>Built by students, for learners around the world.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST HIGHLIGHTS (replaces stats) -->
+    <section class="container stats">
+      <div class="stats-grid">
+        <div class="stat-item reveal reveal-delay-1">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Ads</div>
+          <div class="stat-sub">Privacy-first. No tracking.</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Transparent</div>
+          <div class="stat-sub">Policies are public &amp; open.</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <div class="stat-number">Free</div>
+          <div class="stat-label">Education</div>
+          <div class="stat-sub">Accessible to everyone.</div>
+        </div>
+        <div class="stat-item reveal reveal-delay-4">
+          <div class="stat-number">Open</div>
+          <div class="stat-label">Source</div>
+          <div class="stat-sub">Built in the open.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY COMMITMENT -->
+    <section class="container security-commit">
+      <div class="block reveal">
+        <h3>Our Security Commitment</h3>
+        <div class="grid">
+          <div class="item"><i class="fas fa-shield-halved"></i><span>Responsible Disclosure</span></div>
+          <div class="item"><i class="fas fa-code"></i><span>Secure Development Practices</span></div>
+          <div class="item"><i class="fas fa-eye"></i><span>Open Source Transparency</span></div>
+          <div class="item"><i class="fas fa-database"></i><span>Minimal Data Collection</span></div>
+          <div class="item"><i class="fas fa-calendar-check"></i><span>Regular Policy Reviews</span></div>
+          <div class="item"><i class="fas fa-graduation-cap"></i><span>Ethical Learning Environment</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED POLICIES -->
+    <section class="container policies" id="policies">
+      <h2 class="section-title reveal">Our core policies</h2>
+      <div class="policy-grid">
+
+        <!-- Featured Large Card (Privacy) -->
+        <div class="card-featured reveal reveal-delay-1">
+          <svg class="bg-shield" viewBox="0 0 100 120">
+            <path d="M50 4 L90 20 L90 60 C90 90 70 110 50 116 C30 110 10 90 10 60 L10 20 L50 4Z" />
+            <path d="M50 18 L76 30 L76 58 C76 78 64 92 50 98 C36 92 24 78 24 58 L24 30 L50 18Z" fill="none" stroke="rgba(255,255,255,0.02)" stroke-width="1.5" />
+          </svg>
+          <div class="icon-wrap">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              <circle cx="12" cy="16" r="1" />
+            </svg>
+          </div>
+          <h3>Privacy Policy</h3>
+          <p>What we collect, how we use it, and your rights regarding your information.</p>
+          <div class="meta">
+            <span><i class="fas fa-circle"></i> Updated July 2026</span>
+            <span><i class="fas fa-circle"></i> 5 min read</span>
+          </div>
+          <a href="" class="link">Read Policy <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Smaller Cards -->
+        <div class="card-small reveal reveal-delay-2">
+          <div>
+            <div class="top">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <polyline points="9 12 11 14 15 10" />
+                </svg>
+              </div>
+              <h4>Code of Conduct</h4>
+            </div>
+            <p>Standards, values, and accountability for every member.</p>
+            <div class="meta">
+              <span><i class="fas fa-circle"></i> Last reviewed July 2026</span>
+            </div>
+          </div>
+          <a href="../trust/code-of-conduct.html" class="link">Read Policy <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="card-small reveal reveal-delay-3">
+          <div>
+            <div class="top">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  <path d="M9 12l2 2 4-4" />
+                </svg>
+              </div>
+              <h4>Cyber Ethics</h4>
+            </div>
+            <p>Responsible disclosure, ethical learning, and digital citizenship.</p>
+            <div class="meta">
+              <span><i class="fas fa-circle"></i> Last reviewed July 2026</span>
+            </div>
+          </div>
+          <a href="../trust/cyber-ethics.html" class="link">Read Policy <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="card-small reveal reveal-delay-4">
+          <div>
+            <div class="top">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                  <polyline points="2 17 12 22 22 17" />
+                  <polyline points="2 12 12 17 22 12" />
+                </svg>
+              </div>
+              <h4>Community Guidelines</h4>
+            </div>
+            <p>Learn with curiosity. Collaborate with respect. Protect privacy.</p>
+            <div class="meta">
+              <span><i class="fas fa-circle"></i> Last reviewed July 2026</span>
+            </div>
+          </div>
+          <a href="../trust/community-guidelines.html" class="link">Read Policy <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="card-small reveal reveal-delay-5">
+          <div>
+            <div class="top">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M18 11h-4.5A2.5 2.5 0 0 1 11 8.5V4" />
+                  <path d="M11 4L4 11v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-7-7z" />
+                  <polyline points="9 13 11 15 15 11" />
+                </svg>
+              </div>
+              <h4>Responsible Disclosure</h4>
+            </div>
+            <p>Report vulnerabilities securely. We acknowledge, investigate, and fix promptly.</p>
+            <div class="meta">
+              <span><i class="fas fa-circle"></i> Last reviewed July 2026</span>
+            </div>
+          </div>
+          <a href="../trust/responsible-disclosure.html" class="link">Read Policy <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="card-small reveal reveal-delay-5">
+          <div>
+            <div class="top">
+              <div class="icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                  <path d="M2 17l10 5 10-5" />
+                  <path d="M2 12l10 5 10-5" />
+                </svg>
+              </div>
+              <h4>Terms of Use</h4>
+            </div>
+            <p>Rules for using the Дгмтеϙі platform and community, including intellectual property.</p>
+            <div class="meta">
+              <span><i class="fas fa-circle"></i> Last reviewed July 2026</span>
+            </div>
+          </div>
+          <a href="../trust/terms-of-use.html" class="link">Read Policy <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRUST TIMELINE -->
+    <section class="container timeline-section">
+      <h2 class="section-title reveal">Our journey so far</h2>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="year">July 2026</div>
+          <div class="event"><i class="fas fa-check-circle"></i> Community Founded</div>
+          <div class="description">"Our mission officially begins."</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">July 2026</div>
+          <div class="event"><i class="fas fa-check-circle"></i> Privacy Policy Published</div>
+          <div class="description">"Your data, your rights — clearly stated."</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">July 2026</div>
+          <div class="event"><i class="fas fa-check-circle"></i> Code of Conduct Released</div>
+          <div class="description">"A shared commitment to integrity."</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">July 2026</div>
+          <div class="event"><i class="fas fa-check-circle"></i> GitHub Organization Created</div>
+          <div class="description">"Building in the open, together."</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">July 2026</div>
+          <div class="event"><i class="fas fa-check-circle"></i> First Open Source Project</div>
+          <div class="description">"Code that anyone can learn from."</div>
+        </div>
+        <div class="timeline-item">
+          <div class="year">July 2026</div>
+          <div class="event"><i class="fas fa-check-circle"></i> First Student Workshop</div>
+          <div class="description">"Hands-on learning for the next generation."</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY STATUS STRIP -->
+    <section class="container security-status">
+      <div class="strip reveal">
+        <div class="label"><i class="fas fa-shield-halved"></i> Security Status</div>
+        <div class="item"><i class="fas fa-check-circle"></i> HTTPS Ready</div>
+        <div class="item"><i class="fas fa-check-circle"></i> Privacy First</div>
+        <div class="item"><i class="fas fa-check-circle"></i> Open Source</div>
+        <div class="item"><i class="fas fa-check-circle"></i> Last Policy Review: July 2026</div>
+        <div class="item"><i class="fas fa-check-circle"></i> Responsible Disclosure</div>
+      </div>
+    </section>
+
+    <!-- REPORT A SAFETY CONCERN -->
+    <section class="container concern">
+      <div class="concern-banner reveal">
+        <h3>We take our community's safety seriously.</h3>
+        <p>If you believe a policy has been violated or have a concern, we want to hear from you.</p>
+        <div class="btn-group">
+          <a href="#" class="btn btn-primary"><i class="fas fa-flag"></i> Report a Safety Concern</a>
+          <a href="#" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Trust Team</a>
+        </div>
+        <div class="response-time">
+          <strong>Typical response:</strong> Within 72 hours
+        </div>
+        <div class="email-safety">
+          Questions? <a href="mailto:trust@armteqi.org">trust@armteqi.org</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMUNITY PLEDGE -->
+    <section class="container pledge" id="pledge">
+      <div class="pledge-block reveal">
+        <div class="big-quote">“</div>
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 11h-4.5A2.5 2.5 0 0 1 11 8.5V4" />
+            <path d="M11 4L4 11v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-7-7z" />
+            <polyline points="9 13 11 15 15 11" />
+          </svg>
+        </div>
+        <h3>Member Honor Pledge</h3>
+        <blockquote>
+          “As a member of Armteqi, I commit to learning with integrity, acting ethically, respecting others,
+          and using technology to create positive impact. I will contribute to a community built on collaboration,
+          curiosity, and trust.”
+        </blockquote>
+        <div class="attribution">— Every Дгмтеϙі Member</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="logo" aria-label="Дгмтеϙі home">
+            <img src="/logos/final-logo.png" alt="Дгмтеϙі Logo" loading="lazy" width="200" height="34" />
+            <span>Дгмтеϙі</span>
+          </a>
+          <p>Technology Education Without Barriers — founded by students, built for everyone.</p>
+          <p class="tagline">Building the next generation of ethical cybersecurity professionals.</p>
+          <div class="footer-socials">
+            <a href="https://github.com/armteqi" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Trust Center</h4>
+          <ul>
+            <li><a href="/trust/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/trust/code-of-conduct.html">Code of Conduct</a></li>
+            <li><a href="/trust/cyber-ethics.html">Cyber Ethics</a></li>
+            <li><a href="/trust/community-guidelines.html">Community Guidelines</a></li>
+            <li><a href="/trust/responsible-disclosure.html">Responsible Disclosure</a></li>
+            <li><a href="/trust/cookie-policy.html">Cookie Policy</a></li>
+            <li><a href="/trust/terms-of-use.html">Terms of Use</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Instagram</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <ul>
+            <li><a href="#">Bootcamps</a></li>
+            <li><a href="#">Workshops</a></li>
+            <li><a href="#">Open Source</a></li>
+            <li><a href="#">Events</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="closing-statement">
+        <strong>Trust is earned every day.</strong> We're committed to building a safe, transparent, and welcoming community for everyone.
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Дгмтеϙі · Student-led · Open Source</span>
+        <span class="trust-email">Trust inquiries: <a href="mailto:trust@armteqi.org">trust@armteqi.org</a></span>
+        <span>Learn Together. Build Together. Grow Together.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="/assets/css/js/trust.js"></script>
+</body>
+</html>

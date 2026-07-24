@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service · Дгмтеϙі</title>
+  <meta name="description" content="Armteqi's Terms of Service – the legal agreement governing your use of our website, community, and educational resources." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+  <link rel="stylesheet" href="/assets/css/cookie.css" />
+  <link rel="stylesheet" href="/assets/css/terms-of-use.css">
+</head>
+
+<body>
+
+  <!-- ─── COOKIE BANNER ─── -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+    <div class="banner-row">
+      <div class="icon-wrap">
+        <i class="fas fa-cookie-bite"></i>
+      </div>
+      <div class="content">
+        <div class="title">Cookie Preferences</div>
+        <div class="desc">
+          We use cookies to keep Armteqi secure, remember your preferences, and improve the website.
+          <br />
+          <a href="/trust/cookie-policy.html">Learn more</a>
+        </div>
+        <div class="actions">
+          <button class="btn btn-primary" id="cookieAcceptBtn">
+            <i class="fas fa-check"></i> Accept All
+          </button>
+          <button class="btn btn-ghost" id="cookieCustomizeBtn">
+            <i class="fas fa-sliders"></i> Customize
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── OVERLAY ─── -->
+  <div class="cookie-overlay" id="cookieOverlay"></div>
+
+  <!-- ─── PREFERENCES PANEL ─── -->
+  <div class="cookie-panel" id="cookiePanel" role="dialog" aria-labelledby="panelTitle" aria-modal="true">
+    <div class="panel-header">
+      <h3 id="panelTitle"><i class="fas fa-sliders" style="color:var(--cookie-accent-soft);margin-right:8px;"></i>Cookie Preferences</h3>
+      <button class="close-btn" id="panelCloseBtn" aria-label="Close preferences">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="panel-desc">
+      Choose which cookies you allow. Essential cookies are always enabled to keep the site working properly.
+    </div>
+    <div id="prefsList"></div>
+    <div class="panel-actions">
+      <button class="btn btn-danger" id="panelRejectOptionalBtn">
+        <i class="fas fa-times"></i> Reject Optional
+      </button>
+      <button class="btn btn-primary" id="panelSaveBtn">
+        <i class="fas fa-save"></i> Save Preferences
+      </button>
+      <button class="btn btn-ghost" id="panelAcceptAllBtn">
+        <i class="fas fa-check"></i> Accept All
+      </button>
+    </div>
+  </div>
+
+  <!-- ─── PAGE CONTENT ─── -->
+  <div class="container">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/index.html" class="logo" aria-label="Armteqi Home">
+        <img src="/logos/final-logo.png" alt="Armteqi Icon" class="logo-icon" />
+        <span class="logo-text">Дгмтеϙі</span>
+      </a>
+      <div class="nav-links">
+        <a href="/index.html#about">About</a>
+        <a href="/index.html#today">Programs</a>
+        <a href="/index.html#next">Projects</a>
+        <a href="/index.html#join">Join</a>
+        <a href="/trust/index.html">Trust Center</a>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <a href="/index.html#join" class="btn-outline-sm"><i class="fas fa-arrow-right"></i> Join</a>
+      </div>
+    </nav>
+
+    <main class="terms-container">
+
+      <!-- ─── HEADER ─── -->
+      <header class="terms-header">
+        <div class="badge">
+          <i class="fas fa-file-contract" style="margin-right:6px;"></i> Terms of Service
+        </div>
+        <h1>How we work together</h1>
+        <p class="subtitle">
+          These Terms of Service govern your use of Armteqi's website, community, and educational resources.
+          By using Armteqi, you agree to these terms.
+        </p>
+        <div class="meta">
+          <span><i class="fas fa-calendar-alt"></i> Version 1.0</span>
+          <span><i class="fas fa-clock"></i> Effective: July 23, 2026</span>
+          <span><i class="fas fa-users"></i> For all users</span>
+        </div>
+      </header>
+
+      <!-- ─── TABLE OF CONTENTS ─── -->
+      <nav class="toc" aria-label="Table of contents">
+        <h3>On this page</h3>
+        <ul>
+          <li><a href="#introduction"><i class="fas fa-circle"></i> Introduction</a></li>
+          <li><a href="#acceptance"><i class="fas fa-circle"></i> Acceptance of Terms</a></li>
+          <li><a href="#eligibility"><i class="fas fa-circle"></i> Eligibility</a></li>
+          <li><a href="#community"><i class="fas fa-circle"></i> Community Participation</a></li>
+          <li><a href="#educational"><i class="fas fa-circle"></i> Educational Content</a></li>
+          <li><a href="#responsible-use"><i class="fas fa-circle"></i> Responsible Use</a></li>
+          <li><a href="#ip"><i class="fas fa-circle"></i> Intellectual Property</a></li>
+          <li><a href="#contributions"><i class="fas fa-circle"></i> Open Source Contributions</a></li>
+          <li><a href="#third-party"><i class="fas fa-circle"></i> Third-Party Services</a></li>
+          <li><a href="#privacy"><i class="fas fa-circle"></i> Privacy</a></li>
+          <li><a href="#disclaimer"><i class="fas fa-circle"></i> Disclaimer</a></li>
+          <li><a href="#liability"><i class="fas fa-circle"></i> Limitation of Liability</a></li>
+          <li><a href="#termination"><i class="fas fa-circle"></i> Termination</a></li>
+          <li><a href="#changes"><i class="fas fa-circle"></i> Changes to These Terms</a></li>
+          <li><a href="#contact"><i class="fas fa-circle"></i> Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- ─── SECTION 1 ─── -->
+      <section class="terms-section" id="introduction">
+        <h2><span class="section-number">01</span> Introduction</h2>
+        <p>
+          Welcome to Armteqi! We are a student-led, non-profit technology community dedicated to making
+          quality education accessible through free programs, open-source projects, and peer learning.
+        </p>
+        <p>
+          These Terms of Service ("Terms") form the legal agreement between you and Armteqi. They
+          explain your rights and responsibilities when using our website, participating in our community,
+          and accessing our educational resources.
+        </p>
+        <p>
+          Please read these Terms carefully. If you do not agree with any part of these Terms,
+          you should not use Armteqi.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 2 ─── -->
+      <section class="terms-section" id="acceptance">
+        <h2><span class="section-number">02</span> Acceptance of Terms</h2>
+        <p>
+          By accessing or using the Armteqi website, participating in our community (including but not
+          limited to Discord, WhatsApp, GitHub, and in-person events), or using any of our educational
+          resources, you agree to be bound by these Terms.
+        </p>
+        <p>
+          If you are using Armteqi on behalf of an organization, you represent that you have the
+          authority to bind that organization to these Terms.
+        </p>
+        <p>
+          These Terms apply in addition to our <a href="/trust/privacy-policy.html">Privacy Policy</a>
+          and <a href="/trust/cookie-policy.html">Cookie Policy</a>, which are incorporated by reference.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 3 ─── -->
+      <section class="terms-section" id="eligibility">
+        <h2><span class="section-number">03</span> Eligibility</h2>
+        <p>
+          Armteqi is open to anyone interested in learning technology, regardless of age, background,
+          or experience level. However, you must be at least 13 years old to use our services.
+        </p>
+        <p>
+          If you are under the age of majority in your jurisdiction, you should use Armteqi with
+          the guidance and consent of a parent or legal guardian. The parent or guardian assumes
+          responsibility for your use of Armteqi.
+        </p>
+        <p>
+          By using Armteqi, you represent that you meet these eligibility requirements.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 4 ─── -->
+      <section class="terms-section" id="community">
+        <h2><span class="section-number">04</span> Community Participation</h2>
+        <p>
+          Armteqi is a community built on respect, collaboration, and learning. All members are expected
+          to follow our <a href="/trust/code-of-conduct.html">Code of Conduct</a>, which sets out the
+          standards for behavior in all community spaces.
+        </p>
+        <p>
+          By participating in the Armteqi community, you agree to:
+        </p>
+        <ul>
+          <li>Treat others with respect and kindness</li>
+          <li>Help maintain a safe, inclusive, and supportive environment</li>
+          <li>Follow the instructions of community moderators and organizers</li>
+          <li>Use community resources responsibly and ethically</li>
+        </ul>
+        <p>
+          Violation of the Code of Conduct may result in temporary or permanent suspension from
+          Armteqi, as outlined in our enforcement policy.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 5 ─── -->
+      <section class="terms-section" id="educational">
+        <h2><span class="section-number">05</span> Educational Content</h2>
+        <p>
+          Armteqi provides educational materials, including articles, tutorials, workshops,
+          bootcamps, and open-source projects, for <strong>educational and informational purposes only</strong>.
+        </p>
+        <p>
+          While we strive to provide accurate and up-to-date information, we do not guarantee that
+          our content is error-free, complete, or suitable for any particular purpose.
+        </p>
+        <div class="highlight-box">
+          <p>
+            <strong>No guarantee of outcomes.</strong> Participation in Armteqi does not guarantee
+            certification, employment, admission to any program, or any specific outcome.
+            Your success depends on your own effort, ability, and circumstances.
+          </p>
+        </div>
+        <p>
+          The educational content provided by Armteqi is not a substitute for professional advice.
+          If you require legal, financial, or other professional advice, you should consult a
+          qualified professional.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 6 ─── -->
+      <section class="terms-section" id="responsible-use">
+        <h2><span class="section-number">06</span> Responsible Use</h2>
+        <p>
+          Armteqi is committed to ethical technology education. You agree to use Armteqi and the
+          knowledge you gain through our community <strong>lawfully, ethically, and responsibly</strong>.
+        </p>
+        <div class="highlight-box">
+          <p>
+            <strong>Responsible Security Use:</strong> Armteqi provides cybersecurity education
+            solely for lawful, ethical, and defensive purposes. Members must <strong>not</strong>
+            use community resources or knowledge gained through Armteqi to conduct unauthorized
+            access, attacks, or any activity that violates applicable laws or the rights of others.
+          </p>
+        </div>
+        <p>
+          Specifically, you agree not to:
+        </p>
+        <ul>
+          <li>Use Armteqi for any illegal, fraudulent, or malicious purpose</li>
+          <li>Attempt to gain unauthorized access to Armteqi systems or data</li>
+          <li>Interfere with the operation of Armteqi or its infrastructure</li>
+          <li>Distribute malware, viruses, or other harmful code</li>
+          <li>Engage in any activity that harms, disrupts, or exploits the Armteqi community or its members</li>
+        </ul>
+        <p>
+          We reserve the right to investigate and report any suspected illegal activity to
+          appropriate authorities.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 7 ─── -->
+      <section class="terms-section" id="ip">
+        <h2><span class="section-number">07</span> Intellectual Property</h2>
+        <p>
+          Armteqi's name, logo, branding, and original content (including but not limited to text,
+          graphics, and design) are the intellectual property of Armteqi and its contributors.
+          You may not use them without prior written permission, except as expressly permitted.
+        </p>
+        <p>
+          Third-party content, including open-source software, is governed by its respective licenses.
+          You are responsible for respecting those licenses when using or redistributing such content.
+        </p>
+        <p>
+          When you contribute to Armteqi's open-source projects, you retain ownership of your
+          contributions, but you grant Armteqi and its users a license to use, modify, and distribute
+          your contributions under the terms of the project's license.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 8 ─── -->
+      <section class="terms-section" id="contributions">
+        <h2><span class="section-number">08</span> Open Source Contributions</h2>
+        <p>
+          Armteqi encourages contributions to our open-source projects. When you contribute, you
+          agree to comply with the project's license terms and code of conduct.
+        </p>
+        <p>
+          Contributions may be used, modified, or distributed by Armteqi or other contributors
+          in accordance with the applicable license. You are responsible for ensuring that your
+          contributions do not infringe on the rights of others.
+        </p>
+        <p>
+          By contributing, you acknowledge that your contributions are made on a voluntary basis
+          and that you do not expect compensation or recognition beyond what is customarily provided.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 9 ─── -->
+      <section class="terms-section" id="third-party">
+        <h2><span class="section-number">09</span> Third-Party Services</h2>
+        <p>
+          Armteqi integrates with third-party platforms and services, such as GitHub, Discord,
+          LinkedIn, and WhatsApp. These services are governed by their own terms and policies,
+          and Armteqi is not responsible for their content, functionality, or privacy practices.
+        </p>
+        <p>
+          When you use these third-party services through Armteqi, you agree to comply with their
+          respective terms of service. Armteqi does not endorse or control these services and
+          disclaims all liability related to your use of them.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 10 ─── -->
+      <section class="terms-section" id="privacy">
+        <h2><span class="section-number">10</span> Privacy</h2>
+        <p>
+          Armteqi respects your privacy and handles your personal data in accordance with our
+          <a href="/trust/privacy-policy.html">Privacy Policy</a> and
+          <a href="/trust/cookie-policy.html">Cookie Policy</a>. By using Armteqi, you consent to
+          the collection and use of your data as described in those policies.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 11 ─── -->
+      <section class="terms-section" id="disclaimer">
+        <h2><span class="section-number">11</span> Disclaimer</h2>
+        <p>
+          Armteqi provides its services, content, and resources on an <strong>"as is"</strong> and
+          <strong>"as available"</strong> basis, without any warranties of any kind, express or implied.
+        </p>
+        <p>
+          To the fullest extent permitted by law, Armteqi disclaims all warranties, including but not
+          limited to implied warranties of merchantability, fitness for a particular purpose, and
+          non-infringement.
+        </p>
+        <p>
+          Armteqi does not warrant that its services will be uninterrupted, error-free, secure, or
+          free from viruses or other harmful components. You assume all risks associated with your
+          use of Armteqi.
+        </p>
+        <div class="highlight-box">
+          <p>
+            <strong>Not professional advice.</strong> The information provided by Armteqi is for
+            educational purposes only and is not intended as legal, financial, professional, or
+            other advice. You should consult a qualified professional for advice specific to your
+            situation.
+          </p>
+        </div>
+      </section>
+
+      <!-- ─── SECTION 12 ─── -->
+      <section class="terms-section" id="liability">
+        <h2><span class="section-number">12</span> Limitation of Liability</h2>
+        <p>
+          To the maximum extent permitted by applicable law, Armteqi and its affiliates, contributors,
+          volunteers, and organizers shall not be liable for any indirect, incidental, special,
+          consequential, or punitive damages, including but not limited to loss of profits, data,
+          or goodwill, arising from your use of Armteqi, even if we have been advised of the
+          possibility of such damages.
+        </p>
+        <p>
+          In no event shall Armteqi's total liability to you exceed the amount you have paid to
+          Armteqi (if any) or $100, whichever is less.
+        </p>
+        <p>
+          Some jurisdictions do not allow the exclusion or limitation of certain liabilities, so
+          these limitations may not apply to you.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 13 ─── -->
+      <section class="terms-section" id="termination">
+        <h2><span class="section-number">13</span> Termination</h2>
+        <p>
+          Armteqi reserves the right to suspend or terminate your access to our services, community,
+          and resources at any time, with or without notice, for any reason, including but not limited
+          to violations of these Terms or the Code of Conduct.
+        </p>
+        <p>
+          Upon termination, your right to use Armteqi will immediately cease. However, any sections
+          of these Terms that by their nature should survive termination will remain in effect,
+          including but not limited to Intellectual Property, Disclaimer, and Limitation of Liability.
+        </p>
+        <p>
+          You may also terminate your participation in Armteqi at any time by discontinuing use of
+          our services and requesting removal of your data in accordance with our Privacy Policy.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 14 ─── -->
+      <section class="terms-section" id="changes">
+        <h2><span class="section-number">14</span> Changes to These Terms</h2>
+        <p>
+          Armteqi may revise these Terms of Service from time to time to reflect changes in our
+          services, legal requirements, or community needs. The most current version will always be
+          available in our <a href="/trust/index.html">Trust Center</a>.
+        </p>
+        <p>
+          If we make material changes, we will notify you through our website, community channels,
+          or email (if we have your contact information). Your continued use of Armteqi after the
+          changes become effective constitutes your acceptance of the revised Terms.
+        </p>
+        <p>
+          We encourage you to review these Terms periodically to stay informed of any updates.
+        </p>
+      </section>
+
+      <!-- ─── SECTION 15 ─── -->
+      <section class="terms-section" id="contact">
+        <h2><span class="section-number">15</span> Contact</h2>
+        <p>
+          If you have any questions, concerns, or feedback about these Terms of Service,
+          please reach out to the Armteqi Trust & Safety Team:
+        </p>
+        <div style="display: flex; flex-wrap: wrap; gap: 16px; margin: 16px 0;">
+          <a href="mailto:armteqi.community@gmail.com" style="display:inline-flex; align-items:center; gap:8px; background:var(--bg-surface); border:1px solid var(--border-subtle); padding:12px 24px; border-radius:12px; text-decoration:none; color:var(--text-primary); transition: all var(--transition);">
+            <i class="fas fa-envelope" style="color:var(--accent-soft);"></i>
+            armteqi.community@gmail.com
+          </a>
+          <a href="/trust/index.html" style="display:inline-flex; align-items:center; gap:8px; background:var(--bg-surface); border:1px solid var(--border-subtle); padding:12px 24px; border-radius:12px; text-decoration:none; color:var(--text-primary); transition: all var(--transition);">
+            <i class="fas fa-shield-alt" style="color:var(--accent-soft);"></i>
+            Trust Center
+          </a>
+        </div>
+        <p style="font-size:0.9rem; color:var(--text-muted);">
+          We aim to respond to all inquiries as promptly as possible.
+        </p>
+      </section>
+
+      <!-- ─── BACK TO TOP ─── -->
+      <a href="#" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+        <i class="fas fa-arrow-up"></i> Back to top
+      </a>
+
+    </main>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h4>Дгмтеϙі</h4>
+          <p style="color: var(--text-muted); font-size:0.95rem; line-height:1.6;">Learn Together.<br />Build Together.<br />Grow Together.</p>
+        </div>
+        <div>
+          <h4>Community</h4>
+          <a href="/index.html#about">About</a>
+          <a href="/index.html#today">Programs</a>
+          <a href="/index.html#next">Projects</a>
+          <a href="/index.html#join">Join</a>
+        </div>
+        <div>
+          <h4>Policies</h4>
+          <a href="/trust/privacy-policy.html">Privacy Policy</a>
+          <a href="/trust/cookie-policy.html">Cookie Policy</a>
+          <a href="/trust/code-of-conduct.html">Code of Conduct</a>
+          <a href="/trust/terms-of-use.html">Terms of Service</a>
+        </div>
+        <div>
+          <h4>Cookie</h4>
+          <a href="#" class="cookie-manage-link" id="manageCookiesLink">
+            <i class="fas fa-cookie-bite" style="margin-right:6px;"></i> Manage Cookie Preferences
+          </a>
+        </div>
+        <div>
+          <h4>Connect</h4>
+          <a href="#">GitHub</a>
+          <a href="#">LinkedIn</a>
+          <a href="#">Instagram</a>
+          <a href="mailto:armteqi.community@gmail.com">Email</a>
+        </div>
+      </div>
+
+      <div class="social-icons" style="margin: 30px 0 20px; text-align: center;">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:armteqi.community@gmail.com" aria-label="Email"><i class="far fa-envelope"></i></a>
+      </div>
+
+      <div style="color: var(--text-muted); font-size:0.85rem; text-align:center; border-top: 1px solid var(--border-subtle); padding-top: 25px;">
+        © 2026 Дгмтеϙі. A student-led technology community.
+      </div>
+    </footer>
+  </div>
+
+  <!-- ─── SCRIPTS ─── -->
+  <script src="/assets/js/cookie.js" defer></script>
+
+</body>
+</html>
