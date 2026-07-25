@@ -1,4 +1,11 @@
 
+    
+    
+    // Apply saved theme from Home page
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+
+      document.body.classList.toggle('light-mode', savedTheme === 'light');
+    
     (function() {
       // ── SCROLL PROGRESS ──
       const progressBar = document.getElementById('scroll-progress');
