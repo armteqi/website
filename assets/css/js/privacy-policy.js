@@ -1,11 +1,12 @@
- 
-const savedTheme = localStorage.getItem("theme");
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme") || "dark";
 
-if(savedTheme==="light"){
-    document.documentElement.classList.add("light-mode");
-    getComputedStyle(document.body).getPropertyValue("--bg-primary")
-}
-    
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+    } else {
+        document.body.classList.remove("light-mode");
+    }
+});
     (() => {
       const progressBar = document.getElementById('page-progress');
       const backToTop = document.getElementById('back-to-top');
@@ -109,7 +110,9 @@ if(savedTheme==="light"){
             if (term) highlightText(card, term);
           }
         });
+        if (searchEmpty) {
         searchEmpty.style.display = visible === 0 && term !== '' ? '' : 'none';
+        }
         if (searchLive) {
         searchLive.textContent = term === '' ? '' : `${visible} section${visible !== 1 ? 's' : ''} found.`;
       }
@@ -147,6 +150,7 @@ if(savedTheme==="light"){
           const section = btn.closest('[id]');
           if (!section) return;
           const url = `${window.location.origin}${window.location.pathname}#${section.id}`;
+          if (navigator.clipboard) {
           navigator.clipboard.writeText(url).then(() => {
             const icon = btn.querySelector('i');
             if (icon) {
@@ -154,6 +158,7 @@ if(savedTheme==="light"){
               setTimeout(() => { icon.className = 'fas fa-link'; }, 1500);
             }
           }).catch(() => {});
+        }
         });
       });
 
