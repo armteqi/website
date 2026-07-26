@@ -1,16 +1,73 @@
-.hero-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px auto;
+:root{
+    color-scheme: dark;
+
+    --bg-primary:#0b0c15;
+    --bg-surface:#151724;
+    --bg-surface-soft:#1b1e2c;
+    --bg-surface-hover:#1b1e2c;
+
+    --header-bg:rgba(11,12,21,.85);
+
+    --text-primary:#f0f2fa;
+    --text-secondary:#b4b8cc;
+    --text-muted:#7a7f98;
+
+    --primary:#6C8CFF;
+    --secondary:#8B5CF6;
+
+    --link:var(--primary);
+
+    --border-subtle:rgba(255,255,255,.06);
+
+    --transition-fast:.2s ease;
+    --transition-smooth:.35s ease;
+
+    --card-bg:
+      linear-gradient(
+        180deg,
+        rgba(255,255,255,.03),
+        rgba(255,255,255,.01)
+      );
+
+    --shadow-card:
+      0 10px 30px -12px rgba(0,0,0,.45);
+
+    --accent-glow:
+      rgba(108,140,255,.20);
 }
 
-.hero-logo-icon {
-    width: 120px;
-    height: auto;
-}
+body.light-mode{
 
-.hero-logo-text {
-    font-size: 80px;
-    font-weight: 700;
+    color-scheme: light;
+
+    --primary:#4f64d9;
+    --secondary:#5c70e0;
+
+    --bg-primary:#f5f7ff;
+    --bg-surface:#ffffff;
+    --bg-surface-soft:#eef0fa;
+    --bg-surface-hover:#f1f4ff;
+
+    --header-bg:rgba(255,255,255,.85);
+
+    --text-primary:#12142a;
+    --text-secondary:#444864;
+    --text-muted:#6b6f8a;
+
+    --link:var(--primary);
+
+    --border-subtle:rgba(0,0,0,.07);
+
+    --card-bg:
+      linear-gradient(
+        180deg,
+        rgba(0,0,0,.015),
+        rgba(0,0,0,.005)
+      );
+
+    --shadow-card:
+      0 10px 30px -12px rgba(0,0,0,.08);
+
+    --accent-glow:
+      rgba(79,100,217,.18);
 }
