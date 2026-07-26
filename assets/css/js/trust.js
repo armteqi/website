@@ -1,10 +1,12 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme") || "dark";
 
-    
-    
-    // Apply saved theme from Home page
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-
-      document.body.classList.toggle('light-mode', savedTheme === 'light');
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+    } else {
+        document.body.classList.remove("light-mode");
+    }
+});
     
     (function() {
       // ── SCROLL PROGRESS ──

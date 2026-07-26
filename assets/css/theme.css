@@ -1,4 +1,12 @@
 :root{
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+    --radius-x1: 24px;
+    
+    --surface-hover: rgba(255, 255, 255,.04);
+    --surface-soft: rgba(255, 255, 255,.03);
+        
     color-scheme: dark;
 
     --bg-primary:#0b0c15;
