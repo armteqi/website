@@ -7,17 +7,20 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.remove("light-mode");
     }
 });
+
+    
     
     (function() {
       // ── SCROLL PROGRESS ──
-      const progressBar = document.getElementById('scroll-progress');
+      const progressBar = document.getElementById('page-progress');
+      if(progressBar) {
       window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY;
         const docHeight = document.documentElement.scrollHeight - window.innerHeight;
         const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
         progressBar.style.width = Math.min(progress, 100) + '%';
-        progressBar.setAttribute('aria-valuenow', Math.round(progress));
       });
+    }
 
       // ── HAMBURGER ──
       const hamburger = document.getElementById('hamburger');
