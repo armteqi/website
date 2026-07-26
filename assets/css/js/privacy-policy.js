@@ -1,26 +1,39 @@
  
+const savedTheme = localStorage.getItem("theme");
+
+if(savedTheme==="light"){
+    document.documentElement.classList.add("light-mode");
+    getComputedStyle(document.body).getPropertyValue("--bg-primary")
+}
+    
     (() => {
       const progressBar = document.getElementById('page-progress');
       const backToTop = document.getElementById('back-to-top');
       const searchInput = document.getElementById('policy-search');
       const searchClear = document.getElementById('search-clear');
       const searchLive = document.getElementById('search-live');
-      const allCards = document.querySelectorAll('.policy-card');
+      const allCards = document.querySelectorAll('.policy-card, #contact');
       const searchEmpty = document.getElementById('search-empty');
       const desktopTocLinks = document.querySelectorAll('#sidebar-toc a');
       const mobileTocLinks = document.querySelectorAll('.mobile-toc a');
       const mobileToc = document.getElementById('mobile-toc');
 
       // Progress bar & back-to-top
+      if (progressBar && backToTop) {
       window.addEventListener('scroll', () => {
         const scrollTop = document.documentElement.scrollTop;
         const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        progressBar.style.width = (scrollTop / scrollHeight) * 100 + '%';
+        const progress = 
+        scrollHeight > 0
+        ? (scrollTop / scrollHeight) * 100
+        : 0;
+        progressBar.style.width = progress + '%';
         backToTop.classList.toggle('show', scrollTop > 600);
       }, { passive: true });
-
+    }
+      if (backToTop) {
       backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
+    }
       // Intersection Observer: reveal cards + active TOC
       const observer = new IntersectionObserver((entries) => {
         let bestEntry = null;
@@ -43,9 +56,10 @@
             link.classList.toggle('active-toc', link.getAttribute('href') === `#${id}`);
           });
         }
-      }, { rootMargin: '-120px 0px -30% 0px', threshold: [0, 0.5] });
-
-      document.querySelectorAll('.policy-card, #contact').forEach(el => observer.observe(el));
+      }, { rootMargin: '-120px 0px -30% 0px', threshold: [0.15] });
+        const observedSections = 
+      document.querySelectorAll('.policy-card, #contact');
+      observedSections.forEach(el => observer.observe(el));
 
       // Search with highlight
       function clearHighlights() {
@@ -86,7 +100,7 @@
         clearHighlights();
         let visible = 0;
         allCards.forEach(card => {
-          const text = card.innerText.toLowerCase();
+          const text = card.textContent.toLowerCase();
           const heading = card.querySelector('h2')?.innerText.toLowerCase() || '';
           const match = term === '' || heading.includes(term) || text.includes(term);
           card.style.display = match ? '' : 'none';
@@ -96,23 +110,28 @@
           }
         });
         searchEmpty.style.display = visible === 0 && term !== '' ? '' : 'none';
+        if (searchLive) {
         searchLive.textContent = term === '' ? '' : `${visible} section${visible !== 1 ? 's' : ''} found.`;
       }
-
+      }
       let searchTimeout;
+      if (searchInput) {
       searchInput.addEventListener('input', () => {
         clearTimeout(searchTimeout);
         searchTimeout = setTimeout(() => {
           performSearch(searchInput.value.toLowerCase().trim());
         }, 150);
       });
-
+      
+    }
+      if (searchClear) {
       searchClear.addEventListener('click', () => {
         searchInput.value = '';
         searchInput.focus();
         performSearch('');
       });
-
+    }
+    if (searchInput){
       document.querySelectorAll('.term-btn').forEach(btn => {
         btn.addEventListener('click', () => {
           searchInput.value = btn.textContent;
@@ -120,6 +139,7 @@
           performSearch(btn.textContent.toLowerCase());
         });
       });
+    }
 
       // Copy link buttons
       document.querySelectorAll('.copy-link-btn').forEach(btn => {
@@ -138,12 +158,13 @@
       });
 
       // Mobile TOC close after click
+      if (mobileToc){
       mobileTocLinks.forEach(link => {
         link.addEventListener('click', () => {
           if (mobileToc.open) mobileToc.open = false;
         });
       });
-
+    }
       // Smooth scroll for TOC links
       document.querySelectorAll('#sidebar-toc a, .mobile-toc a').forEach(link => {
         link.addEventListener('click', e => {
