@@ -29,7 +29,7 @@
     .trust-page {
       --bg-card:var(--card-bg);
       --border-subtle:var(--border-subtle);
-      --border-glow:var(--bo);
+      --border-glow:var(--border-glow);
       /* color:var(--text-primary); */
       color:var(--text-secondary);
       --accent:var(--primary);

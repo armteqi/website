@@ -208,6 +208,21 @@
       color: var(--text-primary);
     }
 
+    .highlight-box,
+    .terms-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity .6s ease,
+        transform .6s ease;
+    }
+
+    .highlight-box.visible,
+    .terms-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+    }
+
     /* ─── Back to Top ─── */
     .back-to-top {
       display: inline-flex;
