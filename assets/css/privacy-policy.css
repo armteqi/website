@@ -341,9 +341,9 @@
       gap: 1.8rem;
     }
     .policy-card {
-      background: var(--bg-card);
+      background: var(--bg-surface-soft);
       backdrop-filter: blur(6px);
-      border: 1px solid var(--border-subtle);
+      border: 1px solid #d9e1ee;
       border-radius: 18px;
       padding: 2rem 2.5rem;
       box-shadow:var(--shadow-card);
