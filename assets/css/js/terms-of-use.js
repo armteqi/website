@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     /* Reveal animation */
 
     const cards = document.querySelectorAll(
-        ".highlight-box"
+        ".highlight-box  terms-section"
     );
 
     if ("IntersectionObserver" in window) {
