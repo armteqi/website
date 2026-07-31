@@ -10,13 +10,26 @@
  *  - Back to Top button
  *  - Reading progress
  * ============================================================
- */
 
-document.addEventListener("DOMContentLoaded", () => {
 
     /* ==========================================================
        REVEAL ANIMATION
     ========================================================== */
+    document.addEventListener("DOMContentLoaded", () => {
+
+    /* ------------------------------
+       Apply saved theme
+    ------------------------------ */
+
+    const savedTheme = localStorage.getItem("theme") || "dark";
+
+    if (savedTheme === "light") {
+        document.body.classList.add("light-mode");
+    } else {
+        document.body.classList.remove("light-mode");
+    }
+
+    /* ---------------
 
     const revealElements = document.querySelectorAll(`
         .trust-header,
