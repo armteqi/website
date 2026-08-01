@@ -12,9 +12,9 @@
  * ============================================================
 
 
-    /* ==========================================================
-       REVEAL ANIMATION
-    ========================================================== */
+     /* ==========================================================
+        REVEAL ANIMATION
+     ========================================================== */
     document.addEventListener("DOMContentLoaded", () => {
 
     /* ------------------------------
@@ -29,64 +29,54 @@
         document.body.classList.remove("light-mode");
     }
 
-    /* ---------------
+    /* ---------------*/
+ /* ==========================================
+       Reveal animations
+    ========================================== */
 
-    const revealElements = document.querySelectorAll(`
+    const revealItems = document.querySelectorAll(`
         .trust-header,
         .summary-card,
         .toc,
         .trust-section,
         .card,
-        .contact-links,
-        .back-to-top
+        .contact-links
     `);
 
     if ("IntersectionObserver" in window) {
 
-        const revealObserver = new IntersectionObserver((entries, observer) => {
+        const revealObserver = new IntersectionObserver((entries) => {
 
             entries.forEach(entry => {
 
                 if (!entry.isIntersecting) return;
 
-                entry.target.classList.add("reveal-visible");
-
-                observer.unobserve(entry.target);
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
 
             });
 
         }, {
-            threshold: 0.08,
-            rootMargin: "0px 0px -50px 0px"
+            threshold: 0.12
         });
 
-        revealElements.forEach(element => {
-
-            element.classList.add("reveal-hidden");
-            revealObserver.observe(element);
-
-        });
+        revealItems.forEach(item => revealObserver.observe(item));
 
     } else {
 
-        revealElements.forEach(element => {
-
-            element.classList.remove("reveal-hidden");
-
-        });
+        revealItems.forEach(item => item.classList.add("visible"));
 
     }
 
+    /* ==========================================
+       Smooth scrolling
+    ========================================== */
 
-    /* ==========================================================
-       SMOOTH SCROLL
-    ========================================================== */
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
 
-    document.querySelectorAll('.toc a[href^="#"]').forEach(link => {
+        link.addEventListener("click", function (e) {
 
-        link.addEventListener("click", e => {
-
-            const target = document.querySelector(link.getAttribute("href"));
+            const target = document.querySelector(this.getAttribute("href"));
 
             if (!target) return;
 
@@ -97,163 +87,79 @@
                 block: "start"
             });
 
-            history.replaceState(null, "", link.getAttribute("href"));
-
         });
 
     });
 
-
-    /* ==========================================================
-       ACTIVE TABLE OF CONTENTS
-    ========================================================== */
+    /* ==========================================
+       Active Table of Contents
+    ========================================== */
 
     const sections = document.querySelectorAll(".trust-section");
     const tocLinks = document.querySelectorAll(".toc a");
 
-    function updateTOC() {
+    if (sections.length && tocLinks.length) {
 
-        let current = "";
+        const tocObserver = new IntersectionObserver((entries) => {
 
-        const offset = window.scrollY + 140;
+            entries.forEach(entry => {
 
-        sections.forEach(section => {
+                if (!entry.isIntersecting) return;
 
-            if (
-                offset >= section.offsetTop &&
-                offset < section.offsetTop + section.offsetHeight
-            ) {
+                const id = "#" + entry.target.id;
 
-                current = "#" + section.id;
+                tocLinks.forEach(link => {
 
-            }
+                    link.classList.toggle(
+                        "active-toc",
+                        link.getAttribute("href") === id
+                    );
 
+                });
+
+            });
+
+        }, {
+            threshold: 0.45
         });
 
-        tocLinks.forEach(link => {
-
-            link.classList.toggle(
-                "active",
-                link.getAttribute("href") === current
-            );
-
-        });
+        sections.forEach(section => tocObserver.observe(section));
 
     }
 
+    /* ==========================================
+       Back To Top
+    ========================================== */
 
-    /* ==========================================================
-       BACK TO TOP
-    ========================================================== */
+    const backButton = document.querySelector(".back-to-top");
 
-    const backToTop = document.querySelector(".back-to-top");
+    if (backButton) {
 
-    if (backToTop) {
-
-        function toggleBackToTop() {
+        window.addEventListener("scroll", () => {
 
             if (window.scrollY > 500) {
 
-                backToTop.style.opacity = "1";
-                backToTop.style.visibility = "visible";
-                backToTop.style.pointerEvents = "auto";
+                backButton.classList.add("show");
 
             } else {
 
-                backToTop.style.opacity = "0";
-                backToTop.style.visibility = "hidden";
-                backToTop.style.pointerEvents = "none";
+                backButton.classList.remove("show");
 
             }
 
-        }
+        });
 
-        toggleBackToTop();
-
-        backToTop.addEventListener("click", e => {
+        backButton.addEventListener("click", function (e) {
 
             e.preventDefault();
 
             window.scrollTo({
-
                 top: 0,
                 behavior: "smooth"
-
             });
 
         });
 
     }
-
-
-    /* ==========================================================
-       READING PROGRESS BAR
-       (Only works if page contains:
-       <div id="readingProgress"></div>)
-    ========================================================== */
-
-    const progressBar = document.getElementById("readingProgress");
-
-    function updateReadingProgress() {
-
-        if (!progressBar) return;
-
-        const scrollTop = window.scrollY;
-
-        const docHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
-
-        const progress = (scrollTop / docHeight) * 100;
-
-        progressBar.style.width = progress + "%";
-
-    }
-
-
-    /* ==========================================================
-       SCROLL EVENTS
-    ========================================================== */
-
-    let ticking = false;
-
-    function onScroll() {
-
-        if (ticking) return;
-
-        requestAnimationFrame(() => {
-
-            updateTOC();
-            updateReadingProgress();
-
-            if (backToTop) {
-                if (window.scrollY > 500) {
-
-                    backToTop.style.opacity = "1";
-                    backToTop.style.visibility = "visible";
-                    backToTop.style.pointerEvents = "auto";
-
-                } else {
-
-                    backToTop.style.opacity = "0";
-                    backToTop.style.visibility = "hidden";
-                    backToTop.style.pointerEvents = "none";
-
-                }
-            }
-
-            ticking = false;
-
-        });
-
-        ticking = true;
-
-    }
-
-    window.addEventListener("scroll", onScroll, {
-        passive: true
-    });
-
-    updateTOC();
-    updateReadingProgress();
 
 });
