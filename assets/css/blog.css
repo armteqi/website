@@ -97,6 +97,24 @@
       z-index: 100;
     }
 
+    .brand-home {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: inherit;
+        transition: color 0.25s ease, text-shadow 0.25s ease;
+    }
+
+    .brand-home:hover {
+        color: #8aa5ff;
+        text-shadow: 0 0 12px rgba(108, 140, 255, 0.35);
+    }
+
+    .brand-home :focus-visible{
+        outline: 2px solid var(--primary);
+        outline-offset: 4px;
+        border-radius: 4px;
+    }
+
     .nav-bar {
       display: flex;
       justify-content: space-between;
