@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Code of Conduct · Armteqi</title>
-  <meta name="description" content="Armteqi's Code of Conduct – our commitment to building a safe, respectful, and inclusive community for technology education." />
+  <title>Cyber Ethics Framework · Armteqi</title>
+  <meta name="description" content="Armteqi's Cyber Ethics Framework – ethical principles for responsible technology use, security research, vulnerability disclosure, and community conduct." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
@@ -546,14 +546,14 @@
       font-weight: 700;
     }
 
-    /* ── VALUE GRID (inside cards) ── */
-    .policy-card .value-grid {
+    /* ── VALUE GRID ── */
+    .value-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
       gap: 0.75rem;
       margin: 0.5rem 0;
     }
-    .policy-card .value-grid .value-item {
+    .value-grid .value-item {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--border-subtle);
       border-radius: 10px;
@@ -563,70 +563,56 @@
       gap: 0.6rem;
       transition: border-color 0.2s;
     }
-    .policy-card .value-grid .value-item:hover {
+    .value-grid .value-item:hover {
       border-color: var(--border-glow);
     }
-    .policy-card .value-grid .value-item i {
+    .value-grid .value-item i {
       color: var(--primary);
-      font-size: 1rem;
+      font-size: 0.9rem;
       flex-shrink: 0;
+      opacity: 0.6;
     }
-    .policy-card .value-grid .value-item span {
+    .value-grid .value-item span {
       color: var(--text-primary);
       font-weight: 500;
       font-size: 0.85rem;
     }
 
-    /* ── BEHAVIOR LIST (inside cards) ── */
-    .policy-card .behavior-list {
+    /* ── SUMMARY GRID ── */
+    .summary-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
       margin: 0.5rem 0;
     }
-    .policy-card .behavior-list .behavior-column {
+    .summary-grid .summary-card {
       background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--border-subtle);
       border-radius: 12px;
-      padding: 1rem 1.25rem;
+      padding: 1.25rem 1.25rem 1rem;
+      transition: border-color 0.2s;
     }
-    .policy-card .behavior-list .behavior-column h4 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-      color: var(--text-muted);
-      margin-bottom: 0.5rem;
+    .summary-grid .summary-card:hover {
+      border-color: var(--border-glow);
     }
-    .policy-card .behavior-list .behavior-column ul {
-      margin: 0;
+    .summary-grid .summary-card i {
+      font-size: 1.2rem;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 0.3rem;
+      opacity: 0.5;
     }
-    .policy-card .behavior-list .behavior-column ul li {
-      font-size: 0.88rem;
-      padding-left: 1.25rem;
+    .summary-grid .summary-card h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.2rem;
     }
-    .policy-card .behavior-list .behavior-column ul li::before {
-      content: '•';
-      position: absolute;
-      left: 0;
-    }
-    .behavior-column.acceptable ul li::before {
-      color: #34D399;
-    }
-    .behavior-column.unacceptable ul li::before {
-      color: #F87171;
-    }
-
-    /* ── SECURITY BOX ── */
-    .policy-card .security-box {
-      background: rgba(108, 140, 255, 0.06);
-      border: 1px solid var(--border-subtle);
-      border-radius: 12px;
-      padding: 1.25rem 1.5rem;
-      margin: 0.75rem 0;
-    }
-    .policy-card .security-box p {
+    .summary-grid .summary-card p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
       margin-bottom: 0;
+      line-height: 1.6;
     }
 
     /* ── HIGHLIGHT BOX ── */
@@ -644,49 +630,79 @@
       color: var(--text-primary);
     }
 
-    /* ── ENFORCEMENT TABLE ── */
-    .enforcement-wrap {
-      overflow-x: auto;
-      margin: 0.75rem 0;
-      border-radius: 12px;
+    /* ── CARD VARIANTS (inline) ── */
+    .card-inline {
+      background: rgba(255, 255, 255, 0.02);
       border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin: 0.75rem 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
     }
-    .enforcement-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-      min-width: 400px;
+    .card-inline .icon {
+      font-size: 1rem;
+      color: var(--primary);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+      opacity: 0.5;
     }
-    .enforcement-table th {
-      background: rgba(255, 255, 255, 0.03);
-      color: var(--text-primary);
-      font-weight: 600;
-      text-align: left;
-      padding: 0.6rem 1rem;
-      border-bottom: 1px solid var(--border-subtle);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-    .enforcement-table td {
-      padding: 0.6rem 1rem;
+    .card-inline .content {
       color: var(--text-secondary);
-      border-bottom: 1px solid var(--border-subtle);
+      line-height: 1.7;
+      font-size: 0.95rem;
     }
-    .enforcement-table tr:last-child td {
-      border-bottom: none;
+    .card-inline .content strong {
+      color: var(--text-primary);
     }
-    .severity-low {
+    .card-inline.success .icon {
       color: #34D399;
     }
-    .severity-medium {
-      color: #FBBF24;
-    }
-    .severity-high {
+    .card-inline.danger .icon {
       color: #F87171;
     }
+    .card-inline.warning .icon {
+      color: #FBBF24;
+    }
+    .card-inline.info .icon {
+      color: var(--primary);
+    }
+    .card-inline.tip .icon {
+      color: #FBBF24;
+    }
+    .card-inline.example .icon {
+      color: #34D399;
+    }
 
-    /* ── CONTACT ── */
+    /* ── CONTACT LINKS ── */
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin: 0.75rem 0;
+    }
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      border-bottom: 1px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .contact-links a:hover {
+      color: var(--text-primary);
+      border-bottom-color: var(--primary);
+    }
+    .contact-links a i {
+      color: var(--primary);
+      opacity: 0.4;
+      font-size: 0.85rem;
+    }
+
+    /* ── CONTACT PREMIUM ── */
     .contact-premium {
       background: var(--bg-card);
       backdrop-filter: blur(8px);
@@ -790,6 +806,29 @@
       color: var(--text-primary);
     }
 
+    /* ── CLOSING STATEMENT ── */
+    .closing-statement {
+      margin: 3rem 0 1.5rem;
+      text-align: center;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2rem;
+    }
+    .closing-statement p {
+      color: var(--text-secondary);
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+    .closing-statement .big {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .closing-statement .small {
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
     /* ── FOOTER ── */
     .legal-notice {
       margin-top: 1.5rem;
@@ -876,7 +915,7 @@
 
     /* ── RESPONSIVE ── */
     @media (max-width: 1024px) {
-      .policy-card .value-grid {
+      .summary-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
@@ -906,16 +945,13 @@
       .contact-premium {
         padding: 1.5rem;
       }
-      .policy-card .behavior-list {
-        grid-template-columns: 1fr;
-      }
-      .policy-card .value-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .summary-grid {
+        grid-template-columns: 1fr 1fr;
       }
     }
 
     @media (max-width: 480px) {
-      .policy-card .value-grid {
+      .summary-grid {
         grid-template-columns: 1fr;
       }
       .contact-options {
@@ -933,6 +969,12 @@
         font-size: 0.75rem;
         gap: 0.4rem;
       }
+      .value-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .closing-statement .big {
+        font-size: 1rem;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -948,7 +990,7 @@
 <body>
   <a href="#policy-sections" class="skip-link">Skip to main content</a>
 
-  <main class="trust-page" id="code-of-conduct">
+  <main class="trust-page" id="cyber-ethics">
     <div class="page-progress" id="page-progress" aria-hidden="true"></div>
 
     <!-- ─── HERO ─── -->
@@ -956,45 +998,45 @@
       <div class="hero-breadcrumb">
         <a href="https://armteqi.github.io/website/trust/index.html" class="breadcrumb-link">Trust Center</a>
         <span class="breadcrumb-sep">/</span>
-        <span class="breadcrumb-current">Code of Conduct</span>
+        <span class="breadcrumb-current">Cyber Ethics Framework</span>
       </div>
-      <h1 class="hero-title">Code of Conduct</h1>
+      <h1 class="hero-title">Cyber Ethics Framework</h1>
       <p class="hero-subtitle">
-        Our commitment to creating a safe, respectful, and inclusive environment
-        for everyone who learns, builds, and grows with Armteqi.
+        Technology is most powerful when it is used responsibly.
+        This framework defines the ethical principles that guide every
+        member, volunteer, contributor, and learner within the Armteqi
+        community.
       </p>
       <div class="trust-badges">
-        <div class="trust-badge"><i class="fas fa-handshake"></i><span>Respect</span></div>
-        <div class="trust-badge"><i class="fas fa-book"></i><span>Learn</span></div>
-        <div class="trust-badge"><i class="fas fa-users"></i><span>Community</span></div>
-        <div class="trust-badge"><i class="fas fa-shield-alt"></i><span>Ethics</span></div>
+        <div class="trust-badge"><i class="fas fa-balance-scale"></i><span>Integrity</span></div>
+        <div class="trust-badge"><i class="fas fa-shield-alt"></i><span>Protect People</span></div>
+        <div class="trust-badge"><i class="fas fa-user-lock"></i><span>Respect Privacy</span></div>
+        <div class="trust-badge"><i class="fas fa-handshake"></i><span>Act Responsibly</span></div>
       </div>
       <div class="hero-meta">
-        <span>Effective: 23 July 2026</span>
-        <span class="meta-divider">·</span>
-        <span>Last Updated: 23 July 2026</span>
-        <span class="meta-divider">·</span>
         <span>Version 1.0</span>
         <span class="meta-divider">·</span>
-        <span>⏱️ ~6 min read</span>
+        <span>Effective July 2026</span>
+        <span class="meta-divider">·</span>
+        <span>Applies to All Members</span>
       </div>
     </header>
 
     <!-- ─── QUOTE ─── -->
     <blockquote class="tc-quote">
-      <p>“Everyone starts somewhere. Armteqi welcomes learners of all experience levels – from absolute beginners to seasoned practitioners. Questions are encouraged, mistakes are part of learning, and respectful guidance is valued over criticism.”</p>
+      <p>“Technology Creates Opportunity — Ethics Creates Trust.”</p>
     </blockquote>
 
     <!-- ─── AT A GLANCE ─── -->
     <div class="glance-card">
       <h2><i class="fas fa-clipboard-list"></i> At a glance</h2>
       <div class="glance-grid">
-        <div class="glance-item"><i class="fas fa-check-circle"></i> Safe and inclusive learning environment</div>
-        <div class="glance-item"><i class="fas fa-check-circle"></i> Respect and kindness for all members</div>
-        <div class="glance-item"><i class="fas fa-check-circle"></i> Responsible security learning</div>
-        <div class="glance-item"><i class="fas fa-check-circle"></i> Academic integrity matters</div>
-        <div class="glance-item"><i class="fas fa-check-circle"></i> Report concerns without fear</div>
-        <div class="glance-item"><i class="fas fa-check-circle"></i> Fair and transparent enforcement</div>
+        <div class="glance-item"><i class="fas fa-check-circle"></i> Protect people with security knowledge</div>
+        <div class="glance-item"><i class="fas fa-check-circle"></i> Respect privacy and confidentiality</div>
+        <div class="glance-item"><i class="fas fa-check-circle"></i> Act with honesty and accountability</div>
+        <div class="glance-item"><i class="fas fa-check-circle"></i> Obtain authorization before testing</div>
+        <div class="glance-item"><i class="fas fa-check-circle"></i> Disclose vulnerabilities responsibly</div>
+        <div class="glance-item"><i class="fas fa-check-circle"></i> Use AI ethically and verify outputs</div>
       </div>
     </div>
 
@@ -1013,17 +1055,16 @@
       <nav aria-label="Table of contents">
         <ul>
           <li><a href="#purpose">Purpose</a></li>
-          <li><a href="#who-it-applies">Who It Applies To</a></li>
-          <li><a href="#values">Our Community Values</a></li>
-          <li><a href="#expected">Expected Behavior</a></li>
-          <li><a href="#unacceptable">Unacceptable Behavior</a></li>
-          <li><a href="#security">Responsible Security Learning</a></li>
-          <li><a href="#academic">Academic Integrity</a></li>
-          <li><a href="#reporting">Reporting Concerns</a></li>
-          <li><a href="#enforcement">Enforcement</a></li>
-          <li><a href="#appeals">Appeals Process</a></li>
-          <li><a href="#changes">Changes to This Code</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#principles">Core Ethical Principles</a></li>
+          <li><a href="#responsibility">Member Responsibilities</a></li>
+          <li><a href="#respect">Respect &amp; Privacy</a></li>
+          <li><a href="#authorization">Authorization Before Testing</a></li>
+          <li><a href="#research">Ethical Security Research</a></li>
+          <li><a href="#disclosure">Responsible Vulnerability Disclosure</a></li>
+          <li><a href="#ai">Ethical Use of Artificial Intelligence</a></li>
+          <li><a href="#sharing">Knowledge Sharing</a></li>
+          <li><a href="#commitment">Community Commitment</a></li>
+          <li><a href="#report">Reporting Ethical Concerns</a></li>
         </ul>
       </nav>
     </details>
@@ -1034,27 +1075,26 @@
         <div class="sidebar-sticky">
           <div class="sidebar-header">Trust Center</div>
           <nav aria-label="Trust Center navigation">
-            <a href="#code-of-conduct" class="sidebar-link active" aria-current="page">
-              <i class="fas fa-handshake"></i> Code of Conduct
+            <a href="#cyber-ethics" class="sidebar-link active" aria-current="page">
+              <i class="fas fa-balance-scale"></i> Cyber Ethics
             </a>
             <div class="sidebar-section-title">On this page</div>
             <ul class="sidebar-toc" id="sidebar-toc">
               <li><a href="#purpose">Purpose</a></li>
-              <li><a href="#who-it-applies">Who It Applies To</a></li>
-              <li><a href="#values">Our Community Values</a></li>
-              <li><a href="#expected">Expected Behavior</a></li>
-              <li><a href="#unacceptable">Unacceptable Behavior</a></li>
-              <li><a href="#security">Responsible Security Learning</a></li>
-              <li><a href="#academic">Academic Integrity</a></li>
-              <li><a href="#reporting">Reporting Concerns</a></li>
-              <li><a href="#enforcement">Enforcement</a></li>
-              <li><a href="#appeals">Appeals Process</a></li>
-              <li><a href="#changes">Changes to This Code</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#principles">Core Ethical Principles</a></li>
+              <li><a href="#responsibility">Member Responsibilities</a></li>
+              <li><a href="#respect">Respect &amp; Privacy</a></li>
+              <li><a href="#authorization">Authorization Before Testing</a></li>
+              <li><a href="#research">Ethical Security Research</a></li>
+              <li><a href="#disclosure">Responsible Vulnerability Disclosure</a></li>
+              <li><a href="#ai">Ethical Use of AI</a></li>
+              <li><a href="#sharing">Knowledge Sharing</a></li>
+              <li><a href="#commitment">Community Commitment</a></li>
+              <li><a href="#report">Reporting Ethical Concerns</a></li>
             </ul>
             <div class="sidebar-section-title">Related Policies</div>
-            <span class="sidebar-link disabled"><i class="fas fa-users"></i> Community Guidelines <small>Soon</small></span>
-            <span class="sidebar-link disabled"><i class="fas fa-file-contract"></i> Terms of Service <small>Soon</small></span>
+            <span class="sidebar-link disabled"><i class="fas fa-handshake"></i> Code of Conduct <small>Soon</small></span>
+            <span class="sidebar-link disabled"><i class="fas fa-shield-alt"></i> Responsible Disclosure <small>Soon</small></span>
             <span class="sidebar-link disabled"><i class="fas fa-lock"></i> Privacy Policy <small>Soon</small></span>
           </nav>
         </div>
@@ -1063,317 +1103,341 @@
       <!-- ─── CONTENT ─── -->
       <div class="tc-content" id="policy-sections" role="main">
 
-        <!-- 1. Purpose -->
+        <!-- ─── SECTION 01: Purpose ─── -->
         <article class="policy-card" id="purpose" aria-labelledby="purpose-heading">
           <div class="card-header">
             <i class="fas fa-bullseye"></i>
-            <h2 id="purpose-heading">1. Purpose</h2>
+            <h2 id="purpose-heading">01 Purpose</h2>
             <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
           </div>
           <p>
-            Armteqi was founded on the belief that technology education should be accessible to everyone.
-            This Code of Conduct exists to protect that vision by creating a <strong>safe, respectful,
-            and inclusive learning environment</strong> where every member can thrive.
+            Cybersecurity provides the ability to understand, identify,
+            and improve digital systems. That knowledge carries significant
+            responsibility.
           </p>
           <p>
-            We believe that the strongest communities are built on trust, honesty, and mutual respect.
-            This document isn't just a set of rules – it's a <strong>reflection of our values</strong>
-            and our commitment to each other.
+            The purpose of this framework is to establish a shared ethical
+            standard for every member of Armteqi. These principles guide our
+            decisions regardless of experience level, role, or technical ability.
           </p>
-          <div class="highlight-box">
-            <p>
-              <strong>Participation in Armteqi is a privilege, not a right.</strong> Community membership
-              depends on following this Code of Conduct and contributing positively to our shared spaces.
-            </p>
+          <div class="card-inline success">
+            <span class="icon"><i class="fas fa-check-circle"></i></span>
+            <div class="content">
+              <strong>Our Mission</strong>
+              <br>
+              Use technology to educate, protect, collaborate,
+              and create positive impact.
+            </div>
           </div>
         </article>
 
-        <!-- 2. Who It Applies To -->
-        <article class="policy-card" id="who-it-applies" aria-labelledby="who-it-applies-heading">
+        <!-- ─── SECTION 02: Core Ethical Principles ─── -->
+        <article class="policy-card" id="principles" aria-labelledby="principles-heading">
           <div class="card-header">
-            <i class="fas fa-users"></i>
-            <h2 id="who-it-applies-heading">2. Who It Applies To</h2>
+            <i class="fas fa-gem"></i>
+            <h2 id="principles-heading">02 Core Ethical Principles</h2>
             <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
           </div>
           <p>
-            This Code of Conduct applies to <strong>everyone</strong> in the Armteqi community, regardless of
-            role, experience level, or how long you've been with us.
-          </p>
-          <ul>
-            <li><strong>Members</strong> – anyone who participates in our community</li>
-            <li><strong>Volunteers</strong> – those who give their time to help others</li>
-            <li><strong>Mentors</strong> – experienced members who guide and support learners</li>
-            <li><strong>Organizers</strong> – those who plan and manage community activities</li>
-            <li><strong>Contributors</strong> – anyone who contributes to our open-source projects</li>
-            <li><strong>Visitors</strong> – anyone who visits any Armteqi online or offline community spaces</li>
-          </ul>
-          <p>
-            By participating in Armteqi, you agree to follow this Code of Conduct in all community spaces,
-            including online platforms, in-person events, and any communication related to our community.
-          </p>
-        </article>
-
-        <!-- 3. Our Community Values -->
-        <article class="policy-card" id="values" aria-labelledby="values-heading">
-          <div class="card-header">
-            <i class="fas fa-heart"></i>
-            <h2 id="values-heading">3. Our Community Values</h2>
-            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
-          </div>
-          <p>
-            These are the principles that guide everything we do at Armteqi. They shape our decisions,
-            our interactions, and our culture.
+            Every decision within Armteqi should be measured against these
+            principles.
           </p>
           <div class="value-grid">
-            <div class="value-item"><i class="fas fa-handshake"></i><span>Respect everyone</span></div>
-            <div class="value-item"><i class="fas fa-book"></i><span>Learn continuously</span></div>
-            <div class="value-item"><i class="fas fa-users"></i><span>Help others grow</span></div>
-            <div class="value-item"><i class="fas fa-shield-alt"></i><span>Act ethically</span></div>
-            <div class="value-item"><i class="fas fa-eye"></i><span>Be honest and transparent</span></div>
-            <div class="value-item"><i class="fas fa-laptop-code"></i><span>Use technology responsibly</span></div>
-            <div class="value-item"><i class="fas fa-lock"></i><span>Protect privacy</span></div>
+            <div class="value-item"><i class="fas fa-shield-alt"></i><span>Integrity</span></div>
+            <div class="value-item"><i class="fas fa-user-check"></i><span>Respect</span></div>
+            <div class="value-item"><i class="fas fa-user-shield"></i><span>Privacy</span></div>
+            <div class="value-item"><i class="fas fa-scale-balanced"></i><span>Fairness</span></div>
+            <div class="value-item"><i class="fas fa-eye"></i><span>Transparency</span></div>
+            <div class="value-item"><i class="fas fa-handshake"></i><span>Responsibility</span></div>
           </div>
         </article>
 
-        <!-- 4. Expected Behavior -->
-        <article class="policy-card" id="expected" aria-labelledby="expected-heading">
+        <!-- ─── SECTION 03: Member Responsibilities ─── -->
+        <article class="policy-card" id="responsibility" aria-labelledby="responsibility-heading">
           <div class="card-header">
-            <i class="fas fa-check-circle"></i>
-            <h2 id="expected-heading">4. Expected Behavior</h2>
+            <i class="fas fa-users"></i>
+            <h2 id="responsibility-heading">03 Member Responsibilities</h2>
             <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
           </div>
           <p>
-            We expect all community members to contribute to a positive, productive, and safe environment.
-            Here's what that looks like in practice:
+            Every member contributes to the reputation of Armteqi.
+            Our actions—online and offline—should demonstrate professionalism,
+            respect, and accountability.
           </p>
-          <div class="behavior-list">
-            <div class="behavior-column acceptable">
-              <h4><i class="fas fa-check-circle" style="color:#34D399;margin-right:4px;"></i> We encourage</h4>
-              <ul>
-                <li>Treating everyone with respect and kindness</li>
-                <li>Welcoming beginners and answering questions patiently</li>
-                <li>Giving constructive, actionable feedback</li>
-                <li>Sharing knowledge openly and generously</li>
-                <li>Respecting privacy and intellectual property</li>
-                <li>Following platform rules and applicable laws</li>
-                <li>Admitting when you don't know something</li>
-                <li>Learning from mistakes and helping others learn from theirs</li>
-              </ul>
-            </div>
-            <div class="behavior-column unacceptable">
-              <h4><i class="fas fa-times-circle" style="color:#F87171;margin-right:4px;"></i> We don't tolerate</h4>
-              <ul>
-                <li>Harassment, bullying, or intimidation</li>
-                <li>Hate speech or discrimination</li>
-                <li>Threats or personal attacks</li>
-                <li>Spam, scams, or deceptive behavior</li>
-                <li>Sharing malware, exploits, or malicious tools</li>
-                <li>Unauthorized hacking or illegal activities</li>
-                <li>Plagiarism or misrepresenting others' work</li>
-                <li>Deliberately derailing discussions or trolling</li>
-              </ul>
+          <div class="card-inline tip">
+            <span class="icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="content">
+              Think before you act.
+              Ask yourself:
+              <em>
+                "Will this action help people,
+                improve security,
+                and reflect Armteqi's values?"
+              </em>
             </div>
           </div>
         </article>
 
-        <!-- 5. Responsible Security Learning -->
-        <article class="policy-card" id="security" aria-labelledby="security-heading">
+        <!-- ─── SECTION 04: Respect & Privacy ─── -->
+        <article class="policy-card" id="respect" aria-labelledby="respect-heading">
+          <div class="card-header">
+            <i class="fas fa-user-lock"></i>
+            <h2 id="respect-heading">04 Respect &amp; Privacy</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>
+            Every individual deserves dignity, privacy,
+            and equal treatment regardless of experience,
+            nationality, gender, background,
+            or technical ability.
+          </p>
+          <div class="card-inline info">
+            <span class="icon"><i class="fas fa-info-circle"></i></span>
+            <div class="content">
+              Respecting privacy is not only a legal obligation—
+              it is an ethical responsibility.
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── SECTION 05: Authorization Before Testing ─── -->
+        <article class="policy-card" id="authorization" aria-labelledby="authorization-heading">
+          <div class="card-header">
+            <i class="fas fa-file-signature"></i>
+            <h2 id="authorization-heading">05 Authorization Before Testing</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>
+            Testing or probing systems without explicit permission is unacceptable.
+            Authorization must be written and clearly define scope, duration,
+            and allowed methods.
+          </p>
+          <p>
+            Respect organizational policies. Even with permission, never exceed
+            defined boundaries. Scope limitations protect both the tester and the
+            organization being tested.
+          </p>
+
+          <div class="card-inline success">
+            <span class="icon"><i class="fas fa-check-circle"></i></span>
+            <div class="content">
+              <strong>Good Practice</strong>
+              <br>
+              Always obtain written authorization before testing. Define clear
+              scope and adhere to it strictly. Communicate with the system owner
+              throughout the process.
+            </div>
+          </div>
+
+          <div class="card-inline danger">
+            <span class="icon"><i class="fas fa-times-circle"></i></span>
+            <div class="content">
+              <strong>Never Do</strong>
+              <br>
+              Never scan, probe, or access systems you do not own or have explicit
+              permission to test. Unauthorized testing is unethical and often illegal.
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── SECTION 06: Ethical Security Research ─── -->
+        <article class="policy-card" id="research" aria-labelledby="research-heading">
+          <div class="card-header">
+            <i class="fas fa-flask"></i>
+            <h2 id="research-heading">06 Ethical Security Research</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>
+            Research should always serve a constructive purpose—to advance
+            knowledge, strengthen defenses, or improve security practices.
+          </p>
+          <p>
+            Never conduct research with the intent to cause harm, expose data,
+            or disrupt services. Use safe lab environments and isolated test
+            networks for practical experimentation.
+          </p>
+
+          <div class="card-inline example">
+            <span class="icon"><i class="fas fa-pen-fancy"></i></span>
+            <div class="content">
+              <strong>Example</strong>
+              <br>
+              A member sets up a controlled virtual lab to test common
+              vulnerabilities. They document their findings to share best
+              practices with the community, never targeting live systems
+              without explicit authorization.
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── SECTION 07: Responsible Vulnerability Disclosure ─── -->
+        <article class="policy-card" id="disclosure" aria-labelledby="disclosure-heading">
           <div class="card-header">
             <i class="fas fa-shield-alt"></i>
-            <h2 id="security-heading">5. Responsible Security Learning</h2>
+            <h2 id="disclosure-heading">07 Responsible Vulnerability Disclosure</h2>
             <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
           </div>
           <p>
-            Armteqi focuses on cybersecurity education. This is a powerful responsibility that requires
-            strong ethical standards.
+            If you discover a vulnerability, follow a structured disclosure
+            process. Verify the issue, report it privately to the affected party,
+            and allow reasonable time for remediation.
           </p>
-          <div class="security-box">
-            <p>
-              <strong>We encourage ethical cybersecurity education.</strong> Members must
-              <strong>never</strong> use community resources to perform unauthorized access,
-              attacks, or illegal activities. Skills learned through Armteqi should only be used
-              for <strong>defensive, educational, or authorized purposes</strong>.
-            </p>
-            <p style="margin-top:0.75rem;">
-              Members should <strong>never</strong> request or provide assistance intended to compromise
-              systems without authorization. If you're unsure whether an activity is ethical or legal,
-              please <strong>ask before acting</strong>.
-            </p>
-          </div>
           <p>
-            We'd rather have a conversation than have to take corrective action. When in doubt,
-            reach out to the Armteqi Trust & Safety Team.
+            Public disclosure should only occur after coordination with the
+            vendor or owner. This practice protects users and upholds professional
+            standards.
+          </p>
+          <p>
+            For detailed guidelines, refer to the
+            <a href="responsible-disclosure.html" class="inline-link">Responsible Disclosure Policy</a>.
           </p>
         </article>
 
-        <!-- 6. Academic Integrity -->
-        <article class="policy-card" id="academic" aria-labelledby="academic-heading">
+        <!-- ─── SECTION 08: Ethical Use of AI ─── -->
+        <article class="policy-card" id="ai" aria-labelledby="ai-heading">
           <div class="card-header">
-            <i class="fas fa-graduation-cap"></i>
-            <h2 id="academic-heading">6. Academic Integrity</h2>
+            <i class="fas fa-robot"></i>
+            <h2 id="ai-heading">08 Ethical Use of Artificial Intelligence</h2>
             <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
           </div>
           <p>
-            As a learning community, Armteqi takes academic integrity seriously. We believe that
-            honest learning builds real skills and lasting confidence.
+            AI is a powerful learning tool. Use it to understand concepts faster,
+            generate practice problems, or automate routine tasks—but never to
+            generate malware, phishing content, or fraud.
           </p>
-          <ul>
-            <li><strong>Don't cheat</strong> during CTFs, competitions, or learning activities</li>
-            <li><strong>Don't plagiarize</strong> – always credit others for their work</li>
-            <li><strong>Give proper attribution</strong> when using others' code, ideas, or content</li>
-            <li><strong>Respect licenses</strong> – understand and follow open-source licensing terms</li>
-            <li><strong>Share honestly</strong> – if you didn't create it, don't claim you did</li>
-          </ul>
-          <div class="highlight-box">
-            <p>
-              Learning from others is encouraged. Passing off others' work as your own is not.
-              We're here to grow together, not to take shortcuts.
-            </p>
+          <p>
+            Always verify AI-generated information. The output of AI models is
+            not always accurate. Human judgment remains the ultimate
+            responsibility.
+          </p>
+
+          <div class="card-inline tip">
+            <span class="icon"><i class="fas fa-lightbulb"></i></span>
+            <div class="content">
+              <strong>Best Practice</strong>
+              <br>
+              Treat AI as a junior assistant—review its work critically.
+              Do not share sensitive or private data with public AI tools.
+            </div>
           </div>
         </article>
 
-        <!-- 7. Reporting Concerns -->
-        <article class="policy-card" id="reporting" aria-labelledby="reporting-heading">
+        <!-- ─── SECTION 09: Knowledge Sharing ─── -->
+        <article class="policy-card" id="sharing" aria-labelledby="sharing-heading">
+          <div class="card-header">
+            <i class="fas fa-share-alt"></i>
+            <h2 id="sharing-heading">09 Knowledge Sharing</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>
+            Armteqi thrives on open, responsible knowledge sharing. Teach
+            beginners, write guides, and participate in discussions.
+          </p>
+          <p>
+            Always credit original authors, respect licenses (MIT, GPL, and
+            others), and never share tools or techniques that could be misused
+            without appropriate context and safeguards.
+          </p>
+          <div class="card-inline info">
+            <span class="icon"><i class="fas fa-info-circle"></i></span>
+            <div class="content">
+              <strong>Key Principle</strong>
+              <br>
+              Knowledge grows when it is shared. Gatekeeping weakens the
+              community. We rise together.
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── SECTION 10: Community Commitment ─── -->
+        <article class="policy-card" id="commitment" aria-labelledby="commitment-heading">
+          <div class="card-header">
+            <i class="fas fa-handshake"></i>
+            <h2 id="commitment-heading">10 Community Commitment</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>
+            Every member represents Armteqi. Our reputation is built not by our
+            technical abilities alone, but by our integrity, humility,
+            professionalism, and willingness to protect others.
+          </p>
+          <p>
+            Commit to learning responsibly, treating others with dignity, and
+            using knowledge to strengthen the digital ecosystem. When you
+            succeed, you elevate the entire community.
+          </p>
+
+          <div class="card-inline success">
+            <span class="icon"><i class="fas fa-handshake"></i></span>
+            <div class="content">
+              <strong>Our Shared Pledge</strong>
+              <br>
+              I will use technology to educate, protect, and empower.
+              I will act with integrity. I will respect privacy. I will
+              represent Armteqi with professionalism.
+            </div>
+          </div>
+        </article>
+
+        <!-- ─── SECTION 11: Reporting Ethical Concerns ─── -->
+        <article class="policy-card" id="report" aria-labelledby="report-heading">
           <div class="card-header">
             <i class="fas fa-flag"></i>
-            <h2 id="reporting-heading">7. Reporting Concerns</h2>
+            <h2 id="report-heading">11 Reporting Ethical Concerns</h2>
             <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
           </div>
           <p>
-            If you experience or witness behavior that violates this Code of Conduct, please
-            <strong>report it</strong> to the Armteqi Trust & Safety Team. We take all reports seriously
-            and will respond as quickly as possible.
+            If you observe unethical behavior, report it. All reports are
+            treated confidentially and with care.
           </p>
           <p>
-            <strong>How to report:</strong> Send an email to
-            <a href="mailto:armteqi.community@gmail.com" class="inline-link">armteqi.community@gmail.com</a> with as much detail as you're
-            comfortable sharing. All reports will be handled with care and shared only with those
-            who need to know in order to investigate and resolve the issue.
+            Armteqi does not tolerate retaliation against good-faith reporters.
+            Speaking up protects the community and upholds our shared values.
           </p>
-          <div class="highlight-box">
-            <p>
-              <i class="fas fa-shield-alt" style="color:var(--primary);margin-right:6px;"></i>
-              <strong>No retaliation.</strong> Armteqi does not tolerate retaliation against anyone who
-              reports concerns in good faith. We are committed to protecting those who speak up.
-            </p>
+
+          <div class="contact-links">
+            <a href="mailto:armteqi.community@gmail.com">
+              <i class="fas fa-envelope"></i> armteqi.community@gmail.com
+            </a>
+            <a href="index.html">
+              <i class="fas fa-shield-alt"></i> Trust Center Home
+            </a>
+          </div>
+
+          <div class="card-inline info">
+            <span class="icon"><i class="fas fa-flag"></i></span>
+            <div class="content">
+              We treat every report with discretion. Your safety and
+              privacy matter to us.
+            </div>
           </div>
         </article>
 
-        <!-- 8. Enforcement -->
-        <article class="policy-card" id="enforcement" aria-labelledby="enforcement-heading">
-          <div class="card-header">
-            <i class="fas fa-gavel"></i>
-            <h2 id="enforcement-heading">8. Enforcement</h2>
-            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
-          </div>
-          <p>
-            When a violation of this Code of Conduct is reported or observed, the Armteqi Trust & Safety Team
-            will take appropriate action. We aim to be <strong>fair, transparent, and consistent</strong>
-            in our responses.
+        <!-- ─── CLOSING STATEMENT ─── -->
+        <div class="closing-statement">
+          <p class="big">Cybersecurity begins with ethics.</p>
+          <p class="small">
+            Technical knowledge without responsibility can create harm.
+            Technical knowledge guided by integrity creates trust, protects people,
+            and strengthens the digital world.
           </p>
-          <p>
-            Before taking action, we may review available information, speak with those involved,
-            and consider the severity, context, and impact of the behavior. Our goal is always to
-            <strong>educate and rehabilitate</strong> when possible, and to <strong>protect the community</strong>
-            when necessary.
+          <p class="small" style="margin-top:0.75rem;">
+            Every member of Armteqi is expected to uphold these principles
+            whenever they learn, teach, research, or contribute.
           </p>
-          <p>
-            Possible actions include:
-          </p>
-          <div class="enforcement-wrap">
-            <table class="enforcement-table">
-              <thead>
-                <tr>
-                  <th>Action</th>
-                  <th>Description</th>
-                  <th>Severity</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Friendly reminder</strong></td>
-                  <td>A private note to clarify expectations</td>
-                  <td><span class="severity-low">Low</span></td>
-                </tr>
-                <tr>
-                  <td><strong>Warning</strong></td>
-                  <td>A formal notice about the behavior and consequences</td>
-                  <td><span class="severity-medium">Medium</span></td>
-                </tr>
-                <tr>
-                  <td><strong>Temporary restriction</strong></td>
-                  <td>Limited access to community spaces for a set period</td>
-                  <td><span class="severity-medium">Medium</span></td>
-                </tr>
-                <tr>
-                  <td><strong>Removal from the community</strong></td>
-                  <td>Permanent removal from Armteqi spaces</td>
-                  <td><span class="severity-high">High</span></td>
-                </tr>
-                <tr>
-                  <td><strong>Permanent ban</strong></td>
-                  <td>For serious or repeated violations</td>
-                  <td><span class="severity-high">High</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p>
-            The severity of the response will depend on the nature of the violation, the impact on
-            the community, and whether it's a first-time or repeated offense.
-          </p>
-        </article>
-
-        <!-- 9. Appeals Process -->
-        <article class="policy-card" id="appeals" aria-labelledby="appeals-heading">
-          <div class="card-header">
-            <i class="fas fa-scale-balanced"></i>
-            <h2 id="appeals-heading">9. Appeals Process</h2>
-            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
-          </div>
-          <p>
-            We believe in fairness and second chances. Members who believe an enforcement decision
-            was made in error may request a review by contacting the
-            <strong>Armteqi Trust & Safety Team</strong> at
-            <a href="mailto:armteqi.community@gmail.com" class="inline-link">armteqi.community@gmail.com</a>.
-          </p>
-          <p>
-            In your appeal, please explain why you believe the decision should be reconsidered.
-            The Trust & Safety Team will review the case and respond with a final decision.
-            We treat all appeals with respect and due consideration.
-          </p>
-        </article>
-
-        <!-- 10. Changes to This Code -->
-        <article class="policy-card" id="changes" aria-labelledby="changes-heading">
-          <div class="card-header">
-            <i class="fas fa-edit"></i>
-            <h2 id="changes-heading">10. Changes to This Code</h2>
-            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
-          </div>
-          <p>
-            As our community grows, this Code of Conduct may evolve. We will always publish the
-            latest version in the <a href="https://armteqi.github.io/website/trust/index.html" class="inline-link">Trust Center</a> and notify members of
-            significant changes through our communication channels.
-          </p>
-          <p>
-            We welcome <strong>feedback</strong> on this Code of Conduct. If you have suggestions for
-            improvement, please reach out to us at
-            <a href="mailto:armteqi.community@gmail.com" class="inline-link">armteqi.community@gmail.com</a>.
-          </p>
-        </article>
+        </div>
 
         <!-- ─── CONTACT ─── -->
         <article class="contact-premium" id="contact" aria-labelledby="contact-heading">
           <div class="contact-heading">
             <i class="fas fa-headset"></i>
             <h2 id="contact-heading">Questions or Concerns?</h2>
-            <p>If you have any questions about this Code of Conduct or need to report a concern, please reach out.</p>
+            <p>If you have any questions about this framework or need to report an ethical concern, please reach out.</p>
           </div>
           <div class="contact-options">
             <a href="mailto:armteqi.community@gmail.com" class="contact-option">
               <i class="fas fa-envelope"></i>
-              <span>Contact Us</span>
+              <span>Email Us</span>
               <small>armteqi.community@gmail.com</small>
             </a>
             <a href="https://armteqi.github.io/website/trust/index.html" class="contact-option">
@@ -1384,7 +1448,7 @@
             <a href="#" class="contact-option">
               <i class="fas fa-flag"></i>
               <span>Report a Concern</span>
-              <small>Code of Conduct violations</small>
+              <small>Ethical violations</small>
             </a>
           </div>
         </article>
@@ -1395,11 +1459,11 @@
           <h3>No matching sections found.</h3>
           <p>Try searching for:</p>
           <ul class="suggested-terms">
-            <li><button type="button" class="term-btn">respect</button></li>
-            <li><button type="button" class="term-btn">security</button></li>
-            <li><button type="button" class="term-btn">enforcement</button></li>
-            <li><button type="button" class="term-btn">appeals</button></li>
+            <li><button type="button" class="term-btn">ethics</button></li>
             <li><button type="button" class="term-btn">privacy</button></li>
+            <li><button type="button" class="term-btn">authorization</button></li>
+            <li><button type="button" class="term-btn">disclosure</button></li>
+            <li><button type="button" class="term-btn">AI</button></li>
           </ul>
         </div>
 
@@ -1408,7 +1472,7 @@
           <div class="footer-links">
             <a href="https://armteqi.github.io/website/trust/index.html">Trust Center</a>
             <span>·</span>
-            <a href="#code-of-conduct">Code of Conduct</a>
+            <a href="#cyber-ethics">Cyber Ethics Framework</a>
             <span>·</span>
             <a href="mailto:armteqi.community@gmail.com">Questions?</a>
           </div>
