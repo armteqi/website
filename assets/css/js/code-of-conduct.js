@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
       (() => {
         const progressBar = document.getElementById('page-progress');
         const backToTop = document.getElementById('back-to-top');

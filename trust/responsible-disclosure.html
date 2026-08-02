@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsible Disclosure · Дгмтеϙі</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/disclosure.css">
+  <link rel="stylesheet" href="../assets/css/theme.css">
+
+</head>
+<body>
+  <a href="#policy-sections" class="skip-link">Skip to main content</a>
+
+  <main class="trust-page" id="responsible-disclosure">
+    <div class="page-progress" id="page-progress" aria-hidden="true"></div>
+
+    <!-- ─── HERO ─── -->
+    <header class="tc-hero">
+      <div class="hero-breadcrumb">
+        <a href="https://armteqi.github.io/website/trust/index.html" class="breadcrumb-link">Trust Center</a>
+        <span class="breadcrumb-sep">/</span>
+        <span class="breadcrumb-current">Responsible Disclosure</span>
+      </div>
+      <h1 class="hero-title">Responsible Disclosure</h1>
+      <p class="hero-subtitle">
+        We believe in working with the security community to keep Armteqi safe.
+        If you discover a vulnerability, we want to hear about it.
+      </p>
+      <div class="trust-badges">
+        <div class="trust-badge"><i class="fas fa-shield-alt"></i><span>Responsible Disclosure</span></div>
+        <div class="trust-badge"><i class="fas fa-lock"></i><span>Secure by Design</span></div>
+        <div class="trust-badge"><i class="fas fa-handshake"></i><span>Good-Faith Research</span></div>
+      </div>
+      <div class="hero-meta">
+        <span>Effective: 24 July 2026</span>
+        <span class="meta-divider">·</span>
+        <span>Last Updated: 24 July 2026</span>
+        <span class="meta-divider">·</span>
+        <span>Version 1.0</span>
+        <span class="meta-divider">·</span>
+        <span>⏱️ ~4 min read</span>
+      </div>
+    </header>
+
+    <!-- ─── QUOTE ─── -->
+    <blockquote class="tc-quote">
+      <p>“We appreciate the community's help in keeping Armteqi safe. Responsible disclosure makes the internet better for everyone.”</p>
+    </blockquote>
+
+    <!-- ─── AT A GLANCE ─── -->
+    <div class="glance-card">
+      <h2><i class="fas fa-clipboard-list"></i> At a glance</h2>
+      <div class="glance-grid">
+        <div class="glance-item"><i class="fas fa-check-circle"></i> Privately report security issues</div>
+        <div class="glance-item"><i class="fas fa-check-circle"></i> We will investigate valid reports</div>
+        <div class="glance-item"><i class="fas fa-check-circle"></i> No current bug bounty program</div>
+        <div class="glance-item"><i class="fas fa-check-circle"></i> We follow responsible disclosure</div>
+        <div class="glance-item"><i class="fas fa-check-circle"></i> Good-faith research is protected</div>
+        <div class="glance-item"><i class="fas fa-check-circle"></i> We may thank researchers publicly</div>
+      </div>
+    </div>
+
+    <!-- ─── SEARCH ─── -->
+    <div class="search-container" role="search">
+      <i class="fas fa-search search-icon" aria-hidden="true"></i>
+      <label for="policy-search" class="sr-only">Search policies</label>
+      <input type="text" id="policy-search" placeholder="Search this page…" autocomplete="off" aria-label="Search policies">
+      <button type="button" class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
+      <div id="search-live" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+    </div>
+
+    <!-- ─── MOBILE TOC ─── -->
+    <details class="mobile-toc" id="mobile-toc">
+      <summary><i class="fas fa-list-ul"></i> On this page</summary>
+      <nav aria-label="Table of contents">
+        <ul>
+          <li><a href="#what-is">What is Responsible Disclosure?</a></li>
+          <li><a href="#scope">Systems Covered</a></li>
+          <li><a href="#reporting">How to Report</a></li>
+          <li><a href="#guidelines">Responsible Testing Guidelines</a></li>
+          <li><a href="#out-of-scope">Out of Scope</a></li>
+          <li><a href="#commitment">What We Will Do</a></li>
+          <li><a href="#recognition">Recognition</a></li>
+          <li><a href="#safe-harbor">Safe Harbor</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#timeline">Version History</a></li>
+        </ul>
+      </nav>
+    </details>
+
+    <!-- ─── DESKTOP SIDEBAR + CONTENT ─── -->
+    <div class="tc-layout">
+      <aside class="tc-sidebar">
+        <div class="sidebar-sticky">
+          <div class="sidebar-header">Trust Center</div>
+          <nav aria-label="Trust Center navigation">
+            <a href="#responsible-disclosure" class="sidebar-link active" aria-current="page">
+              <i class="fas fa-shield-alt"></i> Responsible Disclosure
+            </a>
+            <div class="sidebar-section-title">On this page</div>
+            <ul class="sidebar-toc" id="sidebar-toc">
+              <li><a href="#what-is">What is Responsible Disclosure?</a></li>
+              <li><a href="#scope">Systems Covered</a></li>
+              <li><a href="#reporting">How to Report</a></li>
+              <li><a href="#guidelines">Responsible Testing Guidelines</a></li>
+              <li><a href="#out-of-scope">Out of Scope</a></li>
+              <li><a href="#commitment">What We Will Do</a></li>
+              <li><a href="#recognition">Recognition</a></li>
+              <li><a href="#safe-harbor">Safe Harbor</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#timeline">Version History</a></li>
+            </ul>
+            <div class="sidebar-section-title">Related Policies</div>
+            <a href="https://armteqi.github.io/website/trust/privacy-policy.html" class="sidebar-link"><i class="fas fa-file-alt"></i>Privacy Policy</a>
+            <a href="https://armteqi.github.io/website/trust/terms-of-use.html" class="sidebar-link"><i class="fas fa-gavel"></i>Terms of Use</a>
+            <span class="sidebar-link disabled"><i class="fas fa-flag"></i> Report Abuse <small>Soon</small></span>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- ─── CONTENT ─── -->
+      <div class="tc-content" id="policy-sections" role="main">
+
+        <!-- 1. What is Responsible Disclosure? -->
+        <article class="policy-card" id="what-is" aria-labelledby="what-is-heading">
+          <div class="card-header">
+            <i class="fas fa-question-circle"></i>
+            <h2 id="what-is-heading">1. What is Responsible Disclosure?</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>
+            Responsible Disclosure means privately reporting a security issue to Armteqi before sharing it publicly. This gives us time to investigate and resolve the issue without putting our community at unnecessary risk.
+          </p>
+          <p>
+            We believe that working with the security community—rather than against it—makes everyone safer.
+          </p>
+        </article>
+
+        <!-- 2. Systems Covered -->
+        <article class="policy-card" id="scope" aria-labelledby="scope-heading">
+          <div class="card-header">
+            <i class="fas fa-bullseye"></i>
+            <h2 id="scope-heading">2. Systems Covered</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>
+            This policy applies to systems and services directly operated by Armteqi:
+          </p>
+          <ul>
+            <li><strong>Armteqi Website</strong> – The main website at armteqi.org and all its subdomains.</li>
+            <li><strong>GitHub Organization</strong> – Public repositories under the Armteqi organization.</li>
+            <li><strong>Trust Center</strong> – The trust.armteqi.org subdomain and related pages.</li>
+            <li><strong>Official Community Platforms</strong> – Community channels directly administered by Armteqi (e.g., WhatsApp groups, Discord servers).</li>
+            <li><strong>Future Services</strong> – Any new services operated directly by Armteqi will be covered by this policy.</li>
+          </ul>
+          <div class="highlight-box">
+            <p><strong>Note:</strong> Third-party platforms (e.g., GitHub itself, WhatsApp's infrastructure) are <strong>not</strong> covered by this policy. Please report vulnerabilities in those platforms directly to their respective providers.</p>
+          </div>
+        </article>
+
+        <!-- 3. How to Report -->
+        <article class="policy-card" id="reporting" aria-labelledby="reporting-heading">
+          <div class="card-header">
+            <i class="fas fa-envelope"></i>
+            <h2 id="reporting-heading">3. How to Report</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>
+            To report a security issue, email us at <a href="mailto:armteqi.community@gmail.com" class="inline-link" style="color:var(--primary); border-bottom:1px solid transparent; transition:border-color 0.2s;">armteqi.community@gmail.com</a> with:
+          </p>
+          <ul>
+            <li><strong>Subject:</strong> Security Report</li>
+            <li><strong>Description:</strong> A clear explanation of the vulnerability.</li>
+            <li><strong>Steps:</strong> Step-by-step instructions to reproduce the issue.</li>
+            <li><strong>Screenshots:</strong> Visual evidence (if applicable).</li>
+            <li><strong>Proof of Concept:</strong> Code or a script to demonstrate the vulnerability (if possible).</li>
+            <li><strong>Impact:</strong> The potential security impact of the vulnerability.</li>
+          </ul>
+          <div class="highlight-box">
+            <p><strong>Please do not</strong> share the vulnerability publicly until we have had a chance to investigate and address it.</p>
+          </div>
+        </article>
+
+        <!-- 4. Responsible Testing Guidelines -->
+        <article class="policy-card" id="guidelines" aria-labelledby="guidelines-heading">
+          <div class="card-header">
+            <i class="fas fa-book"></i>
+            <h2 id="guidelines-heading">4. Responsible Testing Guidelines</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>Good-faith researchers should follow these principles:</p>
+          <ul class="check-list">
+            <li><i class="fas fa-check-circle"></i> Avoid damaging or deleting data.</li>
+            <li><i class="fas fa-check-circle"></i> Avoid accessing or modifying personal information.</li>
+            <li><i class="fas fa-check-circle"></i> Avoid disrupting services for other users.</li>
+            <li><i class="fas fa-check-circle"></i> Test only what is necessary to confirm the vulnerability.</li>
+            <li><i class="fas fa-check-circle"></i> Keep findings confidential until the issue is resolved.</li>
+          </ul>
+        </article>
+
+        <!-- 5. Out of Scope -->
+        <article class="policy-card" id="out-of-scope" aria-labelledby="out-of-scope-heading">
+          <div class="card-header">
+            <i class="fas fa-ban"></i>
+            <h2 id="out-of-scope-heading">5. Out of Scope</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>
+            The following types of issues are considered out of scope for this policy:
+          </p>
+          <ul>
+            <li>Social engineering (e.g., phishing, pretexting).</li>
+            <li>Spam or bulk messaging.</li>
+            <li>Denial-of-Service (DoS) attacks.</li>
+            <li>Physical attacks (e.g., physical access to hardware).</li>
+            <li>Vulnerabilities in third-party platforms (e.g., vulnerabilities in WhatsApp, Discord, or GitHub's infrastructure).</li>
+            <li>Rate limiting issues.</li>
+            <li>Missing security headers without demonstrated impact.</li>
+            <li>Self-XSS (Cross-Site Scripting that affects only the user performing the test).</li>
+            <li>Clickjacking without sensitive actions (e.g., no account takeover or data modification).</li>
+          </ul>
+        </article>
+
+        <!-- 6. What We Will Do -->
+        <article class="policy-card" id="commitment" aria-labelledby="commitment-heading">
+          <div class="card-header">
+            <i class="fas fa-handshake"></i>
+            <h2 id="commitment-heading">6. What We Will Do</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>
+            When you report a vulnerability to us, we commit to the following:
+          </p>
+          <ul>
+            <li><strong>Acknowledge:</strong> We will acknowledge valid reports as soon as reasonably possible.</li>
+            <li><strong>Investigate:</strong> We will investigate the issue and determine its impact.</li>
+            <li><strong>Inform:</strong> We will keep you informed of our progress when appropriate.</li>
+            <li><strong>Resolve:</strong> We will work to resolve the issue as quickly as we can.</li>
+            <li><strong>Thank:</strong> We may publicly thank researchers after the issue is resolved, unless they request to remain anonymous.</li>
+          </ul>
+        </article>
+
+        <!-- 7. Recognition -->
+        <article class="policy-card" id="recognition" aria-labelledby="recognition-heading">
+          <div class="card-header">
+            <i class="fas fa-award"></i>
+            <h2 id="recognition-heading">7. Recognition</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>
+            Armteqi currently does not offer financial rewards (bug bounties) for vulnerability reports.
+          </p>
+          <p>
+            However, we may acknowledge researchers who responsibly report valid security issues, unless they request to remain anonymous. Recognition may include:
+          </p>
+          <ul>
+            <li>A mention in our security acknowledgments page.</li>
+            <li>A public thank-you in our community channels.</li>
+            <li>Credit in the disclosure of the resolved issue.</li>
+          </ul>
+          <p>
+            We believe that recognition, combined with the satisfaction of making the internet safer, is a meaningful way to thank our contributors.
+          </p>
+        </article>
+
+        <!-- 8. Safe Harbor -->
+        <article class="policy-card" id="safe-harbor" aria-labelledby="safe-harbor-heading">
+          <div class="card-header">
+            <i class="fas fa-umbrella"></i>
+            <h2 id="safe-harbor-heading">8. Safe Harbor</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <p>
+            If you act in good faith, follow this policy, avoid causing harm, and give us reasonable time to investigate, Armteqi will view your research as a good-faith effort to improve security.
+          </p>
+          <p>
+            We will not take legal action against researchers who comply with these guidelines and act responsibly. We appreciate your help in making Armteqi safer for everyone.
+          </p>
+        </article>
+
+        <!-- 9. Contact -->
+        <article class="contact-premium" id="contact" aria-labelledby="contact-heading">
+          <div class="contact-heading">
+            <i class="fas fa-headset"></i>
+            <h2 id="contact-heading">9. Contact</h2>
+            <p>We are a small team, but we take your security concerns seriously.</p>
+          </div>
+          <div class="contact-options">
+            <a href="mailto:armteqi.community@gmail.com" class="contact-option">
+              <i class="fas fa-shield-alt"></i>
+              <span>Report Security Issue</span>
+              <small>Responsible disclosure reports</small>
+            </a>
+            <a href="mailto:armteqi.community@gmail.com" class="contact-option">
+              <i class="fas fa-envelope"></i>
+              <span>Armteqi Community</span>
+              <small>General inquiries</small>
+            </a>
+            <a href="https://chat.whatsapp.com/LMZW8ts0gYGBKod3aD4wgj" class="contact-option">
+              <i class="fab fa-whatsapp"></i>
+              <span>WhatsApp Community</span>
+              <small>Message an admin directly</small>
+            </a>
+          </div>
+        </article>
+
+        <!-- 10. Version History -->
+        <article class="policy-card" id="timeline" aria-labelledby="timeline-heading">
+          <div class="card-header">
+            <i class="fas fa-history"></i>
+            <h2 id="timeline-heading">Version History</h2>
+            <button class="copy-link-btn" aria-label="Copy link to this section"><i class="fas fa-link"></i></button>
+          </div>
+          <ul class="timeline">
+            <li class="timeline-item">
+              <span class="timeline-dot"></span>
+              <div>
+                <strong>Version 1.0</strong> <span class="timeline-date">24 July 2026</span>
+                <p>Initial release of the Armteqi Responsible Disclosure Policy.</p>
+              </div>
+            </li>
+          </ul>
+        </article>
+
+        <!-- ─── SEARCH EMPTY ─── -->
+        <div class="search-empty" id="search-empty">
+          <div style="font-size:2rem; margin-bottom:0.5rem;">🔍</div>
+          <h3>No matching sections found.</h3>
+          <p>Try searching for:</p>
+          <ul class="suggested-terms">
+            <li><button type="button" class="term-btn">scope</button></li>
+            <li><button type="button" class="term-btn">report</button></li>
+            <li><button type="button" class="term-btn">safe harbor</button></li>
+            <li><button type="button" class="term-btn">guidelines</button></li>
+            <li><button type="button" class="term-btn">out of scope</button></li>
+          </ul>
+        </div>
+
+        <!-- ─── FOOTER ─── -->
+        <footer class="legal-notice">
+          <div class="footer-links">
+            <a href="../trust/index.html">Trust Center</a>
+            <span>·</span>
+            <a href="#responsible-disclosure">Responsible Disclosure</a>
+            <span>·</span>
+            <a href="mailto:armteqi.community@gmail.com">Questions?</a>
+          </div>
+          <p class="copyright">© 2026 Дгмтеϙі.</p>
+          <p class="meta-small">Version 1.0 · Last reviewed July 2026</p>
+        </footer>
+      </div>
+    </div>
+
+    <!-- ─── BACK TO TOP ─── -->
+    <button id="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+  </main>
+
+  <script src="https://armteqi.github.io/website/assets/css/js/disclosure.js" defer></script>
+  <Script src="https://armteqi.github.io/website/assets/css/js/theme.js"></Script>
+  <script src="https://armteqi.github.io/website/assets/css/js/cookie.js"></script>
+</body>
+</html>
