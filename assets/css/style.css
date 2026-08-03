@@ -264,6 +264,7 @@
       .impact-stat { padding: 20px; border-radius: 16px; background: var(--bg-surface); border: 1px solid var(--border-subtle); transition: all 0.3s ease; }
       .impact-stat:hover { border-color: var(--accent-soft); transform: translateY(-4px); box-shadow: var(--shadow-card); }
       .impact-stat h4 { font-size: 2.8rem; font-weight: 700; color: var(--text-primary); background: linear-gradient(135deg, var(--accent), var(--accent-soft)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+      .impact-stat h3 { font-size: 2.2rem; font-weight: 700; color: var(--text-primary); background: linear-gradient(135deg, var(--accent), var(--accent-soft)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
       .impact-stat p { color: var(--text-muted); font-size: 0.95rem; margin-top: 4px; }
       
       .promise-block { 
